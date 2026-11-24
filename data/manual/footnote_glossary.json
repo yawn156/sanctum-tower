@@ -1,0 +1,394 @@
+{
+  "作戦行動中": {
+    "tag": "during_operation",
+    "text": {
+      "jp": "作戦行動中",
+      "en": "During operations",
+      "kr": "작전 행동 중"
+    }
+  },
+  "作戦行動中時々": {
+    "tag": "during_operation_sometimes",
+    "text": {
+      "jp": "作戦行動中時々",
+      "en": "Sometimes during operations",
+      "kr": "작전 행동 중 가끔"
+    }
+  },
+  "魔法少女変装中": {
+    "tag": "magical_girl_disguise",
+    "text": {
+      "jp": "魔法少女変装中",
+      "en": "In Magical Girl disguise",
+      "kr": "마법소녀 변장 중"
+    }
+  },
+  "初対面時": {
+    "tag": "first_meeting",
+    "text": {
+      "jp": "初対面時",
+      "en": "First meeting",
+      "kr": "첫 대면 시"
+    }
+  },
+  "初対面": {
+    "tag": "first_meeting",
+    "text": {
+      "jp": "初対面",
+      "en": "First meeting",
+      "kr": "첫 대면"
+    }
+  },
+  "初対面？": {
+    "tag": "first_meeting_uncertain",
+    "text": {
+      "jp": "初対面？",
+      "en": "First meeting?",
+      "kr": "첫 대면?"
+    }
+  },
+  "覆面時": {
+    "tag": "masked",
+    "text": {
+      "jp": "覆面時",
+      "en": "While masked",
+      "kr": "복면 착용 시"
+    }
+  },
+  "モモフレンズ": {
+    "tag": "momo_friends",
+    "text": {
+      "jp": "モモフレンズ",
+      "en": "Momo Friends",
+      "kr": "모모프렌즈"
+    }
+  },
+  "ゲヘナカップ戦闘時": {
+    "tag": "gehenna_cup_battle",
+    "text": {
+      "jp": "ゲヘナカップ戦闘時",
+      "en": "During Gehenna Cup battle",
+      "kr": "게헨나 컵 전투 시"
+    }
+  },
+  "ゲヘナカップでの挑発": {
+    "tag": "gehenna_cup_taunt",
+    "text": {
+      "jp": "ゲヘナカップでの挑発",
+      "en": "Taunt during Gehenna Cup",
+      "kr": "게헨나 컵 도발"
+    }
+  },
+  "偽アヤメ時": {
+    "tag": "fake_ayame",
+    "text": {
+      "jp": "偽アヤメ時",
+      "en": "As fake Ayame",
+      "kr": "가짜 아야메 시"
+    }
+  },
+  "主にメルが怒っている時。": {
+    "tag": "when_meru_angry",
+    "text": {
+      "jp": "主にメルが怒っている時。",
+      "en": "Mainly when Meru is angry",
+      "kr": "주로 메루가 화났을 때"
+    }
+  },
+  "過去": {
+    "tag": "past",
+    "text": {
+      "jp": "過去",
+      "en": "In the past",
+      "kr": "과거"
+    }
+  },
+  "回想時": {
+    "tag": "flashback",
+    "text": {
+      "jp": "回想時",
+      "en": "During flashback",
+      "kr": "회상 시"
+    }
+  },
+  "アリウスで活動時": {
+    "tag": "active_in_arius",
+    "text": {
+      "jp": "アリウスで活動時",
+      "en": "While active in Arius",
+      "kr": "아리우스 활동 시"
+    }
+  },
+  "格付け前": {
+    "tag": "before_ranking",
+    "text": {
+      "jp": "格付け前",
+      "en": "Before ranking",
+      "kr": "서열 평가 전"
+    }
+  },
+  "苗字+肩書きの場合も": {
+    "tag": "surname_plus_title",
+    "text": {
+      "jp": "苗字+肩書きの場合も",
+      "en": "Sometimes surname + title",
+      "kr": "성+직함인 경우도 있음"
+    }
+  },
+  "まれ": {
+    "tag": "rarely",
+    "text": {
+      "jp": "まれ",
+      "en": "Rarely",
+      "kr": "드물게"
+    }
+  },
+  "稀に": {
+    "tag": "rarely",
+    "text": {
+      "jp": "稀に",
+      "en": "Rarely",
+      "kr": "드물게"
+    }
+  },
+  "たまに": {
+    "tag": "occasionally",
+    "text": {
+      "jp": "たまに",
+      "en": "Occasionally",
+      "kr": "가끔"
+    }
+  },
+  "名前は知らない": {
+    "tag": "name_unknown",
+    "text": {
+      "jp": "名前は知らない",
+      "en": "Doesn't know their name",
+      "kr": "이름을 모름"
+    }
+  },
+  "当番設定時": {
+    "tag": "lobby_duty",
+    "text": {
+      "jp": "当番設定時",
+      "en": "When set on lobby duty",
+      "kr": "당번 설정 시"
+    }
+  },
+  "アルバイト中": {
+    "tag": "part_time_job",
+    "text": {
+      "jp": "アルバイト中",
+      "en": "During part-time work",
+      "kr": "아르바이트 중"
+    }
+  },
+  "ハルカが便利屋68に入る前": {
+    "tag": "before_haruka_joined_ps68",
+    "text": {
+      "jp": "ハルカが便利屋68に入る前",
+      "en": "Before Haruka joined Problem Solver 68",
+      "kr": "하루카가 흥신소 68에 들어가기 전"
+    }
+  },
+  "心の中": {
+    "tag": "inner_thoughts",
+    "text": {
+      "jp": "心の中",
+      "en": "In inner thoughts",
+      "kr": "속마음"
+    }
+  },
+  "メモロビ": {
+    "tag": "memory_lobby",
+    "text": {
+      "jp": "メモロビ",
+      "en": "Memory Lobby",
+      "kr": "메모리얼 로비"
+    }
+  },
+  "美食研グループストーリーのみ。以降は呼び捨てで統一": {
+    "tag": "gourmet_group_story_only",
+    "text": {
+      "jp": "美食研グループストーリーのみ。以降は呼び捨てで統一",
+      "en": "Gourmet Research Society group story only; dropped honorifics afterward",
+      "kr": "미식연구회 그룹 스토리 한정. 이후에는 호칭 생략으로 통일"
+    }
+  },
+  "韓国版公式4コマ255話より": {
+    "tag": "kr_official_4koma_255",
+    "text": {
+      "jp": "韓国版公式4コマ255話より",
+      "en": "From official KR 4-koma Ch. 255",
+      "kr": "한국판 공식 4컷 만화 255화"
+    }
+  },
+  "表舞台のかくしあじ～キヴォトス晄輪大祭～": {
+    "tag": "halo_games_story",
+    "text": {
+      "jp": "表舞台のかくしあじ～キヴォトス晄輪大祭～",
+      "en": "Event: Secret Flavor Behind the Stage (Kivotos Halo Games)",
+      "kr": "이벤트: 무대 뒤의 숨은 맛 ~키보토스 황륜대제~"
+    }
+  },
+  "実装後は「私」で統一されている模様": {
+    "tag": "unified_after_release",
+    "text": {
+      "jp": "実装後は「私」で統一されている模様",
+      "en": "Appears unified as 'watashi' after playable release",
+      "kr": "실장 이후에는 '와타시(私)'로 통일된 듯함"
+    }
+  },
+  "イベント-ive aLIVE!ストーリー06,「先生」と言ったあと「あの人」と言い直している": {
+    "tag": "ive_alive_06_self_correction",
+    "text": {
+      "jp": "イベント-ive aLIVE!ストーリー06,「先生」と言ったあと「あの人」と言い直している",
+      "en": "Event -ive aLIVE! Ep. 06: says 'Sensei', then corrects herself to 'that person'",
+      "kr": "이벤트 -ive aLIVE! 스토리 06, '선생님'이라 했다가 '그 사람'으로 고쳐 부름"
+    }
+  },
+  "限界オタク時": {
+    "tag": "fangirl_mode",
+    "text": {
+      "jp": "限界オタク時",
+      "en": "When in full fangirl/otaku mode",
+      "kr": "한계 오타쿠 모드일 때"
+    }
+  },
+  "メイドコス時に時々": {
+    "tag": "maid_outfit_sometimes",
+    "text": {
+      "jp": "メイドコス時に時々",
+      "en": "Sometimes while in maid outfit",
+      "kr": "메이드복 착용 시 가끔"
+    }
+  },
+  "メイドコス時": {
+    "tag": "maid_outfit",
+    "text": {
+      "jp": "メイドコス時",
+      "en": "While in maid outfit",
+      "kr": "메이드복 착용 시"
+    }
+  },
+  "ゲーム教育前": {
+    "tag": "before_game_education",
+    "text": {
+      "jp": "ゲーム教育前",
+      "en": "Before being taught RPG conventions",
+      "kr": "게임 교육 전"
+    }
+  },
+  "時計じかけの花のパヴァーヌ編2章": {
+    "tag": "vol2_ch2",
+    "text": {
+      "jp": "時計じかけの花のパヴァーヌ編2章",
+      "en": "Clockwork Flower Pavane Ch. 2",
+      "kr": "태엽 감는 꽃의 파반느 편 2장"
+    }
+  },
+  "動画『晄輪大祭「障害物競走」』": {
+    "tag": "halo_games_video",
+    "text": {
+      "jp": "動画『晄輪大祭「障害物競走」』",
+      "en": "Halo Games 'Obstacle Race' promotional video",
+      "kr": "영상 「황륜대제 '장애물 경주'」"
+    }
+  },
+  "制服時": {
+    "tag": "school_uniform",
+    "text": {
+      "jp": "制服時",
+      "en": "While in school uniform",
+      "kr": "교복 착용 시"
+    }
+  },
+  "SNS上": {
+    "tag": "on_sns",
+    "text": {
+      "jp": "SNS上",
+      "en": "On social media",
+      "kr": "SNS 상"
+    }
+  },
+  "初対面時のみ": {
+    "tag": "first_meeting_only",
+    "text": {
+      "jp": "初対面時のみ",
+      "en": "First meeting only",
+      "kr": "첫 대면 시에만"
+    }
+  },
+  "ミニストーリー「手動期の終り(2)」": {
+    "tag": "mini_story_manual_era_end_2",
+    "text": {
+      "jp": "ミニストーリー「手動期の終り(2)」",
+      "en": "Mini Story 'End of the Manual Era (2)'",
+      "kr": "미니 스토리 「수동기의 끝(2)」"
+    }
+  },
+  "作戦行動中かつ現場出撃中": {
+    "tag": "during_operation_field_deployment",
+    "text": {
+      "jp": "作戦行動中かつ現場出撃中",
+      "en": "During operations while deployed in the field",
+      "kr": "작전 행동 중 및 현장 출격 중"
+    }
+  },
+  "作戦行動中かつキャンプでオペレート中。正確にはキャンプRABBITは公園のキャンプを指すコードネーム": {
+    "tag": "during_operation_camp_operator",
+    "text": {
+      "jp": "作戦行動中かつキャンプでオペレート中。正確にはキャンプRABBITは公園のキャンプを指すコードネーム",
+      "en": "Operating from camp during missions (Camp RABBIT is technically the park camp's codename)",
+      "kr": "작전 행동 중 캠프에서 오퍼레이트할 때 (정확히는 캠프 RABBIT은 공원 캠프를 가리키는 코드네임)"
+    }
+  },
+  "メインストーリー『カルバノグの兎編』にて。クルミに対して使用": {
+    "tag": "caerbannog_to_kurumi",
+    "text": {
+      "jp": "メインストーリー『カルバノグの兎編』にて。クルミに対して使用",
+      "en": "In Main Story Vol. 4 (Rabbit of Caerbannog); used toward Kurumi",
+      "kr": "메인 스토리 「카르바노그의 토끼 편」에서 쿠루미에게 사용"
+    }
+  },
+  "韓国版公式4コマ251話より。선배（先輩）のような敬称はついていないことがわかる": {
+    "tag": "kr_official_4koma_251",
+    "text": {
+      "jp": "韓国版公式4コマ251話より。선배（先輩）のような敬称はついていないことがわかる",
+      "en": "From official KR 4-koma Ch. 251 (shows no honorific like senpai/seonbae is used)",
+      "kr": "한국판 공식 4컷 만화 251화 기준 (선배 같은 경칭 없이 부름)"
+    }
+  },
+  "反転中": {
+    "tag": "terror_inversion",
+    "text": {
+      "jp": "反転中",
+      "en": "While Terror-inverted",
+      "kr": "반전 중"
+    }
+  },
+  "韓国語版公式4コマ227話おまけ漫画 原文は「히로미 쨩（ヒロミ チャン）」。": {
+    "tag": "kr_official_4koma_227_bonus",
+    "text": {
+      "jp": "韓国語版公式4コマ227話おまけ漫画 原文は「히로미 쨩（ヒロミ チャン）」。",
+      "en": "Official KR 4-koma Ch. 227 bonus comic (original text: '히로미 쨩')",
+      "kr": "한국판 공식 4컷 만화 227화 보너스 만화 (원문: '히로미 쨩')"
+    }
+  },
+  "イベント「夏空のやくそく」ミニゲーム内": {
+    "tag": "summer_sky_promise_minigame",
+    "text": {
+      "jp": "イベント「夏空のやくそく」ミニゲーム内",
+      "en": "In the 'Summer Sky's Promise' event minigame",
+      "kr": "이벤트 「여름 하늘의 약속」 미니게임 내"
+    }
+  },
+  "正確には「暁のホル」まで言いかけて途中で「ホシノさん」に言い直している": {
+    "tag": "horus_self_correction",
+    "text": {
+      "jp": "正確には「暁のホル」まで言いかけて途中で「ホシノさん」に言い直している",
+      "en": "Starts saying 'Horus of Dawn' ('Akatsuki no Horu-') before correcting to 'Hoshino-san'",
+      "kr": "정확히는 '새벽의 호루'까지 말하다가 '호시노 씨'로 고쳐 부름"
+    }
+  }
+}

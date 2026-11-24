@@ -1,0 +1,1184 @@
+{
+  "schools": {
+    "GSC": {
+      "jp": "連邦生徒会",
+      "en": "General Student Council",
+      "kr": "총학생회"
+    },
+    "Kronos": {
+      "jp": "クロノススクール",
+      "en": "Kronos School of Journalism",
+      "kr": "크로노스 스쿨"
+    },
+    "Unaffiliated": {
+      "jp": "所属不明・学園外勢力",
+      "en": "Unaffiliated / External",
+      "kr": "소속 불명 · 학원 외 세력"
+    },
+    "Collab": {
+      "jp": "コラボキャラクター",
+      "en": "Collaboration",
+      "kr": "콜라보 캐릭터"
+    },
+    "Spinoff": {
+      "jp": "スピンオフ作品キャラ",
+      "en": "Spin-off Characters",
+      "kr": "스핀오프 캐릭터"
+    },
+    "Special": {
+      "jp": "特別",
+      "en": "Special",
+      "kr": "특수"
+    }
+  },
+  "clubs": {
+    "AbydosStudentCouncil": {
+      "jp": "アビドス生徒会",
+      "en": "Abydos Student Council",
+      "kr": "아비도스 학생회"
+    },
+    "Nicomedians": {
+      "jp": "ニコメディアトゥループ",
+      "en": "Nicomedia Troupe",
+      "kr": "니코메디아 트루프"
+    },
+    "GSC_Exec": {
+      "jp": "連邦生徒会",
+      "en": "General Student Council",
+      "kr": "총학생회"
+    },
+    "Schale": {
+      "jp": "シャーレ",
+      "en": "SCHALE",
+      "kr": "샬레"
+    },
+    "Gematria": {
+      "jp": "ゲマトリア",
+      "en": "Gematria",
+      "kr": "게마트리아"
+    },
+    "Decagrammaton": {
+      "jp": "デカグラマトン",
+      "en": "Decagrammaton",
+      "kr": "데카그라마톤"
+    },
+    "Kaiser": {
+      "jp": "カイザーコーポレーション",
+      "en": "Kaiser Corporation",
+      "kr": "카이저 코퍼레이션"
+    }
+  },
+  "schoolJpToKey": {
+    "アビドス高等学校": "Abydos",
+    "アリウス分校": "Arius",
+    "ヴァルキューレ警察学校": "Valkyrie",
+    "オデュッセイア海洋高等学校": "Odyssey",
+    "クロノススクール": "Kronos",
+    "ゲヘナ学園": "Gehenna",
+    "山海経高級中学校": "Shanhaijing",
+    "トリニティ総合学園": "Trinity",
+    "ハイランダー鉄道学園": "Highlander",
+    "百鬼夜行連合学院": "Hyakkiyako",
+    "ミレニアムサイエンススクール": "Millennium",
+    "レッドウィンター連邦学園": "RedWinter",
+    "SRT特殊学園": "SRT",
+    "ワイルドハント芸術学院": "WildHunt",
+    "連邦生徒会": "GSC",
+    "所属不明・学園外勢力": "Unaffiliated",
+    "コラボキャラクター": "Collab",
+    "スピンオフ作品キャラ": "Spinoff"
+  },
+  "clubJpToKey": {
+    "対策委員会": "Countermeasure",
+    "アビドス生徒会": "AbydosStudentCouncil",
+    "アリウススクワッド": "AriusSqud",
+    "ニコメディアトゥループ": "Nicomedians",
+    "便利屋68": "Kohshinjo68",
+    "風紀委員会": "Fuuki",
+    "美食研究会": "GourmetClub",
+    "給食部": "FoodService",
+    "補習授業部": "MakeUpWorkClub",
+    "正義実現委員会": "Justice",
+    "放課後スイーツ部": "HoukagoDessert",
+    "図書委員会": "BookClub",
+    "シスターフッド": "Sisterhood",
+    "ティーパーティー": "TeaParty",
+    "救護騎士団": "KnightsHospitaller",
+    "C&C": "CleanNClearing",
+    "エンジニア部": "Engineer",
+    "ゲーム開発部": "GameDev",
+    "セミナー": "Seminar",
+    "ヴェリタス": "Veritas",
+    "連邦生徒会": "GSC_Exec",
+    "シャーレ": "Schale",
+    "ゲマトリア": "Gematria",
+    "デカグラマトン": "Decagrammaton",
+    "カイザーコーポレーション": "Kaiser"
+  },
+  "readingsJp": {
+    "黒服": "くろふく",
+    "地下生活者": "ちかせいかつしゃ",
+    "連邦生徒会長": "れんぽうせいとかいちょう",
+    "柴大将": "しばたいしょう",
+    "不動アン": "ふどうあん",
+    "御坂美琴": "みさかみこと",
+    "食蜂操祈": "しょくほうみさき",
+    "佐天涙子": "さてんるいこ",
+    "初音ミク": "はつねみく",
+    "白井黒子": "しらいくろこ",
+    "雷帝": "らいてい",
+    "カイザーPMC理事": "かいざーぴーえむしーりじ",
+    "スズメ亭の女将": "すずめていのおかみ",
+    "ニャン天丸": "にゃんてんまる"
+  },
+  "npcs": [
+    {
+      "id": "npc:yume",
+      "kind": "npc",
+      "wikiruAnchor": "Yume",
+      "name": { "jp": "ユメ", "en": "Yume", "kr": "유메" },
+      "fullName": { "jp": "梔子ユメ", "en": "Kuchinashi Yume", "kr": "쿠치나시 유메" },
+      "school": "Abydos",
+      "club": "AbydosStudentCouncil"
+    },
+    {
+      "id": "npc:rin",
+      "kind": "npc",
+      "wikiruAnchor": "Rin",
+      "name": { "jp": "リン", "en": "Rin", "kr": "린" },
+      "fullName": { "jp": "七神リン", "en": "Nanagami Rin", "kr": "나나가미 린" },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:momoka",
+      "kind": "npc",
+      "wikiruAnchor": "Momoka",
+      "name": { "jp": "モモカ", "en": "Momoka", "kr": "모모카" },
+      "fullName": { "jp": "由良木モモカ", "en": "Yuragi Momoka", "kr": "유라기 모모카" },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:ayumu",
+      "kind": "npc",
+      "wikiruAnchor": "Ayumu",
+      "name": { "jp": "アユム", "en": "Ayumu", "kr": "아유무" },
+      "fullName": { "jp": "岩櫃アユム", "en": "Iwabitsu Ayumu", "kr": "이와비츠 아유무" },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:kaya",
+      "kind": "npc",
+      "wikiruAnchor": "Kaya",
+      "name": { "jp": "カヤ", "en": "Kaya", "kr": "카야" },
+      "fullName": { "jp": "不知火カヤ", "en": "Shiranui Kaya", "kr": "시라누이 카야" },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:aoi",
+      "kind": "npc",
+      "wikiruAnchor": "Aoi",
+      "name": { "jp": "アオイ", "en": "Aoi", "kr": "아오이" },
+      "fullName": { "jp": "扇喜アオイ", "en": "Ogi Aoi", "kr": "오기 아오이" },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:haine",
+      "kind": "npc",
+      "wikiruAnchor": "Haine",
+      "name": { "jp": "ハイネ", "en": "Haine", "kr": "하이네" },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:sumomo",
+      "kind": "npc",
+      "wikiruAnchor": "Sumomo",
+      "name": { "jp": "スモモ", "en": "Sumomo", "kr": "스모모" },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:gsc_president",
+      "kind": "npc",
+      "alwaysInclude": true,
+      "name": { "jp": "連邦生徒会長", "en": "GSC President", "kr": "총학생회장" },
+      "reading": { "jp": "れんぽうせいとかいちょう" },
+      "aliases": {
+        "jp": ["連邦生徒会長", "会長"],
+        "en": ["GSC President", "General Student Council President", "Student Council President", "President"],
+        "kr": ["총학생회장", "총학생회장님", "회장님"]
+      },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:gsc_president_false",
+      "kind": "npc",
+      "alwaysInclude": true,
+      "name": { "jp": "連邦生徒会長（偽）", "en": "GSC President (False)", "kr": "총학생회장 (가짜)" },
+      "reading": { "jp": "れんぽうせいとかいちょう" },
+      "aliases": {
+        "jp": ["偽の連邦生徒会長"],
+        "en": ["GSC President (False)", "General Student Council President", "Student Council President", "President"],
+        "kr": ["총학생회장", "총학생회장님", "가짜 총학생회장"]
+      },
+      "school": "GSC",
+      "club": "GSC_Exec"
+    },
+    {
+      "id": "npc:arona",
+      "kind": "npc",
+      "wikiruAnchor": "Arona",
+      "name": { "jp": "アロナ", "en": "Arona", "kr": "아로나" },
+      "school": "Unaffiliated",
+      "club": "Schale"
+    },
+    {
+      "id": "npc:plana",
+      "kind": "npc",
+      "wikiruAnchor": "Plana",
+      "name": { "jp": "プラナ", "en": "Plana", "kr": "프라나" },
+      "aliases": { "jp": ["A.R.O.N.A"], "en": ["A.R.O.N.A"] },
+      "school": "Unaffiliated",
+      "club": "Schale"
+    },
+    {
+      "id": "npc:akira",
+      "kind": "npc",
+      "wikiruAnchor": "Akira",
+      "name": { "jp": "アキラ", "en": "Akira", "kr": "아키라" },
+      "fullName": { "jp": "清澄アキラ", "en": "Kiyosumi Akira", "kr": "키요스미 아키라" },
+      "aliases": { "jp": ["慈愛の怪盗"], "en": ["Benevolent Thief"], "kr": ["자애의 괴도 가면"] },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "npc:kurofuku",
+      "kind": "npc",
+      "wikiruAnchor": "BlackSuit",
+      "name": { "jp": "黒服", "en": "Black Suit", "kr": "검은 양복" },
+      "reading": { "jp": "くろふく" },
+      "school": "Unaffiliated",
+      "club": "Gematria"
+    },
+    {
+      "id": "npc:maestro",
+      "kind": "npc",
+      "wikiruAnchor": "Maestro",
+      "name": { "jp": "マエストロ", "en": "Maestro", "kr": "마에스트로" },
+      "school": "Unaffiliated",
+      "club": "Gematria"
+    },
+    {
+      "id": "npc:golconde",
+      "kind": "npc",
+      "wikiruAnchor": "Golconde",
+      "name": { "jp": "ゴルコンダ＆デカルコマニー", "en": "Golconde & Decalcomanie", "kr": "골콩트 & 데칼코마니" },
+      "aliases": {
+        "jp": ["ゴルコンダ", "デカルコマニー"],
+        "en": ["Golconde", "Decalcomanie", "Decalcomania"],
+        "kr": ["골콩트", "데칼코마니"]
+      },
+      "school": "Unaffiliated",
+      "club": "Gematria"
+    },
+    {
+      "id": "npc:francis",
+      "kind": "npc",
+      "wikiruAnchor": "Francis",
+      "name": { "jp": "フランシス", "en": "Francis", "kr": "프란시스" },
+      "school": "Unaffiliated",
+      "club": "Gematria"
+    },
+    {
+      "id": "npc:beatrice",
+      "kind": "npc",
+      "wikiruAnchor": "Beatrice",
+      "name": { "jp": "ベアトリーチェ", "en": "Beatrice", "kr": "베아트리체" },
+      "school": "Unaffiliated",
+      "club": "Gematria"
+    },
+    {
+      "id": "npc:basement_dweller",
+      "kind": "npc",
+      "name": { "jp": "地下生活者", "en": "Underground Dweller", "kr": "지하생활자" },
+      "reading": { "jp": "ちかせいかつしゃ" },
+      "school": "Unaffiliated",
+      "club": "Gematria"
+    },
+    {
+      "id": "npc:phrenapates",
+      "kind": "npc",
+      "wikiruAnchor": "Phrenapates",
+      "name": { "jp": "プレナパテス", "en": "Phrenapates", "kr": "프레나파테스" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "npc:decagrammaton",
+      "kind": "npc",
+      "wikiruAnchor": "Decagrammaton",
+      "name": { "jp": "デカグラマトン", "en": "Decagrammaton", "kr": "데카그라마톤" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "npc:malkuth",
+      "kind": "npc",
+      "wikiruAnchor": "Malkuth",
+      "name": { "jp": "マルクト", "en": "Malkuth", "kr": "말쿠트" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "npc:ein",
+      "kind": "npc",
+      "wikiruAnchor": "Ein",
+      "name": { "jp": "アイン", "en": "Ein", "kr": "아인" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "npc:sof",
+      "kind": "npc",
+      "wikiruAnchor": "Sof",
+      "name": { "jp": "ソフ", "en": "Sof", "kr": "소프" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "npc:ohr",
+      "kind": "npc",
+      "wikiruAnchor": "Ohr",
+      "name": { "jp": "オウル", "en": "Ohr", "kr": "오르" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "npc:master_shiba",
+      "kind": "npc",
+      "name": { "jp": "柴大将", "en": "Master Shiba", "kr": "시바 대장" },
+      "reading": { "jp": "しばたいしょう" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "npc:suou",
+      "kind": "npc",
+      "wikiruAnchor": "Suou",
+      "name": { "jp": "スオウ", "en": "Suou", "kr": "스오우" },
+      "fullName": { "jp": "朝霧スオウ", "en": "Asagiri Suou", "kr": "아사기리 스오우" },
+      "reading": { "jp": "あさぎりすおう" },
+      "school": "Highlander"
+    },
+    {
+      "id": "npc:kaiser_pmc_director",
+      "kind": "npc",
+      "name": { "jp": "カイザーPMC理事", "en": "Kaiser PMC Director", "kr": "카이저 PMC 이사" },
+      "reading": { "jp": "かいざーぴーえむしーりじ" },
+      "school": "Unaffiliated",
+      "club": "Kaiser"
+    },
+    {
+      "id": "npc:general",
+      "kind": "npc",
+      "name": { "jp": "ジェネラル", "en": "Kaiser General", "kr": "제네럴" },
+      "school": "Unaffiliated",
+      "club": "Kaiser"
+    },
+    {
+      "id": "npc:erika",
+      "kind": "npc",
+      "wikiruAnchor": "Erika",
+      "name": { "jp": "エリカ", "en": "Erika", "kr": "에리카" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "npc:kuzunoha",
+      "kind": "npc",
+      "wikiruAnchor": "Kuzunoha",
+      "name": { "jp": "クズノハ", "en": "Kuzunoha", "kr": "쿠즈노하" },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "npc:ayame",
+      "kind": "npc",
+      "wikiruAnchor": "Ayame",
+      "name": { "jp": "アヤメ", "en": "Ayame", "kr": "아야메" },
+      "fullName": { "jp": "七稜アヤメ", "en": "Nanakado Ayame", "kr": "나나카도 아야메" },
+      "reading": { "jp": "ななかどあやめ" },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "npc:kai",
+      "kind": "npc",
+      "wikiruAnchor": "Kai",
+      "name": { "jp": "カイ", "en": "Kai", "kr": "카이" },
+      "fullName": { "jp": "申谷カイ", "en": "Shintani Kai", "kr": "신타니 카이" },
+      "reading": { "jp": "しんたにかい" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "npc:shuro",
+      "kind": "npc",
+      "wikiruAnchor": "Shuro",
+      "name": { "jp": "シュロ", "en": "Shuro", "kr": "슈로" },
+      "fullName": { "jp": "箭吹シュロ", "en": "Yabuki Shuro", "kr": "야부키 슈로" },
+      "reading": { "jp": "やぶきしゅろ" },
+      "aliases": { "jp": ["朽木修羅"], "en": ["Kuchiki Shura"], "kr": ["쿠치키 슈라"] },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "npc:azami",
+      "kind": "npc",
+      "wikiruAnchor": "Azami",
+      "name": { "jp": "アザミ", "en": "Azami", "kr": "아자미" },
+      "fullName": { "jp": "土生アザミ", "en": "Habu Azami", "kr": "하부 아자미" },
+      "reading": { "jp": "はぶあざみ" },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "npc:manami",
+      "kind": "npc",
+      "wikiruAnchor": "Manami",
+      "name": { "jp": "マナミ", "en": "Manami", "kr": "마나미" },
+      "school": "WildHunt"
+    },
+    {
+      "id": "npc:djbob",
+      "kind": "npc",
+      "wikiruAnchor": "DJBoB",
+      "name": { "jp": "DJ B.o.B", "en": "DJ B.o.B", "kr": "DJ B.o.B" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "npc:kyouko",
+      "kind": "npc",
+      "wikiruAnchor": "Kyouko",
+      "name": { "jp": "キョウコ", "en": "Kyouko", "kr": "쿄코" },
+      "fullName": { "jp": "密井キョウコ", "en": "Mitsui Kyoko", "kr": "미츠이 쿄코" },
+      "reading": { "jp": "みついきょうこ" },
+      "school": "WildHunt"
+    },
+    {
+      "id": "npc:akemi",
+      "kind": "npc",
+      "wikiruAnchor": "Akemi",
+      "name": { "jp": "アケミ", "en": "Akemi", "kr": "아케미" },
+      "fullName": { "jp": "栗浜アケミ", "en": "Kurihama Akemi", "kr": "쿠리하마 아케미" },
+      "reading": { "jp": "くりはまあけみ" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "npc:yukino",
+      "kind": "npc",
+      "wikiruAnchor": "Yukino",
+      "name": { "jp": "ユキノ", "en": "Yukino", "kr": "유키노" },
+      "fullName": { "jp": "七度ユキノ", "en": "Shichido Yukino", "kr": "시치도 유키노" },
+      "reading": { "jp": "しちどゆきの" },
+      "school": "SRT"
+    },
+    {
+      "id": "npc:maia",
+      "kind": "npc",
+      "wikiruAnchor": "Maia",
+      "name": { "jp": "マイア", "en": "Maia", "kr": "마이아" },
+      "fullName": { "jp": "立木マイア", "en": "Tachigi Maia", "kr": "타치기 마이아" },
+      "reading": { "jp": "たちぎまいあ" },
+      "school": "Arius"
+    },
+    {
+      "id": "npc:nanami",
+      "kind": "npc",
+      "wikiruAnchor": "Nanami",
+      "name": { "jp": "ナナミ", "en": "Nanami", "kr": "나나미" },
+      "fullName": { "jp": "護守ナナミ", "en": "Gonokami Nanami", "kr": "고노카미 나나미" },
+      "reading": { "jp": "ごのかみななみ" },
+      "school": "Odyssey"
+    },
+    {
+      "id": "npc:fudou_an",
+      "kind": "npc",
+      "name": { "jp": "不動アン", "en": "Fudou An", "kr": "후도 안" },
+      "reading": { "jp": "ふどうあん" },
+      "school": "Spinoff"
+    },
+    {
+      "id": "entity:mecha_croc",
+      "kind": "entity",
+      "name": { "jp": "メカワニ", "en": "Mecha-Croc", "kr": "메카 악어" },
+      "reading": { "jp": "めかわに" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:peroro",
+      "kind": "entity",
+      "name": { "jp": "ペロロ", "en": "Peroro", "kr": "페로로" },
+      "reading": { "jp": "ぺろろ" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:schale",
+      "kind": "entity",
+      "name": { "jp": "シャーレ", "en": "SCHALE", "kr": "샬레" },
+      "reading": { "jp": "しゃーれ" },
+      "school": "Federal"
+    },
+    {
+      "id": "entity:perorodzilla",
+      "kind": "entity",
+      "name": { "jp": "ペロロジラ", "en": "Perorodzilla", "kr": "페로로지라" },
+      "reading": { "jp": "ぺろろじら" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:pan_chan",
+      "kind": "entity",
+      "name": { "jp": "パンちゃん", "en": "Pan-chan", "kr": "빵짱" },
+      "reading": { "jp": "ぱんちゃん" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:helmet_gang",
+      "kind": "entity",
+      "name": { "jp": "ヘルメット団", "en": "Helmet Gang", "kr": "헬멧단" },
+      "reading": { "jp": "へるめっとだん" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:binah",
+      "kind": "entity",
+      "name": { "jp": "ビナー", "en": "Binah", "kr": "비나" },
+      "reading": { "jp": "びなー" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:geburah",
+      "kind": "entity",
+      "name": { "jp": "ゲブラ", "en": "Geburah", "kr": "게부라" },
+      "reading": { "jp": "げぶら" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:chokmah",
+      "kind": "entity",
+      "name": { "jp": "コクマー", "en": "Chokmah", "kr": "호크마" },
+      "reading": { "jp": "こくまー" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:netzach",
+      "kind": "entity",
+      "name": { "jp": "ネツァク", "en": "Netzach", "kr": "네차흐" },
+      "reading": { "jp": "ねつぁく" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:tiphareth",
+      "kind": "entity",
+      "name": { "jp": "ティファレト", "en": "Tiphareth", "kr": "티페레트" },
+      "reading": { "jp": "てぃふぁれと" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:hod",
+      "kind": "entity",
+      "name": { "jp": "ホド", "en": "Hod", "kr": "호드" },
+      "reading": { "jp": "ほど" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:chesed",
+      "kind": "entity",
+      "name": { "jp": "ケセド", "en": "Chesed", "kr": "헤세드" },
+      "reading": { "jp": "けせど" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:yesod",
+      "kind": "entity",
+      "name": { "jp": "イェソド", "en": "Yesod", "kr": "예소드" },
+      "reading": { "jp": "いぇそど" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:kether",
+      "kind": "entity",
+      "name": { "jp": "ケテル", "en": "Kether", "kr": "케테르" },
+      "reading": { "jp": "けてる" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:thunder_emperor",
+      "kind": "entity",
+      "name": { "jp": "雷帝", "en": "Thunder Emperor", "kr": "뇌제" },
+      "reading": { "jp": "らいてい" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:avant_garde",
+      "kind": "entity",
+      "name": { "jp": "アバンギャルド君", "en": "Avant-Garde", "kr": "아방가르드 군" },
+      "reading": { "jp": "あばんぎゃるどくん" },
+      "school": "Millennium"
+    },
+    {
+      "id": "entity:fury_of_set",
+      "kind": "entity",
+      "name": { "jp": "セトの憤怒", "en": "Fury of Set", "kr": "세트의 분노" },
+      "reading": { "jp": "せとのふんぬ" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:shirai_kuroko",
+      "kind": "entity",
+      "name": { "jp": "白井黒子", "en": "Kuroko Shirai", "kr": "시라이 쿠로코" },
+      "reading": { "jp": "しらいくろこ" },
+      "school": "ETC"
+    },
+    {
+      "id": "entity:pandemonium_society",
+      "kind": "entity",
+      "name": { "jp": "万魔殿", "en": "Pandemonium Society", "kr": "만마전" },
+      "reading": { "jp": "まんまでん" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:justina_council",
+      "kind": "entity",
+      "name": { "jp": "ユスティナ聖徒会", "en": "Justina Saints Council", "kr": "유스티나 성도회" },
+      "reading": { "jp": "ゆすてぃなせいとかい" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:trinity_school",
+      "kind": "entity",
+      "name": { "jp": "トリニティ総合学園", "en": "Trinity General School", "kr": "트리니티 종합학원" },
+      "reading": { "jp": "とりにてぃそうごうがくえん" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:jtf",
+      "kind": "entity",
+      "name": { "jp": "正義実現委員会", "en": "Justice Task Force", "kr": "정의실현부" },
+      "reading": { "jp": "せいぎじつげんいいんかい" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:arius_branch",
+      "kind": "entity",
+      "name": { "jp": "アリウス分校", "en": "Arius Satellite School", "kr": "아리우스 분교" },
+      "reading": { "jp": "ありうすぶんこう" },
+      "school": "Arius"
+    },
+    {
+      "id": "entity:tea_party",
+      "kind": "entity",
+      "name": { "jp": "ティーパーティー", "en": "Tea Party", "kr": "티파티" },
+      "reading": { "jp": "てぃーぱーてぃー" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:remedial_knights",
+      "kind": "entity",
+      "name": { "jp": "救護騎士団", "en": "Remedial Knights", "kr": "구호기사단" },
+      "reading": { "jp": "きゅうごきしだん" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:library_committee",
+      "kind": "entity",
+      "name": { "jp": "図書委員会", "en": "Library Committee", "kr": "도서부" },
+      "reading": { "jp": "としょいいんかい" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:problem_solver_68",
+      "kind": "entity",
+      "name": { "jp": "便利屋68", "en": "Problem Solver 68", "kr": "흥신소 68" },
+      "aliases": { "jp": ["便利屋"], "en": ["Problem Solver"], "kr": ["흥신소"] },
+      "reading": { "jp": "べんりや68" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:wildhunt_academy",
+      "kind": "entity",
+      "name": { "jp": "ワイルドハント芸術学院", "en": "Wildhunt Academy of Fine Arts", "kr": "와일드헌트 예술학원" },
+      "reading": { "jp": "わいるどはんとげいじゅつがくいん" },
+      "school": "Wildhunt"
+    },
+    {
+      "id": "entity:arius_squad",
+      "kind": "entity",
+      "name": { "jp": "アリウススクワッド", "en": "Arius Squad", "kr": "아리우스 스쿼드" },
+      "reading": { "jp": "ありうすすくわっど" },
+      "school": "Arius"
+    },
+    {
+      "id": "entity:valkyrie_school",
+      "kind": "entity",
+      "name": { "jp": "ヴァルキューレ警察学校", "en": "Valkyrie Police Academy", "kr": "발키리 경찰학교" },
+      "reading": { "jp": "ゔぁるきゅーれけいさつがっこう" },
+      "school": "Valkyrie"
+    },
+    {
+      "id": "entity:red_winter_school",
+      "kind": "entity",
+      "name": { "jp": "レッドウィンター連邦学園", "en": "Red Winter Federal Academy", "kr": "붉은겨울 연방학원" },
+      "reading": { "jp": "れっどうぃんたーれんぽうがくえん" },
+      "school": "RedWinter"
+    },
+    {
+      "id": "entity:sisterhood",
+      "kind": "entity",
+      "name": { "jp": "シスターフッド", "en": "Sisterhood", "kr": "시스터후드" },
+      "reading": { "jp": "しすたーふっど" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:gsc",
+      "kind": "entity",
+      "name": { "jp": "連邦生徒会", "en": "General Student Council", "kr": "총학생회" },
+      "reading": { "jp": "れんぽうせいとかい" },
+      "school": "Federal"
+    },
+    {
+      "id": "entity:prefect_team",
+      "kind": "entity",
+      "name": { "jp": "風紀委員会", "en": "Prefect Team", "kr": "선도부" },
+      "reading": { "jp": "ふうきいいんかい" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:gourmet_research",
+      "kind": "entity",
+      "name": { "jp": "美食研究会", "en": "Gourmet Research Society", "kr": "미식연구회" },
+      "reading": { "jp": "びしょくけんきゅうかい" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:gehenna_school",
+      "kind": "entity",
+      "name": { "jp": "ゲヘナ学園", "en": "Gehenna Academy", "kr": "게헨나 학원" },
+      "reading": { "jp": "げへながくえん" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:millennium_school",
+      "kind": "entity",
+      "name": { "jp": "ミレニアムサイエンススクール", "en": "Millennium Science School", "kr": "밀레니엄 사이언스 스쿨" },
+      "reading": { "jp": "みれにあむさいえんすすくーる" },
+      "school": "Millennium"
+    },
+    {
+      "id": "entity:ein_sof_ohr",
+      "kind": "entity",
+      "name": { "jp": "アインソフオウル", "en": "Ein, Sof, and Ohr", "kr": "아인, 소프, 오르" },
+      "aliases": { "jp": ["アイン・ソフ・オウル"], "en": ["Ein, Sof, Ohr"], "kr": ["아인과 소프와 오르"] },
+      "reading": { "jp": "あいんそふおうる" },
+      "school": "Unaffiliated",
+      "club": "Decagrammaton"
+    },
+    {
+      "id": "entity:tachibana_sisters",
+      "kind": "entity",
+      "name": {
+        "jp": "橘姉妹",
+        "en": "Hikari & Nozomi (Tachibana Sisters)",
+        "kr": "타치바나 자매 (히카리 & 노조미)"
+      },
+      "aliases": {
+        "jp": ["橘姉妹"],
+        "en": ["Tachibana Sisters", "Hikari & Nozomi", "Nozomi & Hikari"],
+        "kr": ["타치바나 자매"]
+      },
+      "reading": { "jp": "たちばなしまい" },
+      "school": "Highlander",
+      "club": "CCC"
+    },
+    {
+      "id": "entity:schemata",
+      "kind": "entity",
+      "name": { "jp": "シェマタ", "en": "Schemata", "kr": "셰마타" },
+      "reading": { "jp": "しぇまた" },
+      "school": "Abydos"
+    },
+    {
+      "id": "entity:mr",
+      "kind": "entity",
+      "name": { "jp": "Mr.ニコライ", "en": "Mr. Nicholai", "kr": "미스터 니콜라이" },
+      "aliases": { "en": ["Nicolai"] },
+      "reading": { "jp": "みすたーにこらい" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:trinity",
+      "kind": "entity",
+      "name": { "jp": "トリニティ", "en": "Trinity", "kr": "트리니티" },
+      "reading": { "jp": "とりにてぃ" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:barbara",
+      "kind": "entity",
+      "name": { "jp": "バルバラ", "en": "Barbara", "kr": "바르바라" },
+      "reading": { "jp": "ばるばら" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:expedition_team_x",
+      "kind": "entity",
+      "name": { "jp": "調査班X", "en": "Expedition Team X", "kr": "탐사반 X" },
+      "reading": { "jp": "ちょうさはんえっくす" },
+      "school": "Millennium"
+    },
+    {
+      "id": "entity:sammy",
+      "kind": "entity",
+      "name": { "jp": "サミー", "en": "Sammy", "kr": "새미" },
+      "reading": { "jp": "さみー" },
+      "school": "Odyssey"
+    },
+    {
+      "id": "entity:students",
+      "kind": "entity",
+      "name": { "jp": "生徒", "en": "Students", "kr": "학생" },
+      "reading": { "jp": "せいと" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:tooru",
+      "kind": "entity",
+      "name": { "jp": "トオル", "en": "Tooru", "kr": "토오루" },
+      "reading": { "jp": "とおる" },
+      "school": "Odyssey"
+    },
+    {
+      "id": "entity:rinka",
+      "kind": "entity",
+      "name": { "jp": "リンカ", "en": "Rinka", "kr": "린카" },
+      "reading": { "jp": "りんか" },
+      "school": "Shanhaijing"
+    },
+    {
+      "id": "entity:books",
+      "kind": "entity",
+      "name": { "jp": "書物", "en": "Books", "kr": "책" },
+      "reading": { "jp": "しょもつ" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:crusader_tank",
+      "kind": "entity",
+      "name": { "jp": "クルセイダー戦車", "en": "Crusader Tank (Crusadie)", "kr": "크루세이더 전차" },
+      "reading": { "jp": "くるせいだーせんしゃ" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:perorosaurus",
+      "kind": "entity",
+      "name": { "jp": "ペロロサウルス", "en": "Perorosaurus", "kr": "페로로사우루스" },
+      "reading": { "jp": "ぺろろさうるす" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:skullman",
+      "kind": "entity",
+      "name": { "jp": "スカルマン", "en": "Skullman", "kr": "스컬맨" },
+      "reading": { "jp": "すかるまん" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:wavecat",
+      "kind": "entity",
+      "name": { "jp": "ウェーブキャット", "en": "Wavecat", "kr": "웨이브캣" },
+      "reading": { "jp": "うぇーぶきゃっと" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:angry_adelie",
+      "kind": "entity",
+      "name": { "jp": "アングリーアデリー", "en": "Angry Adelie", "kr": "앵그리 아델리" },
+      "reading": { "jp": "あんぐりーあでりー" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:pinky_paca",
+      "kind": "entity",
+      "name": { "jp": "ピンキーパカ", "en": "Pinky-Paca", "kr": "핑키파카" },
+      "reading": { "jp": "ぴんきーぱか" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:big_brother",
+      "kind": "entity",
+      "name": { "jp": "ビッグブラザー", "en": "Big Brother", "kr": "빅 브라더" },
+      "reading": { "jp": "びっぐぶらざー" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:183",
+      "kind": "entity",
+      "name": { "jp": "183号特別クラス", "en": "Special Class 183", "kr": "183호 특별반" },
+      "reading": { "jp": "183ごうとくべつくらす" },
+      "school": "RedWinter"
+    },
+    {
+      "id": "entity:mikuri",
+      "kind": "entity",
+      "name": { "jp": "ミクリ", "en": "Mikuri", "kr": "미쿠리" },
+      "reading": { "jp": "みくり" },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "entity:thundergun",
+      "kind": "entity",
+      "name": { "jp": "雷ちゃん", "en": "Thundergun (Ikazuchi-chan)", "kr": "천둥이" },
+      "aliases": { "jp": ["雷(いかずち)ちゃん"] },
+      "reading": { "jp": "いかずちちゃん" },
+      "school": "Millennium"
+    },
+    {
+      "id": "entity:security_committee",
+      "kind": "entity",
+      "name": { "jp": "保安委員会", "en": "Security Committee", "kr": "보안위원회" },
+      "reading": { "jp": "ほあんいいんかい" },
+      "school": "Odyssey"
+    },
+    {
+      "id": "entity:charles",
+      "kind": "entity",
+      "name": { "jp": "カルレス君", "en": "Charles", "kr": "카를레스 군" },
+      "reading": { "jp": "かるれすくん" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:nicomediatroop",
+      "kind": "entity",
+      "wikiruAnchor": "NicomediaTroop",
+      "name": { "jp": "ニコメディアトゥループ", "en": "Nicomedia Troupe", "kr": "니코메디아 트루프" },
+      "reading": { "jp": "にこめでぃあとぅるーぷ" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:medicalemergencyclub",
+      "kind": "entity",
+      "wikiruAnchor": "MedicalEmergencyClub",
+      "name": { "jp": "救急医学部", "en": "Medical Emergency Club", "kr": "응급의학부" },
+      "reading": { "jp": "きゅうきゅういがくぶ" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:publicpeacebureau",
+      "kind": "entity",
+      "wikiruAnchor": "PublicPeaceBureau",
+      "name": { "jp": "公安局", "en": "Public Peace Bureau", "kr": "공안국" },
+      "reading": { "jp": "こうあんきょく" },
+      "school": "Valkyrie"
+    },
+    {
+      "id": "entity:suspectedscienceclub",
+      "kind": "entity",
+      "wikiruAnchor": "SuspectedScienceClub",
+      "name": { "jp": "疑似科学部", "en": "Pseudoscience Club", "kr": "유사과학부" },
+      "reading": { "jp": "ぎじかがくぶ" },
+      "school": "Millennium"
+    },
+    {
+      "id": "entity:correctionbureau",
+      "kind": "entity",
+      "wikiruAnchor": "CorrectionBureau",
+      "name": { "jp": "矯正局", "en": "Correction Bureau", "kr": "교정국" },
+      "reading": { "jp": "きょうせいきょく" },
+      "school": "Valkyrie"
+    },
+    {
+      "id": "entity:countermeasurescouncil",
+      "kind": "entity",
+      "wikiruAnchor": "CountermeasuresCouncil",
+      "name": { "jp": "対策委員会", "en": "Foreclosure Task Force", "kr": "대책위원회" },
+      "reading": { "jp": "たいさくいいんかい" },
+      "school": "Abydos"
+    },
+    {
+      "id": "entity:hotspringsdepartment",
+      "kind": "entity",
+      "wikiruAnchor": "HotSpringsDepartment",
+      "name": { "jp": "温泉開発部", "en": "Hot Springs Department", "kr": "온천개발부" },
+      "reading": { "jp": "おんせんかいはつぶ" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:gehennarevivalcommittee",
+      "kind": "entity",
+      "wikiruAnchor": "GehennaRevivalCommittee",
+      "name": { "jp": "ゲヘナ再興委員会", "en": "Gehenna Revival Committee", "kr": "게헨나 재흥 위원회" },
+      "reading": { "jp": "げへなさいこういいんかい" },
+      "school": "Gehenna"
+    },
+    {
+      "id": "entity:publishing",
+      "kind": "entity",
+      "wikiruAnchor": "Publishing",
+      "name": { "jp": "出版部", "en": "Publishing Department", "kr": "출판부" },
+      "reading": { "jp": "しゅっぱんぶ" },
+      "school": "RedWinter"
+    },
+    {
+      "id": "entity:kronosschoolofjurnalism",
+      "kind": "entity",
+      "wikiruAnchor": "KronosSchoolOfJurnalism",
+      "name": { "jp": "報道部", "en": "Kronos School of Journalism", "kr": "보도부" },
+      "reading": { "jp": "ほうどうぶ" },
+      "school": "Kronos"
+    },
+    {
+      "id": "entity:jabjabhelmet",
+      "kind": "entity",
+      "wikiruAnchor": "JabJabHelmet",
+      "name": { "jp": "ジャブジャブヘルメット団", "en": "Splash Helmet Gang", "kr": "첨벙첨벙 헬멧단" },
+      "reading": { "jp": "じゃぶじゃぶへるめっとだん" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:vigilantecrew",
+      "kind": "entity",
+      "wikiruAnchor": "VigilanteCrew",
+      "name": { "jp": "トリニティ自警団", "en": "Trinity's Vigilante Crew", "kr": "트리니티 자경단" },
+      "reading": { "jp": "とりにてぃじけいだん" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:festivaloperationsdepartment",
+      "kind": "entity",
+      "wikiruAnchor": "FestivalOperationsDepartment",
+      "name": { "jp": "お祭り運営委員会", "en": "Festival Operations Department", "kr": "마츠리운영관리부" },
+      "reading": { "jp": "おまつりうんえいいいんかい" },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "entity:makeupworkclub",
+      "kind": "entity",
+      "wikiruAnchor": "MakeupWorkClub",
+      "name": { "jp": "補習授業部", "en": "Make-Up Work Club", "kr": "보충수업부" },
+      "reading": { "jp": "ほしゅうじゅぎょうぶ" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:knowledgeliberationfront",
+      "kind": "entity",
+      "wikiruAnchor": "KnowledgeLiberationFront",
+      "name": { "jp": "知識解放戦線", "en": "Knowledge Liberation Front", "kr": "지식해방전선" },
+      "reading": { "jp": "ちしきかいほうせんせん" },
+      "school": "RedWinter"
+    },
+    {
+      "id": "entity:afterschoolsweetsclub",
+      "kind": "entity",
+      "wikiruAnchor": "AfterSchoolSweetsClub",
+      "name": { "jp": "放課後スイーツ部", "en": "After-School Sweets Club", "kr": "방과후 디저트부" },
+      "reading": { "jp": "ほうかごすいーつぶ" },
+      "school": "Trinity"
+    },
+    {
+      "id": "entity:ninjutsuresearchclub",
+      "kind": "entity",
+      "wikiruAnchor": "NinjutsuResearchClub",
+      "name": { "jp": "忍術研究部", "en": "Ninjutsu Research Club", "kr": "인법연구부" },
+      "reading": { "jp": "にんじゅつけんきゅうぶ" },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "entity:hyakkayouranresolutioncouncil",
+      "kind": "entity",
+      "wikiruAnchor": "HyakkayouranResolutionCouncil",
+      "name": { "jp": "百花繚乱", "en": "Hyakkaryouran Resolution Council", "kr": "백화요란 분쟁조정위원회" },
+      "reading": { "jp": "ひゃっかりょうらん" },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "entity:naturesbeauty",
+      "kind": "entity",
+      "wikiruAnchor": "NaturesBeauty",
+      "name": { "jp": "花鳥風月部", "en": "Nature's Beauty Club", "kr": "화조풍월부" },
+      "aliases": { "en": ["Nature's Beauty"] },
+      "reading": { "jp": "かちょうふうげつぶ" },
+      "school": "Hyakkiyako"
+    },
+    {
+      "id": "entity:mo_channel",
+      "kind": "entity",
+      "wikiruAnchor": "mo_channel",
+      "name": { "jp": "モー超常現象研究所", "en": "Mo's Paranormal Research Institute", "kr": "모 초상현상 연구소" },
+      "reading": { "jp": "もーちょうじょうげんしょうけんきゅうじょ" },
+      "school": "Unaffiliated"
+    },
+    {
+      "id": "entity:seminar",
+      "kind": "entity",
+      "wikiruAnchor": "Seminar",
+      "name": { "jp": "セミナー", "en": "Seminar", "kr": "세미나" },
+      "reading": { "jp": "せみなー" },
+      "school": "Millennium"
+    },
+    {
+      "id": "entity:redwinteroffice",
+      "kind": "entity",
+      "wikiruAnchor": "RedWinterOffice",
+      "name": { "jp": "レッドウィンター事務局", "en": "Red Winter Office", "kr": "붉은겨울 사무국" },
+      "reading": { "jp": "れっどうぃんたーじむきょく" },
+      "school": "RedWinter"
+    },
+    {
+      "id": "entity:laborparty",
+      "kind": "entity",
+      "wikiruAnchor": "LaborParty",
+      "name": { "jp": "工務部", "en": "Labor Party", "kr": "공무부" },
+      "reading": { "jp": "こうむぶ" },
+      "school": "RedWinter"
+    },
+    {
+      "id": "entity:occultsociety",
+      "kind": "entity",
+      "wikiruAnchor": "OccultSociety",
+      "name": { "jp": "オカルト研究会", "en": "Occult Research Society", "kr": "오컬트 연구회" },
+      "reading": { "jp": "おかるとけんきゅうかい" },
+      "school": "WildHunt"
+    },
+    {
+      "id": "entity:dormitorysupervisor",
+      "kind": "entity",
+      "wikiruAnchor": "DormitorySupervisor",
+      "name": { "jp": "寮監隊", "en": "Dormitory Supervisors", "kr": "료칸대" },
+      "reading": { "jp": "りょうかんたい" },
+      "school": "WildHunt"
+    },
+    {
+      "id": "entity:artscouncil",
+      "kind": "entity",
+      "wikiruAnchor": "ArtsCouncil",
+      "name": { "jp": "芸術評議会", "en": "Arts Council", "kr": "예술평의회" },
+      "reading": { "jp": "げいじゅつひょうぎかい" },
+      "school": "WildHunt"
+    },
+    {
+      "id": "entity:freetradecartel",
+      "kind": "entity",
+      "wikiruAnchor": "FreeTradeCartel",
+      "name": { "jp": "特殊交易部", "en": "Special Trade Department", "kr": "특수교역부" },
+      "reading": { "jp": "とくしゅこうえきぶ" },
+      "school": "WildHunt"
+    }
+  ]
+}

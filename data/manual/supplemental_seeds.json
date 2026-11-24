@@ -1,0 +1,269 @@
+{
+  "entries": [
+    {
+      "speakerId": "npc:gsc_president",
+      "targetId": "special:self",
+      "jpTerms": ["私"]
+    },
+    {
+      "speakerId": "npc:gsc_president",
+      "targetId": "special:sensei",
+      "jpTerms": ["[USERNAME]先生", "先生"]
+    },
+    {
+      "speakerId": "npc:gsc_president",
+      "targetId": "npc:rin",
+      "jpTerms": ["リンちゃん", "リン"]
+    },
+    {
+      "speakerId": "npc:rin",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:kaya",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:aoi",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:yukino",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:plana",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:arona",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "seia",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:momoka",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "yuuka",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "nagisa",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "mika",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "cherino",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "makoto",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:ayumu",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:haine",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:sumomo",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "erika",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "kirara",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:kurofuku",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "hina",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "ako",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "chinatsu",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "momoi",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:mai",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:gsc_president_false",
+      "targetId": "special:self",
+      "jpTerms": ["私"]
+    },
+    {
+      "speakerId": "npc:gsc_president_false",
+      "targetId": "special:sensei",
+      "jpTerms": ["[USERNAME]先生", "先生"]
+    },
+    {
+      "speakerId": "npc:gsc_president_false",
+      "targetId": "npc:rin",
+      "jpTerms": ["リン", "行政官"]
+    },
+    {
+      "speakerId": "npc:gsc_president_false",
+      "targetId": "npc:yukino",
+      "jpTerms": ["ユキノ小隊長", "ユキノ", "小隊長"]
+    },
+    {
+      "speakerId": "npc:gsc_president_false",
+      "targetId": "npc:kaya",
+      "jpTerms": ["防衛室長", "カヤ"]
+    },
+    {
+      "speakerId": "npc:gsc_president_false",
+      "targetId": "npc:aoi",
+      "jpTerms": ["アオイ", "財務室長"]
+    },
+    {
+      "speakerId": "npc:gsc_president_false",
+      "targetId": "npc:momoka",
+      "jpTerms": ["モモカ"]
+    },
+    {
+      "speakerId": "npc:rin",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:aoi",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:momoka",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:kaya",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:yukino",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:sumika",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:minato",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:mai",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:mitsuki",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:ami",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:misuzu",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:sumomo",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:haine",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:ayumu",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "niko",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "miyako",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "nagisa",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "makoto",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "cherino",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["連邦生徒会長"]
+    }
+  ]
+}

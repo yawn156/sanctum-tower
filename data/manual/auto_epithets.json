@@ -1,0 +1,3133 @@
+{
+  "version": 1,
+  "global": {},
+  "pairs": {
+    "airi->hinata": {
+      "シスターさん": {
+        "kr": [
+          "시스터님"
+        ]
+      }
+    },
+    "ako->entity:pan_chan": {
+      "パンちゃん": {
+        "kr": [
+          "팬 쨩"
+        ],
+        "en": [
+          "Pan-Pan"
+        ]
+      },
+      "家出したパンケーキ": {
+        "kr": [
+          "집 나간 팬케이크"
+        ],
+        "en": [
+          "rogue pancake"
+        ]
+      },
+      "巨大なパンケーキ": {
+        "kr": [
+          "거대한 팬케이크"
+        ],
+        "en": [
+          "giant pancake"
+        ]
+      }
+    },
+    "ako->sena": {
+      "救急医学部長": {
+        "kr": [
+          "응급의학부장"
+        ]
+      }
+    },
+    "ako->yuuka": {
+      "妖怪女": {
+        "kr": [
+          "요괴녀"
+        ],
+        "en": [
+          "monster"
+        ]
+      }
+    },
+    "aris->rio": {
+      "賢者": {
+        "kr": [
+          "현자"
+        ]
+      }
+    },
+    "aru->entity:prefect_team": {
+      "あいつら": {
+        "en": [
+          "Kaitengers"
+        ]
+      }
+    },
+    "aru->ibuki": {
+      "かわいいお嬢ちゃん": {
+        "kr": [
+          "꼬마 아가씨"
+        ],
+        "en": [
+          "little miss"
+        ]
+      }
+    },
+    "asuna->tsurugi": {
+      "正義実現委員会の委員長さん": {
+        "kr": [
+          "정의실현부장"
+        ]
+      }
+    },
+    "atsuko->entity:barbara": {
+      "バルバラ": {
+        "kr": [
+          "바르바라"
+        ],
+        "en": [
+          "Barbara"
+        ]
+      }
+    },
+    "atsuko->entity:justina_council": {
+      "ユスティナ聖徒会": {
+        "en": [
+          "Saint Justina Council"
+        ]
+      }
+    },
+    "atsuko->entity:nicomediatroop": {
+      "ニコメディアトゥループ": {
+        "kr": [
+          "니코메디아 트룹"
+        ],
+        "en": [
+          "Nicomedia's Troop"
+        ]
+      }
+    },
+    "atsuko->npc:djbob": {
+      "DJさん": {
+        "kr": [
+          "DJ씨",
+          "DJ B.o.B씨",
+          "B.o.B씨"
+        ],
+        "en": [
+          "Mister DJ",
+          "Mister DJ B.o.B",
+          "Mister B.o.B"
+        ]
+      }
+    },
+    "azusa->entity:jtf": {
+      "委員会のみんな": {
+        "en": [
+          "your organization"
+        ]
+      }
+    },
+    "azusa->mashiro": {
+      "狙撃手": {
+        "en": [
+          "sniper"
+        ]
+      },
+      "監視役": {
+        "kr": [
+          "감시관",
+          "감시역",
+          "감시 역"
+        ]
+      }
+    },
+    "cherino->entity:red_winter_school": {
+      "偉大なるレッドウィンター連邦学園": {
+        "en": [
+          "great Red Winter"
+        ]
+      }
+    },
+    "cherino->npc:kaya": {
+      "なんちゃら連邦生徒会長代行": {
+        "kr": [
+          "카…… 뭐시기 총학생회장 대행"
+        ]
+      }
+    },
+    "chinatsu->entity:pan_chan": {
+      "パンちゃん": {
+        "kr": [
+          "팬 쨩"
+        ],
+        "en": [
+          "Pan-Pan"
+        ]
+      },
+      "モンスター": {
+        "kr": [
+          "이해할 수 없는 생명체"
+        ],
+        "en": [
+          "inexplicable lifeform"
+        ]
+      }
+    },
+    "eimi->neru": {
+      "C&Cのダブルオー": {
+        "kr": [
+          "C&C의 더블오"
+        ],
+        "en": [
+          "C&C's Double O"
+        ]
+      }
+    },
+    "eri->entity:dormitorysupervisor": {
+      "忌むべき者": {
+        "kr": [
+          "험한 것"
+        ]
+      },
+      "寮監隊": {
+        "kr": [
+          "사감대"
+        ],
+        "en": [
+          "Prefectural Council"
+        ]
+      }
+    },
+    "eri->entity:wildhunt_academy": {
+      "学院": {
+        "en": [
+          "academy",
+          "Wildhunt"
+        ]
+      },
+      "ワイルドハント芸術学院": {
+        "en": [
+          "Wildhunt Art Academy"
+        ]
+      }
+    },
+    "fubuki->entity:mecha_croc": {
+      "メカワニ": {
+        "en": [
+          "Mechagator"
+        ]
+      }
+    },
+    "fubuki->konoka": {
+      "副局長": {
+        "kr": [
+          "부국장",
+          "부국장님"
+        ],
+        "en": [
+          "Deputy Director"
+        ]
+      }
+    },
+    "fubuki->miyu": {
+      "ウサギの狙撃手ちゃん": {
+        "kr": [
+          "토끼 저격수 쨩"
+        ],
+        "en": [
+          "little rabbit"
+        ]
+      }
+    },
+    "fuuka->entity:gourmet_research": {
+      "あんた達": {
+        "kr": [
+          "너희",
+          "너희들",
+          "다들"
+        ]
+      }
+    },
+    "fuuka->hina": {
+      "風紀委員長": {
+        "kr": [
+          "선도부장"
+        ]
+      },
+      "委員長": {
+        "kr": [
+          "선도부장"
+        ]
+      }
+    },
+    "fuyu->special:sensei": {
+      "シャーレの先生": {
+        "kr": [
+          "샬레 소속인 선생님"
+        ]
+      }
+    },
+    "fuyu->entity:wildhunt_academy": {
+      "学院": {
+        "en": [
+          "Wildhunt"
+        ]
+      }
+    },
+    "fuyu->miyo": {
+      "桜井先生": {
+        "kr": [
+          "작가님"
+        ],
+        "en": [
+          "brilliant scribe"
+        ]
+      }
+    },
+    "fuyu->npc:hiromi": {
+      "寮監隊の副隊長": {
+        "kr": [
+          "사감대 부대장"
+        ]
+      }
+    },
+    "hanako->entity:perorodzilla": {
+      "ペロロジラ": {
+        "en": [
+          "Perorod...zilla"
+        ]
+      }
+    },
+    "hanako->ui": {
+      "コ・ゼ・キ・先・輩": {
+        "kr": [
+          "코.제.키.선.배"
+        ]
+      },
+      "こ・ぜ・き・せ・ん・ぱ・い": {
+        "kr": [
+          "코.제.키.선.배.님"
+        ]
+      }
+    },
+    "hare->kotama": {
+      "先輩": {
+        "en": [
+          "Pres"
+        ]
+      }
+    },
+    "haruka->aru": {
+      "社長": {
+        "kr": [
+          "사장님"
+        ]
+      }
+    },
+    "haruna->entity:gehennarevivalcommittee": {
+      "料理の後に残ったオイスターソース保存委員会": {
+        "kr": [
+          "요리 후 남은 굴소스 보존위원회"
+        ],
+        "en": [
+          "Leftover Oyster Sauce Reheating Legion"
+        ]
+      }
+    },
+    "haruna->mika": {
+      "あなた": {
+        "en": [
+          "Tea Party"
+        ]
+      }
+    },
+    "haruna->noa": {
+      "ミレニアムの書記の方": {
+        "kr": [
+          "밀레니엄의 서기"
+        ],
+        "en": [
+          "Millennium's Secretary"
+        ]
+      }
+    },
+    "hasumi->ako": {
+      "ゲヘナの行政官": {
+        "kr": [
+          "게헨나의 선임행정관"
+        ]
+      }
+    },
+    "hasumi->entity:gehenna_school": {
+      "ゲヘナ自治区": {
+        "en": [
+          "Gehenna"
+        ]
+      }
+    },
+    "hasumi->entity:jtf": {
+      "委員会の皆さん": {
+        "kr": [
+          "부원들"
+        ],
+        "en": [
+          "other members"
+        ]
+      },
+      "みんな": {
+        "en": [
+          "others"
+        ]
+      }
+    },
+    "hibiki->utaha": {
+      "先輩": {
+        "kr": [
+          "부장"
+        ],
+        "en": [
+          "president"
+        ]
+      }
+    },
+    "hifumi->entity:skullman": {
+      "スカルマン様": {
+        "kr": [
+          "스컬맨 님"
+        ],
+        "en": [
+          "Skullman"
+        ]
+      }
+    },
+    "hifumi->entity:makeupworkclub": {
+      "補習授業部のみんな": {
+        "kr": [
+          "보충수업부 일동"
+        ],
+        "en": [
+          "Make-Up Work Club"
+        ]
+      }
+    },
+    "hifumi->entity:mr": {
+      "ニコライさん": {
+        "kr": [
+          "니콜라이 씨"
+        ],
+        "en": [
+          "Mr. Nicholai",
+          "Nicolai"
+        ]
+      },
+      "Mr.ニコライさん": {
+        "kr": [
+          "Mr. 니콜라이 씨",
+          "Mr.니콜라이 씨"
+        ],
+        "en": [
+          "Mr. Nicholai"
+        ]
+      }
+    },
+    "himari->entity:chokmah": {
+      "船の預言者": {
+        "kr": [
+          "배 형상의 예언자",
+          "예언자"
+        ]
+      }
+    },
+    "himari->npc:ein": {
+      "デカグラマトンのエンジニア": {
+        "kr": [
+          "데카그라마톤의 엔지니어들"
+        ]
+      }
+    },
+    "himari->npc:ohr": {
+      "デカグラマトンのエンジニア": {
+        "kr": [
+          "데카그라마톤의 엔지니어들"
+        ]
+      }
+    },
+    "himari->npc:sof": {
+      "デカグラマトンのエンジニア": {
+        "kr": [
+          "데카그라마톤의 엔지니어들"
+        ]
+      }
+    },
+    "himari->rio": {
+      "あの陰気な女": {
+        "kr": [
+          "오물 같은 여자",
+          "오물"
+        ],
+        "en": [
+          "filthy girl",
+          "filthy witch"
+        ]
+      }
+    },
+    "hina->mina": {
+      "玄龍門の執行部長": {
+        "kr": [
+          "현룡문의 집행부장"
+        ],
+        "en": [
+          "executive officer of Genryumon"
+        ]
+      }
+    },
+    "hina->miyako": {
+      "RABBIT小隊長": {
+        "kr": [
+          "RABBIT 소대장"
+        ]
+      }
+    },
+    "hina->reijo": {
+      "マネージャー": {
+        "kr": [
+          "매니저"
+        ],
+        "en": [
+          "manager"
+        ]
+      }
+    },
+    "hiyori->entity:arius_branch": {
+      "アリウスの子たち": {
+        "en": [
+          "students"
+        ]
+      }
+    },
+    "hoshino->nonomi": {
+      "お嬢さん": {
+        "kr": [
+          "네프티스의 영애님",
+          "영애님"
+        ],
+        "en": [
+          "li'l lady",
+          "precious little daughter"
+        ]
+      }
+    },
+    "hoshino->npc:master_shiba": {
+      "大将": {
+        "kr": [
+          "마스터"
+        ]
+      }
+    },
+    "ibuki->aru": {
+      "綺麗なおねえちゃん": {
+        "kr": [
+          "예쁜 언니"
+        ],
+        "en": [
+          "pretty lady"
+        ]
+      }
+    },
+    "ichika->entity:festivaloperationsdepartment": {
+      "お祭り運営委員会": {
+        "kr": [
+          "마츠리운영관리부"
+        ],
+        "en": [
+          "Festival Operations Department"
+        ]
+      }
+    },
+    "ichika->hifumi": {
+      "戦車泥棒": {
+        "kr": [
+          "전차 탈취범"
+        ],
+        "en": [
+          "tank thief"
+        ]
+      }
+    },
+    "iori->entity:hotspringsdepartment": {
+      "温泉開発部": {
+        "kr": [
+          "온천개발부"
+        ]
+      }
+    },
+    "iroha->ako": {
+      "行政官": {
+        "kr": [
+          "선임행정관"
+        ]
+      }
+    },
+    "izumi->fuuka": {
+      "給食部の部長": {
+        "kr": [
+          "급양부장"
+        ],
+        "en": [
+          "School Lunch Club president"
+        ]
+      }
+    },
+    "izumi->npc:restaurateur": {
+      "女将さん": {
+        "kr": [
+          "주인분"
+        ]
+      }
+    },
+    "izuna->ichika": {
+      "あなた": {
+        "kr": [
+          "귀공"
+        ]
+      }
+    },
+    "juri->npc:restaurateur": {
+      "女将さん": {
+        "kr": [
+          "주인",
+          "주인분"
+        ]
+      }
+    },
+    "kaede->entity:mikuri": {
+      "ミクリ": {
+        "kr": [
+          "미쿠리"
+        ],
+        "en": [
+          "Mikuri"
+        ]
+      }
+    },
+    "kaho->entity:festivaloperationsdepartment": {
+      "お祭り運営委員会の皆さん": {
+        "kr": [
+          "마츠리부 여러분"
+        ]
+      }
+    },
+    "kanna->entity:mecha_croc": {
+      "メタル・ウェポン・スピード・クロコダイル": {
+        "kr": [
+          "메탈 웨폰 스피드 크로커다일"
+        ],
+        "en": [
+          "Cybernetic Rapid Ordnance Carrier"
+        ]
+      }
+    },
+    "kanna->npc:misuzu": {
+      "矯正局長殿": {
+        "kr": [
+          "교정국장님"
+        ],
+        "en": [
+          "Director"
+        ]
+      }
+    },
+    "kanoe->entity:dormitorysupervisor": {
+      "寮監隊": {
+        "kr": [
+          "사감대"
+        ],
+        "en": [
+          "Prefectural Council"
+        ]
+      }
+    },
+    "karin->koyuki": {
+      "白兎": {
+        "kr": [
+          "백토"
+        ],
+        "en": [
+          "White Rabbit"
+        ]
+      }
+    },
+    "karin->neru": {
+      "部長": {
+        "en": [
+          "president"
+        ]
+      }
+    },
+    "karin->yuuka": {
+      "ユウカ": {
+        "kr": [
+          "세미나 회계"
+        ],
+        "en": [
+          "Seminar treasurer"
+        ]
+      }
+    },
+    "kasumi->npc:shoko": {
+      "しょうゆちゃん": {
+        "kr": [
+          "쇼킹 쨩"
+        ],
+        "en": [
+          "Shocking"
+        ]
+      },
+      "ショックちゃん": {
+        "kr": [
+          "쇼커 쨩"
+        ],
+        "en": [
+          "Shackle"
+        ]
+      }
+    },
+    "kayoko->makoto": {
+      "あんた": {
+        "kr": [
+          "너"
+        ]
+      }
+    },
+    "kikyou->entity:naturesbeauty": {
+      "あいつら": {
+        "kr": [
+          "화조풍월부"
+        ]
+      }
+    },
+    "kikyou->npc:azami": {
+      "あの女": {
+        "kr": [
+          "저 여자"
+        ]
+      }
+    },
+    "kikyou->npc:kokuriko": {
+      "あの女": {
+        "kr": [
+          "저 여자"
+        ]
+      }
+    },
+    "kikyou->npc:shuro": {
+      "おチビさん": {
+        "en": [
+          "child"
+        ]
+      },
+      "この子": {
+        "kr": [
+          "이 꼬마"
+        ],
+        "en": [
+          "brat"
+        ]
+      }
+    },
+    "kikyou->shizuko": {
+      "百夜堂の看板娘": {
+        "kr": [
+          "백야당의 간판 아가씨"
+        ],
+        "en": [
+          "idol of Momoyodou"
+        ]
+      }
+    },
+    "kirara->sena": {
+      "部長": {
+        "en": [
+          "President",
+          "Pres"
+        ]
+      }
+    },
+    "kirino->entity:mecha_croc": {
+      "メカワニ": {
+        "en": [
+          "Mechagator"
+        ]
+      }
+    },
+    "kirino->rabu": {
+      "テロリストさん": {
+        "kr": [
+          "테러리스트"
+        ],
+        "en": [
+          "terrorist"
+        ]
+      }
+    },
+    "kirino->wakamo": {
+      "災厄の狐さん": {
+        "kr": [
+          "재액의 여우 씨"
+        ]
+      }
+    },
+    "kokoro->special:sensei": {
+      "覗き魔": {
+        "kr": [
+          "엿보기범"
+        ]
+      }
+    },
+    "konoka->special:self": {
+      "お姉さん": {
+        "kr": [
+          "누님"
+        ]
+      }
+    },
+    "konoka->special:sensei": {
+      "この方": {
+        "kr": [
+          "이분"
+        ]
+      }
+    },
+    "konoka->entity:gehenna_school": {
+      "ゲヘナ": {
+        "en": [
+          "Gehenna"
+        ]
+      }
+    },
+    "konoka->entity:expedition_team_x": {
+      "調査班X": {
+        "kr": [
+          "탐사반 X"
+        ],
+        "en": [
+          "Expedition Team X"
+        ]
+      }
+    },
+    "konoka->entity:suspectedscienceclub": {
+      "疑似科学部": {
+        "kr": [
+          "유사과학부"
+        ]
+      }
+    },
+    "konoka->entity:wildhunt_academy": {
+      "ワイルドハント芸術学院": {
+        "en": [
+          "Wildhunt Art Academy"
+        ]
+      },
+      "芸術学院": {
+        "en": [
+          "Wildhunt"
+        ]
+      }
+    },
+    "konoka->npc:kyouko": {
+      "密井キョウコ": {
+        "kr": [
+          "미츠이 쿄코"
+        ]
+      }
+    },
+    "konoka->npc:tsubasa": {
+      "モー所長": {
+        "kr": [
+          "모 소장"
+        ]
+      }
+    },
+    "kotori->entity:mecha_croc": {
+      "メカワニ": {
+        "en": [
+          "Mechagator"
+        ]
+      }
+    },
+    "kurumi->special:self": {
+      "FOX3": {
+        "kr": [
+          "FOX 3"
+        ]
+      }
+    },
+    "makoto->cherino": {
+      "会長": {
+        "kr": [
+          "서기장"
+        ]
+      }
+    },
+    "makoto->entity:countermeasurescouncil": {
+      "弱小生徒会": {
+        "kr": [
+          "약소 학생회"
+        ],
+        "en": [
+          "pitiful council"
+        ]
+      }
+    },
+    "marina->entity:laborparty": {
+      "工務部": {
+        "kr": [
+          "용역부"
+        ],
+        "en": [
+          "Labor Party"
+        ]
+      }
+    },
+    "marina->entity:millennium_school": {
+      "ミレニアム": {
+        "en": [
+          "Millennium"
+        ]
+      }
+    },
+    "mashiro->entity:jabjabhelmet": {
+      "ジャブジャブヘルメット団": {
+        "en": [
+          "Splash Helmet Gangsters"
+        ]
+      }
+    },
+    "mashiro->entity:knowledgeliberationfront": {
+      "知識解放戦線の生徒さんたち": {
+        "kr": [
+          "지식해방전선 학생분들"
+        ],
+        "en": [
+          "Knowledge Liberation Front students"
+        ]
+      }
+    },
+    "mashiro->entity:publishing": {
+      "出版部さん": {
+        "kr": [
+          "도서부 여러분"
+        ]
+      },
+      "あなた方": {
+        "kr": [
+          "붉은겨울의 도서부 여러분"
+        ]
+      }
+    },
+    "mashiro->entity:trinity_school": {
+      "トリニティ自治区": {
+        "en": [
+          "Trinity territory"
+        ]
+      }
+    },
+    "mashiro->mine": {
+      "団長": {
+        "en": [
+          "Captain"
+        ]
+      }
+    },
+    "mashiro->npc:mirai": {
+      "ターゲット": {
+        "kr": [
+          "목표",
+          "표적"
+        ]
+      }
+    },
+    "megu->ichika": {
+      "カスミ部長の友達": {
+        "en": [
+          "President Kasumi's pal"
+        ]
+      },
+      "お友達さん": {
+        "kr": [
+          "카스미 부장 베프"
+        ],
+        "en": [
+          "Kasumi's bestie"
+        ]
+      }
+    },
+    "meru->special:sensei": {
+      "君": {
+        "kr": [
+          "이 사람"
+        ]
+      }
+    },
+    "meru->cherino": {
+      "書記長": {
+        "en": [
+          "Great Leader"
+        ]
+      }
+    },
+    "meru->entity:knowledgeliberationfront": {
+      "知識解放戦線": {
+        "kr": [
+          "지식해방전선"
+        ]
+      }
+    },
+    "michiru->shizuko": {
+      "百夜堂のオーナー": {
+        "kr": [
+          "백야당의 오너"
+        ]
+      }
+    },
+    "mika->entity:sisterhood": {
+      "あの子たち": {
+        "en": [
+          "interlopers"
+        ]
+      }
+    },
+    "mika->megu": {
+      "あの子": {
+        "kr": [
+          "저 아이"
+        ]
+      }
+    },
+    "mika->seia": {
+      "人を怒らせる天才さん": {
+        "en": [
+          "massive meanie"
+        ]
+      }
+    },
+    "mimori->kikyou": {
+      "キキョウさん": {
+        "kr": [
+          "그분"
+        ]
+      }
+    },
+    "mina->npc:kanae": {
+      "広報部長": {
+        "kr": [
+          "홍보부장"
+        ],
+        "en": [
+          "PR manager"
+        ]
+      }
+    },
+    "mine->entity:arius_branch": {
+      "アリウスの皆さん": {
+        "en": [
+          "Arius students"
+        ]
+      }
+    },
+    "mine->hasumi": {
+      "副委員長": {
+        "kr": [
+          "부부장님"
+        ]
+      }
+    },
+    "mine->wakamo": {
+      "災厄の狐": {
+        "kr": [
+          "재액의 여우"
+        ]
+      }
+    },
+    "minori->cherino": {
+      "圧制者": {
+        "kr": [
+          "압제자"
+        ],
+        "en": [
+          "oppressor",
+          "tyrant"
+        ]
+      },
+      "ヨーグルトのふたを舐めずに捨てる憎らしいひげチビ": {
+        "kr": [
+          "요거트 뚜껑을 핥지 않고 버리는 가증스러운 수염 꼬맹이"
+        ],
+        "en": [
+          "abominable mustache who throws away yogurt lids without licking them"
+        ]
+      }
+    },
+    "minori->marina": {
+      "圧制者の走狗": {
+        "kr": [
+          "압제자의 주구이자 오른팔"
+        ],
+        "en": [
+          "oppressor's puppet and number one henchman"
+        ]
+      }
+    },
+    "misaka_mikoto->entity:shirai_kuroko": {
+      "黒子": {
+        "en": [
+          "Kuroko"
+        ]
+      }
+    },
+    "misaki->entity:trinity_school": {
+      "あっちの子": {
+        "kr": [
+          "그쪽 애들"
+        ]
+      }
+    },
+    "misaki->hanako": {
+      "あの人": {
+        "kr": [
+          "저 사람"
+        ]
+      }
+    },
+    "misaki->mika": {
+      "あの女": {
+        "kr": [
+          "저 여자"
+        ]
+      }
+    },
+    "misaki->npc:maestro": {
+      "人形": {
+        "kr": [
+          "인형"
+        ]
+      },
+      "木の人形": {
+        "kr": [
+          "나무 인형"
+        ],
+        "en": [
+          "wooden doll"
+        ]
+      }
+    },
+    "miyako->special:self": {
+      "RABBIT1": {
+        "kr": [
+          "RABBIT 1"
+        ]
+      }
+    },
+    "miyo->entity:dormitorysupervisor": {
+      "寮監隊の皆さん": {
+        "kr": [
+          "사감대 여러분"
+        ],
+        "en": [
+          "Prefectural Council"
+        ]
+      }
+    },
+    "miyo->entity:freetradecartel": {
+      "特殊交易部": {
+        "en": [
+          "Free Trade Cartel"
+        ]
+      }
+    },
+    "miyo->entity:occultsociety": {
+      "オカルト研究会": {
+        "en": [
+          "Occult Investigation Society"
+        ]
+      }
+    },
+    "miyo->npc:akira": {
+      "七囚人の一人": {
+        "kr": [
+          "일곱 죄수 중 한 명"
+        ],
+        "en": [
+          "one of the Seven Prisoners"
+        ]
+      }
+    },
+    "miyu->special:self": {
+      "RABBIT4": {
+        "kr": [
+          "RABBIT 4"
+        ]
+      }
+    },
+    "miyu->npc:rin": {
+      "行政官": {
+        "kr": [
+          "수석행정관"
+        ],
+        "en": [
+          "chief officer"
+        ]
+      }
+    },
+    "moe->special:self": {
+      "RABBIT3": {
+        "kr": [
+          "RABBIT 3"
+        ]
+      }
+    },
+    "moe->chihiro": {
+      "ヴェリタスの副部長": {
+        "kr": [
+          "베리타스의 그 부부장"
+        ]
+      }
+    },
+    "moe->npc:kaya": {
+      "防衛室長": {
+        "kr": [
+          "방위실장"
+        ],
+        "en": [
+          "Chief of Defense"
+        ]
+      }
+    },
+    "moe->npc:rin": {
+      "行政官": {
+        "en": [
+          "chief officer"
+        ]
+      }
+    },
+    "momiji->entity:publishing": {
+      "出版部": {
+        "kr": [
+          "출판부"
+        ]
+      }
+    },
+    "momiji->marina": {
+      "保安委員長": {
+        "kr": [
+          "보안위원장님"
+        ],
+        "en": [
+          "Security Committee Chair"
+        ]
+      }
+    },
+    "momoi->yuuka": {
+      "冷酷算術妖怪": {
+        "kr": [
+          "냉혹한 계산의 요괴"
+        ],
+        "en": [
+          "cold, calculating monster"
+        ]
+      },
+      "邪悪な会計": {
+        "kr": [
+          "사악한 회계"
+        ],
+        "en": [
+          "evil accountant"
+        ]
+      }
+    },
+    "nagisa->entity:arius_squad": {
+      "アリウススクワッド": {
+        "en": [
+          "Arius' Squad",
+          "Squad"
+        ]
+      }
+    },
+    "nagisa->entity:kronosschoolofjurnalism": {
+      "クロノススクールの報道部": {
+        "kr": [
+          "크로노스 스쿨의 보도부원들"
+        ],
+        "en": [
+          "Kronos School of Journalism"
+        ]
+      }
+    },
+    "natsu->entity:afterschoolsweetsclub": {
+      "冒険者たち": {
+        "kr": [
+          "모험자들"
+        ],
+        "en": [
+          "brave students"
+        ]
+      }
+    },
+    "natsu->hasumi": {
+      "副委員長": {
+        "kr": [
+          "부부장"
+        ]
+      }
+    },
+    "neru->koyuki": {
+      "子ウサギ": {
+        "kr": [
+          "귀여운 토끼 녀석"
+        ]
+      }
+    },
+    "neru->seia": {
+      "お嬢ちゃん": {
+        "kr": [
+          "아가씨"
+        ]
+      }
+    },
+    "neru->toki": {
+      "新人": {
+        "kr": [
+          "신입",
+          "후배"
+        ]
+      }
+    },
+    "neru->yuuka": {
+      "セミナーの会計": {
+        "kr": [
+          "세미나의 회계"
+        ],
+        "en": [
+          "Seminar's treasurer"
+        ]
+      }
+    },
+    "neru->yuzu": {
+      "おでこ": {
+        "kr": [
+          "이마 깐 녀석",
+          "마빡이"
+        ],
+        "en": [
+          "Miss Forehead"
+        ]
+      }
+    },
+    "niko->special:self": {
+      "FOX2": {
+        "kr": [
+          "FOX 2"
+        ]
+      }
+    },
+    "niya->entity:ninjutsuresearchclub": {
+      "忍術研究部の皆さん": {
+        "kr": [
+          "인법연구부 여러분"
+        ],
+        "en": [
+          "Ninjutsu Research Club members"
+        ]
+      }
+    },
+    "niya->npc:azami": {
+      "怪芸家": {
+        "kr": [
+          "괴예가"
+        ],
+        "en": [
+          "ghost artist"
+        ]
+      }
+    },
+    "niya->npc:kuzunoha": {
+      "伝説の大預言者": {
+        "kr": [
+          "전설 속의 대 예언자"
+        ],
+        "en": [
+          "legendary Great Prophet"
+        ]
+      }
+    },
+    "niya->npc:shuro": {
+      "ちっちゃな怪談家さん": {
+        "kr": [
+          "꼬마 괴담가님"
+        ],
+        "en": [
+          "little bard"
+        ]
+      },
+      "朽木修羅": {
+        "kr": [
+          "쿠치키 슈라"
+        ],
+        "en": [
+          "Kuchiki Shura"
+        ]
+      }
+    },
+    "niya->ui": {
+      "魔術師": {
+        "kr": [
+          "마술사",
+          "마술사님"
+        ]
+      }
+    },
+    "noa->hasumi": {
+      "正義実現委員会の副委員長": {
+        "kr": [
+          "정의실현부의 부부장님"
+        ]
+      }
+    },
+    "nonomi->entity:mr": {
+      "ミスター・ニコライ": {
+        "kr": [
+          "Mr. 니콜라이"
+        ],
+        "en": [
+          "Mr. Nicholai"
+        ]
+      }
+    },
+    "nonomi->hoshino": {
+      "副生徒会長さん": {
+        "kr": [
+          "부학생회장님"
+        ]
+      }
+    },
+    "npc:akemi->entity:charles": {
+      "カルレス君": {
+        "kr": [
+          "카를레스 군"
+        ],
+        "en": [
+          "Charles"
+        ]
+      }
+    },
+    "npc:akemi->saori": {
+      "ムササビさん": {
+        "kr": [
+          "날다람쥐 양"
+        ],
+        "en": [
+          "Miss Flying Squirrel"
+        ]
+      }
+    },
+    "npc:akira->special:sensei": {
+      "貴方": {
+        "en": [
+          "you"
+        ]
+      }
+    },
+    "npc:akira->entity:wildhunt_academy": {
+      "学院": {
+        "en": [
+          "Wildhunt"
+        ]
+      }
+    },
+    "npc:akira->miyo": {
+      "お嬢さん": {
+        "kr": [
+          "조력자분들"
+        ]
+      }
+    },
+    "npc:arata->rabu": {
+      "お面を貸してくれたお姉さま": {
+        "kr": [
+          "멋진 가면을 빌려준 누님"
+        ],
+        "en": [
+          "one who lent me her cool mask"
+        ]
+      }
+    },
+    "npc:arata->wakamo": {
+      "七囚人": {
+        "kr": [
+          "일곱 죄수"
+        ],
+        "en": [
+          "Seven Prisoner"
+        ]
+      }
+    },
+    "npc:azami->entity:hyakkayouranresolutioncouncil": {
+      "百花繚乱の皆さん": {
+        "kr": [
+          "백화요란 여러분"
+        ],
+        "en": [
+          "Hyakkaryouran"
+        ]
+      }
+    },
+    "npc:azami->niya": {
+      "貴様": {
+        "kr": [
+          "네 녀석"
+        ]
+      }
+    },
+    "npc:azami->npc:shuro": {
+      "シュロちゃん": {
+        "en": [
+          "Shuey"
+        ]
+      },
+      "あの子": {
+        "kr": [
+          "아이"
+        ],
+        "en": [
+          "child"
+        ]
+      },
+      "おバカ": {
+        "kr": [
+          "얼치기 꼬마"
+        ],
+        "en": [
+          "foolish little brat"
+        ]
+      },
+      "餓鬼": {
+        "kr": [
+          "꼬맹이"
+        ],
+        "en": [
+          "brat"
+        ]
+      },
+      "バカ": {
+        "kr": [
+          "맹랑한 계집애",
+          "꼬맹이"
+        ],
+        "en": [
+          "insolent brat",
+          "brat"
+        ]
+      }
+    },
+    "npc:basement_dweller->special:sensei": {
+      "奇跡の担い手": {
+        "kr": [
+          "기적을 행하는 자"
+        ],
+        "en": [
+          "one who makes miracles"
+        ]
+      }
+    },
+    "npc:basement_dweller->hoshino": {
+      "キヴォトス最高の神秘": {
+        "kr": [
+          "키보토스 최고의 신비",
+          "아비도스의 최고의 신비"
+        ]
+      },
+      "暁のホルス": {
+        "kr": [
+          "새벽의 호루스"
+        ],
+        "en": [
+          "Horus of Dawn"
+        ]
+      }
+    },
+    "npc:basement_dweller->npc:francis": {
+      "匿名の行人": {
+        "kr": [
+          "익명의 행인"
+        ]
+      }
+    },
+    "npc:basement_dweller->shiroko_terror": {
+      "死の神、アヌビス": {
+        "kr": [
+          "죽음의 신 아누비스"
+        ],
+        "en": [
+          "Anubis, the god of death"
+        ]
+      },
+      "死の神": {
+        "kr": [
+          "죽음의 신"
+        ],
+        "en": [
+          "God of death"
+        ]
+      }
+    },
+    "npc:beatrice->npc:maestro": {
+      "木偶": {
+        "kr": [
+          "나무 인형"
+        ],
+        "en": [
+          "little puppet"
+        ]
+      }
+    },
+    "npc:beatrice->seia": {
+      "予知夢の大天使": {
+        "kr": [
+          "예지몽의 대천사"
+        ],
+        "en": [
+          "prophetic archangel"
+        ]
+      }
+    },
+    "npc:decagrammaton->special:sensei": {
+      "（先生のユーザー名）": {
+        "kr": [
+          "[USERNAME]"
+        ],
+        "en": [
+          "[USERNAME]"
+        ]
+      }
+    },
+    "npc:decagrammaton->himari": {
+      "ハッカーの少女": {
+        "kr": [
+          "해커 소녀"
+        ],
+        "en": [
+          "Young hacker"
+        ]
+      }
+    },
+    "npc:ein->kei": {
+      "名もなき神々の鍵": {
+        "kr": [
+          "이름없는 신들의 열쇠"
+        ],
+        "en": [
+          "key of the Nameless Gods"
+        ]
+      }
+    },
+    "npc:general->miyako": {
+      "小隊長": {
+        "kr": [
+          "소대장"
+        ],
+        "en": [
+          "leader"
+        ]
+      }
+    },
+    "npc:general->npc:aoi": {
+      "財務室長": {
+        "kr": [
+          "재무실장"
+        ],
+        "en": [
+          "Treasury"
+        ]
+      }
+    },
+    "npc:general->npc:kaya": {
+      "新連邦生徒会長代行": {
+        "kr": [
+          "신임 총학생회장 대행"
+        ]
+      }
+    },
+    "npc:haine->moe": {
+      "メガネ": {
+        "kr": [
+          "안경"
+        ],
+        "en": [
+          "four-eyes"
+        ]
+      }
+    },
+    "npc:haine->npc:kaya": {
+      "連邦生徒会長代行": {
+        "kr": [
+          "총학생회장 대행"
+        ]
+      }
+    },
+    "npc:hiromi->entity:dormitorysupervisor": {
+      "私たち": {
+        "en": [
+          "Prefectural Council",
+          "Council"
+        ]
+      }
+    },
+    "npc:kai->kisaki": {
+      "門主": {
+        "en": [
+          "President"
+        ]
+      }
+    },
+    "npc:kai->npc:kaguya": {
+      "京劇部長": {
+        "kr": [
+          "경극부장"
+        ],
+        "en": [
+          "Peking Opera Club President"
+        ]
+      }
+    },
+    "npc:kai->saya": {
+      "後輩さん": {
+        "kr": [
+          "후배님"
+        ],
+        "en": [
+          "underclassman"
+        ]
+      }
+    },
+    "npc:karen->npc:shoko": {
+      "うちのブレイン": {
+        "en": [
+          "our mastermind"
+        ]
+      }
+    },
+    "npc:kaya->npc:ayumu": {
+      "調停室長": {
+        "kr": [
+          "조정실장"
+        ],
+        "en": [
+          "Chief of Staff"
+        ]
+      }
+    },
+    "npc:kokuriko->special:sensei": {
+      "御主(おのし)": {
+        "kr": [
+          "그대"
+        ],
+        "en": [
+          "You"
+        ]
+      },
+      "そなた": {
+        "kr": [
+          "그대"
+        ],
+        "en": [
+          "you"
+        ]
+      }
+    },
+    "npc:kokuriko->nagusa": {
+      "百花繚乱のお嬢さん": {
+        "kr": [
+          "백화요란의 아이"
+        ],
+        "en": [
+          "my dear Hyakkaryouran"
+        ]
+      },
+      "後輩さん": {
+        "kr": [
+          "후배"
+        ],
+        "en": [
+          "junior"
+        ]
+      },
+      "おまえさん": {
+        "kr": [
+          "너"
+        ]
+      }
+    },
+    "npc:kokuriko->npc:ayame": {
+      "ヒトツメ": {
+        "kr": [
+          "히토츠메"
+        ]
+      }
+    },
+    "npc:kokuriko->yukari": {
+      "おまえさん": {
+        "kr": [
+          "너"
+        ],
+        "en": [
+          "Darling",
+          "you"
+        ]
+      }
+    },
+    "npc:kurofuku->npc:francis": {
+      "フランシス": {
+        "kr": [
+          "프랜시스"
+        ]
+      }
+    },
+    "npc:kurofuku->npc:golconde": {
+      "デカルコマニー": {
+        "en": [
+          "Decalcomania"
+        ]
+      }
+    },
+    "npc:kuzunoha->npc:ayame": {
+      "あやつ": {
+        "kr": [
+          "그녀"
+        ]
+      }
+    },
+    "npc:kuzunoha->seia": {
+      "トリニティの預言者": {
+        "kr": [
+          "트리니티의 예언자"
+        ],
+        "en": [
+          "Prophet of Trinity"
+        ]
+      }
+    },
+    "npc:maestro->npc:francis": {
+      "フランシス": {
+        "kr": [
+          "프랜시스"
+        ]
+      }
+    },
+    "npc:maestro->npc:phrenapates": {
+      "嚮導者": {
+        "kr": [
+          "인도자"
+        ],
+        "en": [
+          "Guide"
+        ]
+      }
+    },
+    "npc:maia->mine": {
+      "トリニティの団長さん": {
+        "kr": [
+          "트리니티의 그 구호기사단장이라는 분"
+        ],
+        "en": [
+          "Remedial Knights captain from Trinity"
+        ]
+      }
+    },
+    "npc:mirai->entity:suspectedscienceclub": {
+      "うちの部": {
+        "kr": [
+          "저희 동아리"
+        ]
+      }
+    },
+    "npc:mirai->entity:trinity_school": {
+      "トリニティ": {
+        "en": [
+          "Trinity"
+        ]
+      }
+    },
+    "npc:mirai->entity:valkyrie_school": {
+      "ヴァルキューレ": {
+        "en": [
+          "Valkyrie"
+        ]
+      }
+    },
+    "npc:mirai->npc:niyaniya": {
+      "スポンサー": {
+        "kr": [
+          "스폰서"
+        ],
+        "en": [
+          "sponsor"
+        ]
+      }
+    },
+    "npc:miria->entity:artscouncil": {
+      "評議会": {
+        "kr": [
+          "평의회"
+        ],
+        "en": [
+          "Assembly"
+        ]
+      }
+    },
+    "npc:miria->entity:freetradecartel": {
+      "後輩のみなさん": {
+        "kr": [
+          "후배님들"
+        ],
+        "en": [
+          "my clever little juniors"
+        ]
+      }
+    },
+    "npc:miria->entity:occultsociety": {
+      "みなさん": {
+        "kr": [
+          "후배님들"
+        ],
+        "en": [
+          "my clever little juniors"
+        ]
+      }
+    },
+    "npc:miria->entity:valkyrie_school": {
+      "ヴァルキューレ": {
+        "en": [
+          "Valkyrie"
+        ]
+      }
+    },
+    "npc:miria->entity:wildhunt_academy": {
+      "ワイルドハント": {
+        "en": [
+          "Wildhunt"
+        ]
+      }
+    },
+    "npc:misuzu->entity:publicpeacebureau": {
+      "公安局": {
+        "kr": [
+          "공안국"
+        ]
+      }
+    },
+    "npc:niyaniya->npc:djbob": {
+      "DJ B.o.B": {
+        "kr": [
+          "DJ B.o.B"
+        ],
+        "en": [
+          "DJ B.o.B"
+        ]
+      }
+    },
+    "npc:ein->npc:decagrammaton": {
+      "あの方": {
+        "en": [
+          "master"
+        ]
+      }
+    },
+    "npc:malkuth->npc:decagrammaton": {
+      "あの方": {
+        "en": [
+          "master"
+        ]
+      }
+    },
+    "npc:ohr->kei": {
+      "侍女": {
+        "kr": [
+          "시녀"
+        ],
+        "en": [
+          "servant"
+        ]
+      }
+    },
+    "npc:ohr->npc:decagrammaton": {
+      "あの方": {
+        "en": [
+          "master"
+        ]
+      }
+    },
+    "npc:sof->npc:decagrammaton": {
+      "あの方": {
+        "en": [
+          "master"
+        ]
+      }
+    },
+    "npc:president->nonomi": {
+      "ネフティスの令嬢": {
+        "kr": [
+          "네프티스의 영애"
+        ],
+        "en": [
+          "Nephthys heir"
+        ]
+      }
+    },
+    "npc:rin->npc:ayumu": {
+      "調停室長": {
+        "kr": [
+          "조정실장"
+        ],
+        "en": [
+          "Chief of Staff"
+        ]
+      }
+    },
+    "npc:shuro->nagusa": {
+      "ナグサ": {
+        "en": [
+          "Nagusa"
+        ]
+      },
+      "バカ女": {
+        "kr": [
+          "멍청한 년"
+        ],
+        "en": [
+          "useless, inspirational idiot"
+        ]
+      }
+    },
+    "npc:shuro->npc:azami": {
+      "手前(てめえ)": {
+        "kr": [
+          "너희"
+        ]
+      }
+    },
+    "npc:sof->entity:tiphareth": {
+      "門番": {
+        "kr": [
+          "수문장"
+        ]
+      }
+    },
+    "npc:sof->kei": {
+      "侍女": {
+        "kr": [
+          "시녀"
+        ],
+        "en": [
+          "servant"
+        ]
+      }
+    },
+    "npc:sora->hina": {
+      "委員長": {
+        "kr": [
+          "선도부장님"
+        ]
+      }
+    },
+    "npc:suou->entity:schemata": {
+      "鉄拳政治のシェマタ": {
+        "kr": [
+          "철권통치의 셰마타"
+        ],
+        "en": [
+          "iron-fisted ruler, Schemata"
+        ]
+      }
+    },
+    "npc:tsubasa->entity:expedition_team_x": {
+      "調査班X": {
+        "en": [
+          "Expedition Team X"
+        ]
+      },
+      "調査班": {
+        "kr": [
+          "탐사반"
+        ],
+        "en": [
+          "expedition team"
+        ]
+      }
+    },
+    "npc:tsubasa->entity:mo_channel": {
+      "モー超常現象研究所": {
+        "kr": [
+          "모 초자연 연구소"
+        ],
+        "en": [
+          "Mo Paranormal Research Institute"
+        ]
+      },
+      "我が研究所": {
+        "kr": [
+          "우리 연구소"
+        ],
+        "en": [
+          "Our research institute"
+        ]
+      }
+    },
+    "npc:tsubasa->entity:publicpeacebureau": {
+      "公安局": {
+        "kr": [
+          "공안국"
+        ],
+        "en": [
+          "Public Peace Bureau"
+        ]
+      }
+    },
+    "npc:tsubasa->entity:suspectedscienceclub": {
+      "疑似科学部": {
+        "kr": [
+          "유사과학부"
+        ],
+        "en": [
+          "Pseudoscience Club"
+        ]
+      }
+    },
+    "npc:tsubasa->entity:valkyrie_school": {
+      "ヴァルキューレ警察学校": {
+        "en": [
+          "Valkyrie Police School"
+        ]
+      }
+    },
+    "npc:yukino->special:self": {
+      "FOX1": {
+        "kr": [
+          "FOX 1"
+        ]
+      }
+    },
+    "npc:yukino->npc:kaya": {
+      "防衛室長": {
+        "en": [
+          "Chief of Defense"
+        ]
+      }
+    },
+    "otogi->special:self": {
+      "FOX4": {
+        "kr": [
+          "FOX 4"
+        ]
+      }
+    },
+    "otogi->entity:peroro": {
+      "ペパロニ": {
+        "kr": [
+          "페퍼로니"
+        ],
+        "en": [
+          "Pepperoni"
+        ]
+      },
+      "ペロッシャー": {
+        "kr": [
+          "페롯샤"
+        ],
+        "en": [
+          "perotsha"
+        ]
+      }
+    },
+    "otogi->niko": {
+      "副小隊長": {
+        "kr": [
+          "부소대장님",
+          "부소대장"
+        ]
+      }
+    },
+    "pina->shizuko": {
+      "部長": {
+        "en": [
+          "President"
+        ]
+      }
+    },
+    "rabu->entity:jabjabhelmet": {
+      "うちら": {
+        "en": [
+          "We"
+        ]
+      }
+    },
+    "rabu->entity:library_committee": {
+      "図書委員会": {
+        "en": [
+          "librarian"
+        ]
+      }
+    },
+    "rabu->entity:mecha_croc": {
+      "メタル・ウェポン・スピード・クロコダイル": {
+        "kr": [
+          "메탈 웨폰 스피드 크로커다일"
+        ],
+        "en": [
+          "Cybernetic Rapid Ordnance Carrier"
+        ]
+      }
+    },
+    "rabu->entity:trinity_school": {
+      "あんな学園": {
+        "kr": [
+          "그 따위 학교"
+        ],
+        "en": [
+          "that school"
+        ]
+      }
+    },
+    "rabu->entity:vigilantecrew": {
+      "自警団": {
+        "en": [
+          "vigilantes",
+          "vigilante"
+        ]
+      }
+    },
+    "rabu->npc:mirai": {
+      "ターゲット": {
+        "kr": [
+          "먹잇감",
+          "타겟",
+          "표적"
+        ],
+        "en": [
+          "prey",
+          "prize",
+          "target"
+        ]
+      }
+    },
+    "reisa->entity:trinity_school": {
+      "トリニティ自治区": {
+        "en": [
+          "Trinity district"
+        ]
+      }
+    },
+    "reisa->entity:vigilantecrew": {
+      "ヘヴィキャリバーズ": {
+        "kr": [
+          "헤비캘리버즈"
+        ]
+      }
+    },
+    "reisa->shimiko": {
+      "エラ": {
+        "kr": [
+          "에라"
+        ]
+      }
+    },
+    "reisa->suzumi": {
+      "トリニティの走る閃光弾": {
+        "kr": [
+          "트리니티의 달리는 섬광탄"
+        ],
+        "en": [
+          "Trinity's Flash-Bang"
+        ]
+      }
+    },
+    "rena->entity:artscouncil": {
+      "芸術評議会": {
+        "kr": [
+          "예술 평의회"
+        ],
+        "en": [
+          "Assembly of Arts"
+        ]
+      }
+    },
+    "rena->entity:expedition_team_x": {
+      "調査班X": {
+        "kr": [
+          "탐사반 X"
+        ]
+      }
+    },
+    "rena->entity:mo_channel": {
+      "モー超常現象研究所": {
+        "kr": [
+          "모 초자연 연구소"
+        ],
+        "en": [
+          "Mo Paranormal Research Institute"
+        ]
+      }
+    },
+    "rena->entity:occultsociety": {
+      "バカ先輩ども": {
+        "kr": [
+          "바보 선배들"
+        ],
+        "en": [
+          "idiot seniors"
+        ]
+      },
+      "先輩ども": {
+        "kr": [
+          "선배들"
+        ],
+        "en": [
+          "YOU all"
+        ]
+      },
+      "ヘンテコ集団": {
+        "kr": [
+          "괴짜들"
+        ],
+        "en": [
+          "freaks"
+        ]
+      }
+    },
+    "renge->entity:naturesbeauty": {
+      "奴ら": {
+        "kr": [
+          "그 녀석들"
+        ]
+      },
+      "アイツら": {
+        "kr": [
+          "녀석들"
+        ],
+        "en": [
+          "those guys"
+        ]
+      }
+    },
+    "renge->kikyou": {
+      "作戦参謀さま": {
+        "kr": [
+          "작전 참모"
+        ],
+        "en": [
+          "operations officer"
+        ]
+      }
+    },
+    "renge->npc:kokuriko": {
+      "あの女": {
+        "kr": [
+          "저 여자"
+        ]
+      }
+    },
+    "renge->npc:shuro": {
+      "おチビ": {
+        "en": [
+          "Nature's Beauty brat"
+        ]
+      },
+      "生意気チビ": {
+        "kr": [
+          "건방진 꼬맹이 녀석"
+        ],
+        "en": [
+          "kid"
+        ]
+      },
+      "朽木修羅": {
+        "kr": [
+          "쿠치키 슈라"
+        ]
+      }
+    },
+    "renge->tsubaki": {
+      "ツバキ部長": {
+        "en": [
+          "Pres"
+        ]
+      }
+    },
+    "ritsu->special:sensei": {
+      "せんせー": {
+        "kr": [
+          "선생님"
+        ]
+      }
+    },
+    "ritsu->npc:akira": {
+      "ドロボーさん": {
+        "en": [
+          "Thiefster"
+        ]
+      },
+      "怪盗さん": {
+        "en": [
+          "Thiefster"
+        ]
+      },
+      "怪盗ちゃん": {
+        "en": [
+          "Thiefster"
+        ]
+      }
+    },
+    "rumi->cherino": {
+      "チェリノ書記長": {
+        "en": [
+          "Great Leader of Red Winter"
+        ]
+      },
+      "書記長": {
+        "en": [
+          "Great Leader of Red Winter"
+        ]
+      }
+    },
+    "rumi->mina": {
+      "執行部長": {
+        "kr": [
+          "집행부장"
+        ],
+        "en": [
+          "Kisaki's right-hand girl"
+        ]
+      }
+    },
+    "saki->special:self": {
+      "RABBIT2": {
+        "kr": [
+          "RABBIT 2"
+        ]
+      }
+    },
+    "sakurako->mine": {
+      "団長": {
+        "kr": [
+          "기사단장"
+        ],
+        "en": [
+          "captain"
+        ]
+      }
+    },
+    "saori->npc:akemi": {
+      "伝説のスケバン": {
+        "kr": [
+          "전설의 스케반"
+        ],
+        "en": [
+          "Legendary Thug"
+        ]
+      }
+    },
+    "saori->npc:djbob": {
+      "DJ B.o.B": {
+        "kr": [
+          "DJ B.o.B"
+        ],
+        "en": [
+          "DJ B.o.B"
+        ]
+      }
+    },
+    "saori->npc:maestro": {
+      "あの人形": {
+        "kr": [
+          "그 인형"
+        ],
+        "en": [
+          "that doll"
+        ]
+      }
+    },
+    "saori->subaru": {
+      "あいつ": {
+        "en": [
+          "That one"
+        ]
+      }
+    },
+    "satsuki->ako": {
+      "行政官": {
+        "kr": [
+          "선임행정관"
+        ]
+      }
+    },
+    "seia->mika": {
+      "おてんば娘": {
+        "kr": [
+          "철부지 아가씨",
+          "말괄량이 아가씨"
+        ]
+      }
+    },
+    "seia->neru": {
+      "C&Cのリーダー": {
+        "kr": [
+          "C&C의 부장",
+          "C&C의 리더",
+          "C&C 부장"
+        ]
+      }
+    },
+    "sena->entity:pan_chan": {
+      "モンスター": {
+        "kr": [
+          "괴물체"
+        ],
+        "en": [
+          "monstrosity"
+        ]
+      },
+      "動くパンケーキ": {
+        "kr": [
+          "움직이는 팬케이크"
+        ],
+        "en": [
+          "living pancake"
+        ]
+      },
+      "巨大パンケーキ": {
+        "kr": [
+          "거대 팬케이크"
+        ],
+        "en": [
+          "creature"
+        ]
+      },
+      "アレ": {
+        "kr": [
+          "그것"
+        ]
+      }
+    },
+    "sena->makoto": {
+      "議長": {
+        "kr": [
+          "의장"
+        ]
+      }
+    },
+    "sena->mine": {
+      "救護騎士団の団長": {
+        "en": [
+          "leader of the Remedial Knights"
+        ]
+      },
+      "この方": {
+        "kr": [
+          "이분"
+        ]
+      }
+    },
+    "serika->hikari": {
+      "双子": {
+        "kr": [
+          "그 녀석들"
+        ],
+        "en": [
+          "little menaces"
+        ]
+      }
+    },
+    "serika->nozomi": {
+      "双子": {
+        "kr": [
+          "그 녀석들"
+        ],
+        "en": [
+          "little menaces"
+        ]
+      }
+    },
+    "serika->shiroko": {
+      "ブルー先輩": {
+        "kr": [
+          "블루 선배"
+        ],
+        "en": [
+          "Blue"
+        ]
+      }
+    },
+    "serina->entity:arius_squad": {
+      "スクワッドの皆さん": {
+        "en": [
+          "Squad members"
+        ]
+      }
+    },
+    "serina->entity:remedial_knights": {
+      "名もなき奉仕活動部": {
+        "kr": [
+          "봉사 동아리"
+        ],
+        "en": [
+          "Community Service Club"
+        ]
+      }
+    },
+    "serina->wakamo": {
+      "災厄の狐": {
+        "kr": [
+          "재액의 여우"
+        ],
+        "en": [
+          "Fox of Calamity"
+        ]
+      }
+    },
+    "shimiko->entity:jtf": {
+      "みなさん": {
+        "en": [
+          "Everyone"
+        ]
+      }
+    },
+    "shimiko->entity:trinity_school": {
+      "トリニティ自治区": {
+        "en": [
+          "Trinity district"
+        ]
+      }
+    },
+    "shimiko->hinata": {
+      "ヒナタさん": {
+        "en": [
+          "H i n a t a"
+        ]
+      }
+    },
+    "shimiko->npc:mirai": {
+      "悪の商人シルバープレート": {
+        "kr": [
+          "악마의 상인 '실버플레이트'"
+        ],
+        "en": [
+          "demon merchant Silver Plate"
+        ]
+      }
+    },
+    "shiroko->shiroko_terror": {
+      "覆面ライダー": {
+        "kr": [
+          "복면 라이더"
+        ],
+        "en": [
+          "Masked Rider"
+        ]
+      }
+    },
+    "shiroko_terror->shiroko": {
+      "ちびシロコ": {
+        "kr": [
+          "작은 시로코"
+        ],
+        "en": [
+          "Small Shiroko"
+        ]
+      },
+      "よわシロコ": {
+        "kr": [
+          "약한 시로코"
+        ],
+        "en": [
+          "Weak Shiroko"
+        ]
+      }
+    },
+    "shizuko->entity:hyakkayouranresolutioncouncil": {
+      "百花繚乱の皆さん": {
+        "kr": [
+          "백화요란분들",
+          "백화요란"
+        ]
+      },
+      "百花繚乱": {
+        "kr": [
+          "백화요란"
+        ],
+        "en": [
+          "Hyakkaryouran"
+        ]
+      }
+    },
+    "shokuhou_misaki->misaka_mikoto": {
+      "常盤台(ときわだい)の超電磁砲(レールガン)さん": {
+        "kr": [
+          "<레벨 5의 레일건> 씨"
+        ],
+        "en": [
+          "Miss Level 5 Railgun"
+        ]
+      }
+    },
+    "shun->entity:rinka": {
+      "リンカ": {
+        "kr": [
+          "린카"
+        ],
+        "en": [
+          "Rinka"
+        ]
+      }
+    },
+    "subaru->entity:arius_squad": {
+      "スクワッドの皆さん": {
+        "en": [
+          "Squad"
+        ]
+      }
+    },
+    "subaru->entity:nicomediatroop": {
+      "ニコメディアトゥループ": {
+        "kr": [
+          "니코메디아 트룹"
+        ],
+        "en": [
+          "Nicomedia's Troop"
+        ]
+      }
+    },
+    "subaru->entity:trinity_school": {
+      "彼女たち": {
+        "en": [
+          "Trinity kids",
+          "Privileged children"
+        ]
+      }
+    },
+    "subaru->mine": {
+      "団長さん": {
+        "en": [
+          "Remedial Knights captain"
+        ]
+      }
+    },
+    "suzumi->entity:jabjabhelmet": {
+      "ヘルメット団の皆さん": {
+        "kr": [
+          "라브 씨 일행분들"
+        ],
+        "en": [
+          "Rabu, and friends"
+        ]
+      }
+    },
+    "suzumi->npc:mirai": {
+      "ターゲット": {
+        "kr": [
+          "목표",
+          "그 녀석",
+          "그 사람들"
+        ],
+        "en": [
+          "target",
+          "you-know-who",
+          "knock-off salesperson"
+        ]
+      }
+    },
+    "suzumi->shimiko": {
+      "エラ": {
+        "kr": [
+          "에라"
+        ],
+        "en": [
+          "Era"
+        ]
+      }
+    },
+    "takane->entity:jtf": {
+      "正義実現委員会の方々": {
+        "en": [
+          "Task Force"
+        ]
+      }
+    },
+    "takane->entity:tea_party": {
+      "トリニティの生徒会": {
+        "kr": [
+          "트리니티의 학생회"
+        ],
+        "en": [
+          "Trinity's triumvirate student council"
+        ]
+      }
+    },
+    "takane->entity:trinity_school": {
+      "トリニティの皆さん": {
+        "en": [
+          "Trinity students"
+        ]
+      },
+      "トリニティのみなさん": {
+        "en": [
+          "Trinity"
+        ]
+      }
+    },
+    "takane->meru": {
+      "大作家メルリーさん": {
+        "kr": [
+          "대작가 메루리 씨"
+        ],
+        "en": [
+          "great Meruri"
+        ]
+      }
+    },
+    "toki->special:self": {
+      "コールサイン04": {
+        "kr": [
+          "콜사인 04"
+        ]
+      }
+    },
+    "toki->aris": {
+      "可愛いアリス": {
+        "kr": [
+          "귀여운 아리스"
+        ],
+        "en": [
+          "Aris the Adorable",
+          "adorable Aris"
+        ]
+      }
+    },
+    "toki->midori": {
+      "代表のミドリ": {
+        "kr": [
+          "사실상의 대표자 미도리"
+        ],
+        "en": [
+          "Midori the True President"
+        ]
+      }
+    },
+    "toki->momoi": {
+      "騒がしいモモイ": {
+        "kr": [
+          "소란스러운 모모이"
+        ],
+        "en": [
+          "Noisy-Moi"
+        ]
+      },
+      "賢いモモイ": {
+        "kr": [
+          "현명한 모모이"
+        ],
+        "en": [
+          "Wise Momoi"
+        ]
+      },
+      "賢い残念なモモイ": {
+        "kr": [
+          "현명해 보였지만, 결국 쉽게 잘난 체하고 마는 모모이"
+        ],
+        "en": [
+          "Seemed-Wise-but-Ended-Up-Being-a-Show-Off Momoi"
+        ]
+      }
+    },
+    "toki->yuzu": {
+      "静かなユズ": {
+        "kr": [
+          "조용한 유즈"
+        ],
+        "en": [
+          "Yuzu the Timid"
+        ]
+      }
+    },
+    "toki->npc:akira": {
+      "泥棒様": {
+        "kr": [
+          "도둑님"
+        ]
+      }
+    },
+    "tomoe->entity:183": {
+      "183号特別クラス": {
+        "en": [
+          "Spec Ops No. 183"
+        ]
+      }
+    },
+    "tomoe->kisaki": {
+      "黒い君主": {
+        "kr": [
+          "검은 군주"
+        ],
+        "en": [
+          "Dark Monarch"
+        ]
+      }
+    },
+    "tsukuyo->niya": {
+      "陰陽部の部長さん": {
+        "en": [
+          "president of the Yin-Yang Club"
+        ]
+      }
+    },
+    "tsumugi->special:sensei": {
+      "マスコット": {
+        "kr": [
+          "마스코트"
+        ],
+        "en": [
+          "mascot"
+        ]
+      }
+    },
+    "tsumugi->airi": {
+      "お嬢さん": {
+        "kr": [
+          "주인공"
+        ],
+        "en": [
+          "protagonist"
+        ]
+      },
+      "可憐なヒロイン": {
+        "kr": [
+          "가련한 주인공"
+        ],
+        "en": [
+          "delicate protagonist"
+        ]
+      }
+    },
+    "tsumugi->entity:dormitorysupervisor": {
+      "寮監隊": {
+        "en": [
+          "Council"
+        ]
+      }
+    },
+    "tsumugi->entity:gehenna_school": {
+      "ゲヘナ": {
+        "en": [
+          "Gehenna"
+        ]
+      }
+    },
+    "tsumugi->entity:occultsociety": {
+      "オカルト研究会": {
+        "en": [
+          "Society"
+        ]
+      }
+    },
+    "tsumugi->entity:trinity_school": {
+      "トリニティ": {
+        "en": [
+          "Trinity"
+        ]
+      }
+    },
+    "tsumugi->entity:wildhunt_academy": {
+      "芸術の故郷(ふるさと)": {
+        "kr": [
+          "예술의 고향"
+        ],
+        "en": [
+          "home of artistic endeavors"
+        ]
+      }
+    },
+    "tsumugi->rena": {
+      "あの子": {
+        "en": [
+          "girl"
+        ]
+      }
+    },
+    "ui->entity:books": {
+      "この子": {
+        "en": [
+          "books"
+        ]
+      }
+    },
+    "ui->entity:tea_party": {
+      "お偉いさん": {
+        "kr": [
+          "높으신 분들"
+        ],
+        "en": [
+          "stuffy executives"
+        ]
+      }
+    },
+    "ui->shimiko": {
+      "あんた": {
+        "kr": [
+          "너"
+        ]
+      }
+    },
+    "umika->entity:hyakkayouranresolutioncouncil": {
+      "百花繚乱のみなさん": {
+        "kr": [
+          "백화요란 위원회 여러분"
+        ],
+        "en": [
+          "Hyakkaryouran"
+        ]
+      }
+    },
+    "umika->npc:datemeowru": {
+      "百鬼夜行商店街の会長": {
+        "kr": [
+          "백귀야행 상점가의 상인회장"
+        ]
+      }
+    },
+    "utaha->himari": {
+      "「全知」": {
+        "kr": [
+          "전지"
+        ],
+        "en": [
+          "Miss Omniscience"
+        ]
+      }
+    },
+    "wakamo->mine": {
+      "救護騎士団の団長さん": {
+        "en": [
+          "captain of the Remedial Knights"
+        ]
+      }
+    },
+    "yakumo->entity:knowledgeliberationfront": {
+      "知識解放戦線": {
+        "kr": [
+          "지식해방전선"
+        ],
+        "en": [
+          "Knowledge Liberation Front"
+        ]
+      },
+      "知識解放戦線の皆さん": {
+        "kr": [
+          "지식해방전선"
+        ],
+        "en": [
+          "Knowledge Liberation Front"
+        ]
+      },
+      "あの子たち": {
+        "kr": [
+          "그 애들"
+        ]
+      }
+    },
+    "yakumo->entity:red_winter_school": {
+      "うち": {
+        "kr": [
+          "우리"
+        ]
+      }
+    },
+    "yakumo->marina": {
+      "保安委員長": {
+        "kr": [
+          "보안위원장"
+        ],
+        "en": [
+          "Security Committee Chair"
+        ]
+      }
+    },
+    "yakumo->mika": {
+      "この人": {
+        "kr": [
+          "이 사람"
+        ]
+      }
+    },
+    "yakumo->minori": {
+      "レッドウィンターでも随一の要注意人物": {
+        "kr": [
+          "붉은겨울 최고의 요주의 인물"
+        ],
+        "en": [
+          "most dangerous figure of Red Winter"
+        ]
+      }
+    },
+    "yakumo->takane": {
+      "タ・カ・ネ・姫": {
+        "kr": [
+          "공. 녀. 님"
+        ]
+      }
+    },
+    "yukari->npc:azami": {
+      "会長さん": {
+        "kr": [
+          "부장님"
+        ]
+      }
+    },
+    "yukari->npc:kai": {
+      "お医者さま": {
+        "kr": [
+          "명의"
+        ],
+        "en": [
+          "doctor"
+        ]
+      }
+    },
+    "yukari->npc:kokuriko": {
+      "あの方": {
+        "en": [
+          "mentor"
+        ]
+      }
+    },
+    "yukari->npc:shuro": {
+      "朽木修羅": {
+        "kr": [
+          "쿠치키 슈라"
+        ],
+        "en": [
+          "Kuchiki Shura"
+        ]
+      }
+    },
+    "yuuka->npc:rin": {
+      "代行": {
+        "en": [
+          "Acting President",
+          "Proxy"
+        ]
+      }
+    }
+  }
+}

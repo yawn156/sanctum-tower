@@ -1,0 +1,25 @@
+{
+  "name": "sanctum-tower",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Data pipeline and rules for the Sanctum Tower Blue Archive appellation table.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test pipeline/tests/*.test.ts",
+    "pipeline:m1": "tsx pipeline/src/run.ts --milestone=1",
+    "pipeline:m1:refresh": "tsx pipeline/src/run.ts --milestone=1 --refresh",
+    "pipeline:m2": "tsx pipeline/src/run.ts --milestone=2",
+    "pipeline:m2:refresh": "tsx pipeline/src/run.ts --milestone=2 --refresh",
+    "pipeline:m3": "tsx pipeline/src/run.ts --milestone=3",
+    "pipeline:build": "tsx pipeline/src/run.ts --milestone=all"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
