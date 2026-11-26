@@ -383,8 +383,126 @@
         "科学少女",
         "一輪の花",
         "高嶺の花",
+        "清水の如く透き通る私",
+        "清水の如く透き通るレディ",
         "「全知」"
       ]
+    },
+    {
+      "speakerId": "himari",
+      "targetId": "rio",
+      "jpTerms": ["浄化槽の濁った水"]
+    },
+    {
+      "speakerId": "toki",
+      "targetId": "special:self",
+      "jpTerms": [
+        "飛鳥馬トキ",
+        "パーフェクトキュートクール系美少女",
+        "完璧かつ最高のメイドであり、エージェント",
+        "完璧で最高なメイドかつエージェント",
+        "完璧なメイドでエージェント",
+        "ハイパーパーフェクトメイド",
+        "キヴォトス最強のメイド",
+        "メイドの中のメイド",
+        "完璧なるメイド",
+        "完璧なメイド",
+        "優秀なメイド",
+        "最強のメイド",
+        "最高のメイド",
+        "完璧なエージェント",
+        "最高のエージェント",
+        "優秀なエージェント"
+      ]
+    },
+    {
+      "speakerId": "reisa",
+      "targetId": "special:self",
+      "jpTerms": [
+        "自警団のスーパースター",
+        "みんなのスーパースター",
+        "スーパースター"
+      ]
+    },
+    {
+      "speakerId": "saori",
+      "targetId": "mika",
+      "jpTerms": ["あのバカ"]
+    },
+    {
+      "speakerId": "mika",
+      "targetId": "hanako",
+      "jpTerms": ["腹黒"]
+    },
+    {
+      "speakerId": "mika",
+      "targetId": "azusa",
+      "jpTerms": ["裏切り者"]
+    },
+    {
+      "speakerId": "nagisa",
+      "targetId": "mika",
+      "jpTerms": ["裏切り者"]
+    },
+    {
+      "speakerId": "hanako",
+      "targetId": "azusa",
+      "jpTerms": ["裏切り者", "氷の魔女"]
+    },
+    {
+      "speakerId": "mari",
+      "targetId": "azusa",
+      "jpTerms": ["氷の魔女"]
+    },
+    {
+      "speakerId": "koharu",
+      "targetId": "hanako",
+      "jpTerms": ["トリニティの変態", "変態"]
+    },
+    {
+      "speakerId": "moe",
+      "targetId": "saki",
+      "jpTerms": ["おバカなサキ"]
+    },
+    {
+      "speakerId": "npc:shuro",
+      "targetId": "npc:ayame",
+      "jpTerms": ["おバカさん"]
+    },
+    {
+      "speakerId": "npc:gsc_president_false",
+      "targetId": "hina",
+      "jpTerms": ["無能"]
+    },
+    {
+      "speakerId": "minori",
+      "targetId": "cherino",
+      "jpTerms": ["チビ"]
+    },
+    {
+      "speakerId": "rio",
+      "targetId": "himari",
+      "jpTerms": ["「天才」"]
+    },
+    {
+      "speakerId": "hina",
+      "targetId": "eri",
+      "jpTerms": ["「天才」"]
+    },
+    {
+      "speakerId": "atsuko",
+      "targetId": "subaru",
+      "jpTerms": ["最後の天使"]
+    },
+    {
+      "speakerId": "npc:suou",
+      "targetId": "npc:gsc_president",
+      "jpTerms": ["天才戦略家"]
+    },
+    {
+      "speakerId": "kaede",
+      "targetId": "mimori",
+      "jpTerms": ["百鬼夜行最強の読心術師"]
     }
   ]
 }

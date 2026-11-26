@@ -896,6 +896,19 @@ const JP_TO_KR_TITLES: Array<[RegExp, string[]]> = [
   [/ビッグシスター/, ["빅 시스터"]],
   [/(?<!ビッグ)シスター/, ["수녀님", "시스터"]],
   [/勇者/, ["용사"]],
+  [/裏切り者/, ["배신자", "스파이"]],
+  [/氷の魔女/, ["얼음마녀"]],
+  [/変態/, ["변태"]],
+  [/腹黒/, ["시커멓게 속을 숨기던 여자"]],
+  [/あのバカ/, ["그 멍청한 여자"]],
+  [/おバカなサキ/, ["바보 사키"]],
+  [/おバカさん/, ["얼간이"]],
+  [/無能/, ["무능"]],
+  [/「天才」/, ["천재"]],
+  [/最後の天使/, ["마지막 천사"]],
+  [/天才戦略家/, ["천재 전략가"]],
+  [/百鬼夜行最強の読心術師/, ["백귀야행 학원 최강의 독심술사", "최강의 독심술사"]],
+  [/浄化槽の濁った水/, ["정화조 같은 사람", "정화조"]],
   [/美少女|ハッカー|美人部長/, ["초천재병약미소녀해커", "초천재병약미소녀", "천재병약미소녀해커", "천재병약미소녀", "청순한 미소녀 해커", "병약 미소녀", "병약미소녀", "미소녀 해커", "미소녀해커", "초천재미소녀", "천재미소녀", "초천재해커", "천재 해커", "미인 부장"]],
   [/女将/, ["여주인님", "여주인", "안주인", "주인장"]],
   [/マダム/, ["마담"]],
@@ -1014,9 +1027,37 @@ export function extractKrAppellations(
             "천재 소녀",
             "한 떨기의 청초한 꽃",
             "한 떨기 꽃",
+            "1급 미네랄 워터",
             "전지",
           ]
-        : []),
+        : speaker.id === "toki"
+          ? [
+              "퍼펙트 큐트 미소녀 메이드",
+              "큐트 창백 계열 퍼펙트 미소녀",
+              "완벽한 메이드이자 최고의 요원",
+              "완벽한 최고의 메이드이자 요원",
+              "완벽한 메이드이자 에이전트",
+              "하이퍼 퍼펙트 메이드",
+              "키보토스 최강의 메이드",
+              "메이드 중의 메이드",
+              "퍼펙트 메이드",
+              "완벽한 메이드",
+              "우수한 메이드",
+              "최고의 메이드",
+              "최강의 메이드",
+              "완벽한 특수요원",
+              "최고의 에이전트",
+              "최고의 요원",
+              "완벽한 에이전트",
+              "우수한 저",
+            ]
+          : speaker.id === "reisa"
+            ? [
+                "자경단의 슈퍼스타",
+                "모두의 슈퍼스타",
+                "슈퍼스타",
+              ]
+            : []),
     ];
     let krSelfLine = krLine;
     if (
@@ -1321,7 +1362,7 @@ export function extractKrAppellations(
   }
 
   const hasExplicitTitleInJp = matchedJpTerms.some((t) =>
-    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官|勇者)/.test(
+    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官|勇者|裏切り者|氷の魔女|変態|腹黒|あのバカ|おバカなサキ|おバカさん|無能|「天才」|最後の天使|天才戦略家|百鬼夜行最強の読心術師|浄化槽の濁った水)/.test(
       t
     )
   );
@@ -1352,6 +1393,13 @@ export function extractKrAppellations(
         break;
       }
     }
+  }
+  if (
+    matchedJpTerms.some((t) => /浄化槽の濁った水/.test(t)) &&
+    /정화조 같은 사람/.test(krLine) &&
+    !found.includes("정화조 같은 사람")
+  ) {
+    found.push("정화조 같은 사람");
   }
 
   return uniqueOrdered(found);
@@ -1709,6 +1757,19 @@ const JP_TO_EN_TITLES: Array<[RegExp, Array<[string, RegExp]>]> = [
   [/ビッグシスター/, [["Big Sister", /\bBig Sister\b/i]]],
   [/(?<!ビッグ)シスター/, [["Sister", /\bSister\b/i]]],
   [/勇者/, [["hero", /\bhero\b/i]]],
+  [/裏切り者/, [["traitor", /\btraitor\b/i]]],
+  [/氷の魔女/, [["ice queen", /\bice queen\b/i]]],
+  [/変態/, [["pervert", /\bperverts?\b/i]]],
+  [/腹黒/, [["malicious", /\bmalicious\b/i]]],
+  [/あのバカ/, [["that foolish girl", /\bthat foolish girl\b/i], ["foolish girl", /\bfoolish girl\b/i]]],
+  [/おバカなサキ/, [["idiot", /\bidiot\b/i]]],
+  [/おバカさん/, [["imposter", /\bimposter\b/i]]],
+  [/無能/, [["incompetent", /\bincompetent\b/i], ["incompetence", /\bincompetence\b/i]]],
+  [/「天才」/, [["genius hacker", /\bgenius hacker\b/i], ["genius", /\bgenius\b/i]]],
+  [/最後の天使/, [["final angel", /\bfinal angel\b/i]]],
+  [/天才戦略家/, [["genius strategist", /\bgenius strategist\b/i]]],
+  [/百鬼夜行最強の読心術師/, [["Mind Reader of Hyakkiyako", /\bMind Reader of Hyakkiyako\b/i]]],
+  [/浄化槽の濁った水/, [["septic tank", /\bseptic tank\b/i]]],
   [
     /美少女|ハッカー|美人部長/,
     [
@@ -1886,10 +1947,37 @@ export function extractEnAppellations(
             ["beautiful president", /\bbeautiful president\b/i],
             ["cyber fairy", /\bcyber fairy\b/i],
             ["science girl", /\bscience girl\b/i],
+            ["mineral water from an ice cap", /\bmineral water from an ice cap\b/i],
+            ["crystal-clear pure mineral water", /\bcrystal-clear pure mineral water\b/i],
             ["Omniscient being", /\bOmniscient being\b/i],
             ["omniscient", /\bomniscient\b/i],
           ] as Array<[string, RegExp]>)
-        : []),
+        : speaker.id === "toki"
+          ? ([
+              ["platonically perfect, cute maid of unparalleled beauty", /\bplatonically perfect, cute maid of unparalleled beauty\b/i],
+              ["preeminent cute, pale, perfect beauty", /\bpreeminent cute, pale, perfect beauty\b/i],
+              ["perfect maid and agent", /\bperfect maid and (?:perfect )?agent\b/i],
+              ["hyper-perfect maid", /\bhyper-perfect maid\b/i],
+              ["best maid in Kivotos", /\bbest maid in Kivotos\b/i],
+              ["maid of all maids", /\bmaid of all maids\b/i],
+              ["kind and perfect maid", /\bkind and perfect maid\b/i],
+              ["perfect, wonderful maid", /\bperfect, wonderful maid\b/i],
+              ["perfect maid", /\bperfect maid\b/i],
+              ["superior maid", /\bsuperior maid\b/i],
+              ["excellent maid", /\bexcellent maid\b/i],
+              ["capable maid", /\bcapable maid\b/i],
+              ["perfect special agent", /\bperfect special agent\b/i],
+              ["perfect agent", /\bperfect agent\b/i],
+              ["best agent", /\bbest agent\b/i],
+            ] as Array<[string, RegExp]>)
+          : speaker.id === "reisa"
+            ? ([
+                ["Superstar of the Vigilante Crew", /\bSuperstar of the Vigilante Crew\b/i],
+                ["Vigilante Crew's Superstar", /\bVigilante Crew'?s Superstar\b/i],
+                ["everyone's superstar", /\beveryone'?s superstar\b/i],
+                ["Superstar", /\bSuperstar\b/i],
+              ] as Array<[string, RegExp]>)
+            : []),
     ];
     for (const [label, re] of specialSelfPhrases) {
       if (re.test(normalized)) {
@@ -2207,7 +2295,7 @@ export function extractEnAppellations(
   }
 
   const hasExplicitTitleInJp = matchedJpTerms.some((t) =>
-    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官|勇者)/.test(
+    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官|勇者|裏切り者|氷の魔女|変態|腹黒|あのバカ|おバカなサキ|おバカさん|無能|「天才」|最後の天使|天才戦略家|百鬼夜行最強の読心術師|浄化槽の濁った水)/.test(
       t
     )
   );
@@ -2226,6 +2314,14 @@ export function extractEnAppellations(
         (matchedJpTerms.some((t) => /お嬢ちゃん/.test(t)) &&
           f.trim().toLowerCase() === "you")
     );
+
+  if (
+    matchedJpTerms.some((t) => /浄化槽の濁った水/.test(t)) &&
+    /\bseptic tank\b/i.test(normalized) &&
+    !found.some((f) => f.toLowerCase() === "septic tank")
+  ) {
+    found.push("septic tank");
+  }
 
   if (found.length === 0 || (hasExplicitTitleInJp && onlyBareStemFound) || onlyBareStemOrYou) {
     for (const [jpRe, enTitles] of JP_TO_EN_TITLES) {
@@ -3717,14 +3813,16 @@ export async function extractMultilangAppellations(versions: {
         ...(t.notes ? { notes: t.notes } : {}),
         ...(t.contextTags ? { contextTags: t.contextTags } : {}),
         source: seed.autoSeeded ? ("extracted" as const) : ("wikiru" as const),
-      }));
+      }))
+      .sort((a, b) => b.count - a.count || a.term.localeCompare(b.term));
 
     const normalizedEnCounts = normalizeEnCaseVariants(
       enCounts,
       citationCandidates
     );
-    const krTerms = toSortedTermVariants(krCounts);
-    const enTerms = toSortedTermVariants(normalizedEnCounts);
+    const termLimit = target.id === "special:self" ? 60 : 12;
+    const krTerms = toSortedTermVariants(krCounts, termLimit);
+    const enTerms = toSortedTermVariants(normalizedEnCounts, termLimit);
 
     const speech =
       target.id === "special:self"
