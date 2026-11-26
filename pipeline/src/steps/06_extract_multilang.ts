@@ -893,7 +893,10 @@ const JP_TO_KR_TITLES: Array<[RegExp, string[]]> = [
   [/リーダー/, ["리더님", "리더"]],
   [/幹部/, ["간부님들", "간부님", "간부들", "간부"]],
   [/お二人/, ["두 분", "두 사람"]],
-  [/シスター/, ["수녀님", "시스터"]],
+  [/ビッグシスター/, ["빅 시스터"]],
+  [/(?<!ビッグ)シスター/, ["수녀님", "시스터"]],
+  [/勇者/, ["용사"]],
+  [/美少女|ハッカー|美人部長/, ["초천재병약미소녀해커", "초천재병약미소녀", "천재병약미소녀해커", "천재병약미소녀", "청순한 미소녀 해커", "병약 미소녀", "병약미소녀", "미소녀 해커", "미소녀해커", "초천재미소녀", "천재미소녀", "초천재해커", "천재 해커", "미인 부장"]],
   [/女将/, ["여주인님", "여주인", "안주인", "주인장"]],
   [/マダム/, ["마담"]],
   [/ジェネラル/, ["제너럴"]],
@@ -952,7 +955,7 @@ function uniqueOrdered(items: string[]): string[] {
 }
 
 const KR_PARTICLE_LOOKAHEAD =
-  "(?=(?:은|는|이|가|을|를|의|에게는|에게|에겐|께서는|께서|께|한테는|한테|에서도|에서|에도|에|도|만|까지는|까지|부터는|부터|이랑도|이랑|랑도|랑|와도|와|과도|과|으로도|으로|로도|로|야|아|여|시여|이라고|라고|이라는|라는|이라니|라니|처럼|보다|마다|조차|마저|밖에|뿐|입니다|입니까|이시군요|이셨던|이셨|이시네요|이시죠|이세요|이잖아요|이잖아|이라면|이에요|예요|이군요|이네요|이구나|이지요|이지|이죠|인가요|인가|인데요|인데|이야|이었|였|이시다|이시|이다|인|잖아|잖아요|라면)?(?![가-힣]))";
+  "(?=(?:은|는|이|가|을|를|의|에게는|에게|에겐|께서는|께서|께|한테는|한테|에서도|에서|에도|에|도|만|까지는|까지|부터는|부터|이랑도|이랑|랑도|랑|와도|와|과도|과|으로도|으로|로도|로|야|아|여|시여|이라고|라고|이라는|라는|이라니|라니|처럼|보다|마다|조차|마저|밖에|뿐|입니다|입니까|이시군요|이셨던|이셨|이시네요|이시죠|이세요|이잖아요|이잖아|이라면|이에요|예요|이군요|이네요|이구나|이지요|이지|이죠|인가요|인가|인데요|인데|이야|이었|였|이시다|이시|이다|인|잖아|잖아요|니까요|니까|라면)?(?![가-힣]))";
 
 export function extractKrAppellations(
   krLine: string,
@@ -972,6 +975,48 @@ export function extractKrAppellations(
       "소녀",
       "소인",
       "이 언니",
+      ...(speaker.id === "himari"
+        ? [
+            "초천재병약만능전투미소녀해커",
+            "초천재병약만능미소녀해커",
+            "초천재병약청초계쿨뷰티미소녀",
+            "초천재병약청초계미소녀",
+            "초천재병약미소녀해커이자 라이프 스태프",
+            "초천재병약미소녀 라이프 스태프",
+            "초천재청초계병약 미소녀",
+            "초천재 청초계 병약 미소녀",
+            "초천재 청초계 병약미소녀",
+            "초천재병약미소녀해커",
+            "초천재병약미소녀",
+            "초절정미소녀해커",
+            "천재병약미소녀해커",
+            "천재병약미소녀",
+            "청초계 병약 미소녀 해커",
+            "청초병약계열의 천재 해커",
+            "청초병약계열의 미소녀",
+            "청순한 미소녀 해커",
+            "만능전투미소녀",
+            "병약 미소녀",
+            "병약미소녀",
+            "완벽한 미소녀",
+            "비운의 미소녀",
+            "은둔형 미소녀",
+            "희대의 미소녀",
+            "미소녀 해커",
+            "미소녀해커",
+            "초천재미소녀",
+            "천재미소녀",
+            "초천재해커",
+            "천재 해커",
+            "미인 부장",
+            "전뇌요정",
+            "과학소녀",
+            "천재 소녀",
+            "한 떨기의 청초한 꽃",
+            "한 떨기 꽃",
+            "전지",
+          ]
+        : []),
     ];
     let krSelfLine = krLine;
     if (
@@ -993,6 +1038,13 @@ export function extractKrAppellations(
           " "
         );
       specialSelfTerms.unshift(
+        ...(speaker.fullName?.kr
+          ? [
+              `${speaker.fullName.kr} 님`,
+              `${speaker.fullName.kr}님`,
+              speaker.fullName.kr,
+            ]
+          : []),
         `${speaker.name.kr} 님`,
         `${speaker.name.kr}님`,
         speaker.name.kr
@@ -1004,7 +1056,11 @@ export function extractKrAppellations(
       if (
         term === speaker.name.kr &&
         (found.includes(`${speaker.name.kr} 님`) ||
-          found.includes(`${speaker.name.kr}님`))
+          found.includes(`${speaker.name.kr}님`) ||
+          (speaker.fullName?.kr &&
+            (found.includes(speaker.fullName.kr) ||
+              found.includes(`${speaker.fullName.kr} 님`) ||
+              found.includes(`${speaker.fullName.kr}님`))))
       ) {
         continue;
       }
@@ -1265,7 +1321,7 @@ export function extractKrAppellations(
   }
 
   const hasExplicitTitleInJp = matchedJpTerms.some((t) =>
-    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官)/.test(
+    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官|勇者)/.test(
       t
     )
   );
@@ -1552,6 +1608,23 @@ const JP_TO_EN_TITLES: Array<[RegExp, Array<[string, RegExp]>]> = [
     ],
   ],
   [
+    /お嬢ちゃん/,
+    [
+      ["Tea Party girl", /\bTea Party girl\b/i],
+      ["little lady", /\blittle lady\b/i],
+      ["young lady", /\byoung lady\b/i],
+    ],
+  ],
+  [
+    /おてんば娘/,
+    [
+      ["petulant princess", /\bpetulant princess\b/i],
+      ["little princess", /\blittle princess\b/i],
+      ["troublemaker", /\btroublemaker\b/i],
+      ["princess", /\bprincess\b/i],
+    ],
+  ],
+  [
     /門主様?/,
     [
       ["Madam", /\bMadam\b/i],
@@ -1633,7 +1706,30 @@ const JP_TO_EN_TITLES: Array<[RegExp, Array<[string, RegExp]>]> = [
   [/リーダー/, [["Leader", /\bLeader\b/i]]],
   [/幹部/, [["higher-ups", /\bhigher-ups\b/i], ["executives", /\bexecutives?\b/i], ["officers", /\bofficers?\b/i]]],
   [/お二人/, [["both of you", /\bboth of you\b/i], ["the two of you", /\bthe two of you\b/i], ["you two", /\byou two\b/i]]],
-  [/シスター/, [["Sister", /\bSister\b/i]]],
+  [/ビッグシスター/, [["Big Sister", /\bBig Sister\b/i]]],
+  [/(?<!ビッグ)シスター/, [["Sister", /\bSister\b/i]]],
+  [/勇者/, [["hero", /\bhero\b/i]]],
+  [
+    /美少女|ハッカー|美人部長/,
+    [
+      ["delicate yet beautiful super-genius hacker", /\bdelicate(?:,)? yet beautiful(?:,)? super[- ]?genius hacker\b/i],
+      ["delicate and beautiful super-genius hacker", /\bdelicate and beautiful super[- ]?genius hacker\b/i],
+      ["beautiful super-genius hacker", /\bbeautiful super[- ]?genius hacker\b/i],
+      ["delicate genius hacker", /\bdelicate(?:,)? genius hacker\b/i],
+      ["super-genius hacker", /\bsuper[- ]?genius hacker\b/i],
+      ["genius hacker", /\bgenius hacker\b/i],
+      ["beautiful hacker", /\bbeautiful(?: and alluring)? hacker\b/i],
+      ["super-genius, elegant, delicate beauty", /\bsuper[- ]?genius, elegant, delicate beauty\b/i],
+      ["super-genius delicate beauty", /\bsuper[- ]?genius delicate beauty\b/i],
+      ["delicate super-genius beauty", /\bdelicate super[- ]?genius beauty\b/i],
+      ["delicate genius beauty", /\bdelicate genius beauty\b/i],
+      ["delicate beauty", /\bdelicate beauty\b/i],
+      ["super-genius and delicate, beautiful flower", /\bsuper[- ]?genius and delicate, beautiful flower\b/i],
+      ["delicate flower", /\bdelicate(?:, beautiful)? flower\b/i],
+      ["beautiful genius", /\bbeautiful genius\b/i],
+      ["beautiful president", /\bbeautiful president\b/i],
+    ],
+  ],
   [
     /女将/,
     [
@@ -1746,6 +1842,54 @@ export function extractEnAppellations(
       ["big sis", /\bbig sis\b/i],
       ["yours truly", /\byours truly\b/i],
       ["moi", /\bmoi\b/i],
+      ...(speaker.id === "himari"
+        ? ([
+            ["delicate yet beautiful super-genius hacker", /\bdelicate(?:,)? yet beautiful(?:,)? super[- ]?genius hacker\b/i],
+            ["delicate and beautiful super-genius hacker", /\bdelicate and beautiful super[- ]?genius hacker\b/i],
+            ["beautiful, super-genius, and delicate omniscient hacker", /\bbeautiful, super[- ]?genius, and delicate omniscient hacker\b/i],
+            ["delicate, intelligent, elegant, super-genius hacker", /\bdelicate, intelligent, elegant, super[- ]?genius hacker\b/i],
+            ["delicately chic and beautiful super genius hacker", /\bdelicately chic and beautiful super[- ]?genius hacker\b/i],
+            ["leading beautiful super genius delicate hacker", /\bleading beautiful super[- ]?genius delicate hacker\b/i],
+            ["multifaceted super genius hacker", /\bmultifaceted super[- ]?genius hacker\b/i],
+            ["super genius hacker of ethereal beauty", /\bsuper[- ]?genius hacker of ethereal beauty\b/i],
+            ["transcendentally beautiful hacker heroine", /\btranscendentally beautiful hacker heroine\b/i],
+            ["beautiful super-genius hacker", /\bbeautiful super[- ]?genius hacker\b/i],
+            ["delicate genius hacker", /\bdelicate(?:,)? genius hacker\b/i],
+            ["super-genius hacker", /\bsuper[- ]?genius hacker\b/i],
+            ["genius hacker", /\bgenius hacker\b/i],
+            ["beautiful hacker", /\bbeautiful(?: and alluring)? hacker\b/i],
+            ["delicate, beautiful, super-genius, chic, cool beauty", /\bdelicate, beautiful, super[- ]?genius, chic, cool beauty\b/i],
+            ["super-genius, delicate, chic beauty", /\bsuper[- ]?genius, delicate, chic beauty\b/i],
+            ["super-genius, elegant, delicate beauty", /\bsuper[- ]?genius, elegant, delicate beauty\b/i],
+            ["super-genius delicate beauty", /\bsuper[- ]?genius delicate beauty\b/i],
+            ["delicate super-genius beauty", /\bdelicate super[- ]?genius beauty\b/i],
+            ["delicate genius beauty", /\bdelicate genius beauty\b/i],
+            ["jack-of-all-trades battle beauty", /\bjack-of-all-trades battle beauty\b/i],
+            ["most stunning, delicate beauty", /\bmost stunning, delicate beauty\b/i],
+            ["rare, delicate beauty", /\brare, delicate beauty\b/i],
+            ["omnipotent AND omniscient beauty", /\bomnipotent AND omniscient beauty\b/i],
+            ["flawless beauty", /\bflawless beauty\b/i],
+            ["delicate beauty", /\bdelicate beauty\b/i],
+            ["beautiful, delicate, genius life support girl", /\bbeautiful, delicate, genius life support girl\b/i],
+            ["alabaster-white, ever-blooming fragile flower", /\balabaster-white, ever-blooming fragile flower\b/i],
+            ["super-genius and delicate, beautiful flower", /\bsuper[- ]?genius and delicate, beautiful flower\b/i],
+            ["pure and delicate flower", /\bpure and delicate flower\b/i],
+            ["sickly and dainty flower", /\bsickly and dainty flower\b/i],
+            ["delicate flower", /\bdelicate(?:, beautiful)? flower\b/i],
+            ["super-genius beauty biker", /\bsuper[- ]?genius beauty biker\b/i],
+            ["super-genius, beautifully delicate, beautiful maiden", /\bsuper[- ]?genius, beautifully delicate, beautiful maiden\b/i],
+            ["quintessential docile maiden", /\bquintessential docile maiden\b/i],
+            ["solitary recluse of a girl", /\bsolitary recluse of a girl\b/i],
+            ["lady of the century", /\blady of the century\b/i],
+            ["Millennium's Resident Genius", /\bMillennium's Resident Genius\b/i],
+            ["beautiful genius", /\bbeautiful genius\b/i],
+            ["beautiful president", /\bbeautiful president\b/i],
+            ["cyber fairy", /\bcyber fairy\b/i],
+            ["science girl", /\bscience girl\b/i],
+            ["Omniscient being", /\bOmniscient being\b/i],
+            ["omniscient", /\bomniscient\b/i],
+          ] as Array<[string, RegExp]>)
+        : []),
     ];
     for (const [label, re] of specialSelfPhrases) {
       if (re.test(normalized)) {
@@ -1755,6 +1899,7 @@ export function extractEnAppellations(
         found.push(label);
       }
     }
+    const selfFullEn = speaker.fullName?.en?.trim() ?? "";
     const selfEn = speaker.name.en.trim();
     if (
       selfEn.length >= 3 &&
@@ -1762,24 +1907,47 @@ export function extractEnAppellations(
       !["Self", "You"].includes(selfEn)
     ) {
       const escEn = escapeRegExp(selfEn);
-      let withoutSelfIntro = normalized.replace(
-        new RegExp(
-          `\\b(?:I am|I'm|my name is|name's|call me|known as)\\s+${escEn}\\b`,
-          "gi"
-        ),
-        " "
-      );
-      const greatRe = new RegExp(`\\bGreat\\s+${escEn}\\b`, "i");
-      if (greatRe.test(withoutSelfIntro)) {
-        found.push(`Great ${selfEn}`);
+      const fullVariants: string[] = [];
+      if (selfFullEn && selfFullEn.includes(" ")) {
+        fullVariants.push(selfFullEn);
+        const parts = selfFullEn.split(/\s+/);
+        if (parts.length === 2) {
+          fullVariants.push(`${parts[1]} ${parts[0]}`);
+        }
+      }
+      let withoutSelfIntro = normalized;
+      for (const fv of [...fullVariants, selfEn]) {
+        const escFv = escapeRegExp(fv);
         withoutSelfIntro = withoutSelfIntro.replace(
-          new RegExp(`\\bGreat\\s+${escEn}\\b`, "gi"),
+          new RegExp(
+            `\\b(?:I am|I'm|my name is|name's|call me|known as)\\s+${escFv}\\b`,
+            "gi"
+          ),
           " "
         );
       }
-      const re = new RegExp(`\\b${escEn}\\b`);
-      if (re.test(withoutSelfIntro)) {
-        found.push(selfEn);
+      let matchedFullSelf = false;
+      for (const fv of fullVariants) {
+        const fvRe = new RegExp(`\\b${escapeRegExp(fv)}\\b`);
+        if (fvRe.test(withoutSelfIntro)) {
+          found.push(fv);
+          matchedFullSelf = true;
+          break;
+        }
+      }
+      if (!matchedFullSelf) {
+        const greatRe = new RegExp(`\\bGreat\\s+${escEn}\\b`, "i");
+        if (greatRe.test(withoutSelfIntro)) {
+          found.push(`Great ${selfEn}`);
+          withoutSelfIntro = withoutSelfIntro.replace(
+            new RegExp(`\\bGreat\\s+${escEn}\\b`, "gi"),
+            " "
+          );
+        }
+        const re = new RegExp(`\\b${escEn}\\b`);
+        if (re.test(withoutSelfIntro)) {
+          found.push(selfEn);
+        }
       }
     }
     for (const extra of ctx.extraEnTerms ?? []) {
@@ -2039,7 +2207,7 @@ export function extractEnAppellations(
   }
 
   const hasExplicitTitleInJp = matchedJpTerms.some((t) =>
-    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官)/.test(
+    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官|勇者)/.test(
       t
     )
   );
@@ -2049,7 +2217,17 @@ export function extractEnAppellations(
     found.length > 0 &&
     found.every((f) => stemLowerSet.has(f.trim().toLowerCase()));
 
-  if (found.length === 0 || (hasExplicitTitleInJp && onlyBareStemFound)) {
+  const onlyBareStemOrYou =
+    !target.id.startsWith("npc:gsc_president") &&
+    found.length > 0 &&
+    found.every(
+      (f) =>
+        stemLowerSet.has(f.trim().toLowerCase()) ||
+        (matchedJpTerms.some((t) => /お嬢ちゃん/.test(t)) &&
+          f.trim().toLowerCase() === "you")
+    );
+
+  if (found.length === 0 || (hasExplicitTitleInJp && onlyBareStemFound) || onlyBareStemOrYou) {
     for (const [jpRe, enTitles] of JP_TO_EN_TITLES) {
       if (matchedJpTerms.some((t) => jpRe.test(t))) {
         for (const [label, re] of enTitles) {
@@ -2059,7 +2237,7 @@ export function extractEnAppellations(
             const picked = matchedLower === label.toLowerCase() ? m[0] : label;
             if (onlyBareStemFound) {
               found.splice(0, found.length, picked);
-            } else {
+            } else if (!found.some((f) => f.toLowerCase() === picked.toLowerCase())) {
               found.push(picked);
             }
             break;
@@ -2878,6 +3056,11 @@ export async function extractMultilangAppellations(versions: {
       const pairId = `${item.speakerId}->${item.targetId}`;
       const existing = seedEntriesWithAutoSensei.find((e) => e.id === pairId);
       if (existing) {
+        if (pairId === "himari->special:self") {
+          existing.jpTerms = existing.jpTerms.filter(
+            (t) => t.term !== "他自己賛美多数"
+          );
+        }
         for (const term of item.jpTerms) {
           if (!existing.jpTerms.some((t) => stripJpParens(t.term) === term)) {
             existing.jpTerms.push({ term });
