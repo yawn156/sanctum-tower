@@ -3434,6 +3434,45 @@ export async function extractMultilangAppellations(versions: {
     matchedTerm: string,
     specificEntityNeedles: string[] = []
   ): boolean => {
+    if (
+      target.id === "special:sensei" &&
+      AMBIGUOUS_PRONOUNS.has(stripJpParens(matchedTerm)) &&
+      !THIRD_PERSON_PRONOUNS.has(matchedTerm)
+    ) {
+      if (line.jp.includes("先生")) return false;
+      if (
+        line.speakerId === "hina" &&
+        /(?:^|[\s,'"])너(?:는|가|를|도|의|에게|한테|와|랑)?(?![가-힣])/.test(
+          line.kr
+        )
+      ) {
+        return false;
+      }
+      for (const ch of charactersOut.characters) {
+        if (
+          ch.id !== line.speakerId &&
+          ch.kind !== "special" &&
+          ch.fullName?.jp &&
+          ch.fullName.jp.length >= 4 &&
+          line.jp.includes(ch.fullName.jp)
+        ) {
+          return false;
+        }
+      }
+      if (line.sourceType === "momotalk" || line.sourceType === "dialog") {
+        return true;
+      }
+      if (line.groupId === undefined) return false;
+      const glSensei = groupLinesMap.get(line.groupId);
+      const idxSensei = lineSceneIdx.get(line);
+      if (!glSensei || idxSensei === undefined) return false;
+      return isDirectSecondPersonAddressee(
+        glSensei,
+        idxSensei,
+        line.speakerId,
+        "special:sensei"
+      );
+    }
     if (ambiguity === "specific") return true;
     if (line.sourceType === "momotalk" || line.sourceType === "dialog") {
       return false;
