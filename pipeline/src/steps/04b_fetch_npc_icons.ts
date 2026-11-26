@@ -42,7 +42,7 @@ export async function fetchNpcIcons(
       if (res.fromCache) cached++;
       else fetched++;
 
-      ch.defaultImages.icon = `./images/npc/${filename}`;
+      ch.defaultImages.icon = `/images/npc/${filename}`;
     } catch {
       failed++;
     }

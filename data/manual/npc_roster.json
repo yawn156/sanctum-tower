@@ -624,6 +624,7 @@
       "kind": "entity",
       "name": { "jp": "雷帝", "en": "Thunder Emperor", "kr": "뇌제" },
       "reading": { "jp": "らいてい" },
+      "aliases": { "en": ["Tyrant Emperor", "Thunder Emperor"] },
       "school": "Gehenna"
     },
     {

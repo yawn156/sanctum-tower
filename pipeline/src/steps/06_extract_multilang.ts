@@ -491,6 +491,7 @@ export function matchesDecagrammatonAnokata(
 
 const REAL_GSC_PRESIDENT_CUE_RE =
   /本物の連邦生徒会長|私の知る連邦生徒会長|前の連邦生徒会長|連邦生徒会長が残した|連邦生徒会長の行方|失踪|消えた|いなくなった|帰ってこない/;
+const FALSE_GSC_PRESIDENT_CUE_RE = /詐称|偽物/;
 
 export function matchesGscPresidentScene(
   line: DialogueLineRecord,
@@ -504,7 +505,10 @@ export function matchesGscPresidentScene(
   ) {
     return true;
   }
-  if (!matchedTerm.includes("連邦生徒会長")) return true;
+  const isFalseCue = FALSE_GSC_PRESIDENT_CUE_RE.test(line.jp);
+  if (!matchedTerm.includes("連邦生徒会長")) {
+    return targetId === "npc:gsc_president_false" ? true : !isFalseCue;
+  }
 
   const isRealCue = REAL_GSC_PRESIDENT_CUE_RE.test(line.jp);
   const gidStr = line.groupId !== undefined ? String(line.groupId) : "";
@@ -517,11 +521,13 @@ export function matchesGscPresidentScene(
   );
 
   if (targetId === "npc:gsc_president_false") {
+    if (isFalseCue) return true;
     if (isRealCue) return false;
     return hasFalseSpeaker || isAct2FalseArc;
   }
 
   // targetId === "npc:gsc_president"
+  if (isFalseCue) return false;
   if (isRealCue) return true;
   if (hasFalseSpeaker && !hasOrigSpeaker) return false;
   if (isAct2FalseArc && !hasOrigSpeaker) return false;
@@ -1506,8 +1512,9 @@ const JP_TO_EN_TITLES: Array<[RegExp, Array<[string, RegExp]>]> = [
   [
     /委員長/,
     [
-      ["Head Prefect", /\bHead Prefect\b/i],
       ["Chairwoman", /(?<!\bvice[\s-]+|\bdeputy[\s-]+)\bChairwoman\b/i],
+      ["Chairman", /(?<!\bvice[\s-]+|\bdeputy[\s-]+)\bChairman\b/i],
+      ["Chair", /(?<!\bvice[\s-]+|\bdeputy[\s-]+)\bChair\b/i],
       ["President", /(?<!\bvice[\s-]+|\bdeputy[\s-]+)\bPresident\b/i],
     ],
   ],
@@ -2802,7 +2809,9 @@ export async function extractMultilangAppellations(versions: {
   const allSpeakerIds = new Set([
     ...seedOut.entries.map((e) => e.speakerId),
     ...charactersOut.characters
-      .filter((c) => c.kind === "student" || c.kind === "collab")
+      .filter(
+        (c) => c.kind === "student" || c.kind === "npc" || c.kind === "collab"
+      )
       .map((c) => c.id),
   ]);
 
@@ -2923,6 +2932,56 @@ export async function extractMultilangAppellations(versions: {
       speakerHomographNeedles.set(spId, overlap);
     }
   }
+  const validCharTargets = charactersOut.characters.filter(
+    (c) =>
+      (c.kind === "student" || c.kind === "npc" || c.kind === "collab") &&
+      c.id !== "npc:gsc_president" &&
+      c.id !== "npc:gsc_president_false"
+  );
+  const validSpeakerIds = new Set(
+    charactersOut.characters
+      .filter(
+        (c) => c.kind === "student" || c.kind === "npc" || c.kind === "collab"
+      )
+      .map((c) => c.id)
+  );
+  const existingSeedPairIds = new Set(
+    seedEntriesWithAutoSensei.map((e) => e.id)
+  );
+  const autoTargetMatchers = validCharTargets
+    .map((tg) => {
+      const jpStems = uniqueOrdered([tg.fullName?.jp ?? "", tg.name.jp]).filter(
+        (s) => s.length >= 2
+      );
+      const enFull = tg.fullName?.en?.trim() || "";
+      const enGiven = tg.name.en.trim();
+      const enPatterns: RegExp[] = [];
+      if (enFull && enFull.includes(" ")) {
+        enPatterns.push(new RegExp(`\\b${escapeRegExp(enFull)}\\b`, "i"));
+        const parts = enFull.split(/\s+/);
+        if (parts.length === 2) {
+          enPatterns.push(
+            new RegExp(`\\b${escapeRegExp(`${parts[1]} ${parts[0]}`)}\\b`, "i")
+          );
+        }
+      }
+      if (
+        enGiven.length >= 3 &&
+        !/^(?:president|chairman|chairwoman|boss|master|leader|captain|director|professor|doctor|sister|sensei|teacher|advisor|instructor|black|white|blue|red|member|student|guard|maid|admin|other)$/i.test(
+          enGiven
+        )
+      ) {
+        enPatterns.push(new RegExp(`\\b${escapeRegExp(enGiven)}\\b`, "i"));
+      }
+      if (jpStems.length === 0 || enPatterns.length === 0) return null;
+      const jpSurfaceRe = new RegExp(
+        `(?:${jpStems.map(escapeRegExp).join("|")})(?:さん|ちゃん|くん|君|様|殿|先輩|先生|社長|議長|委員長|会長|部長)?`,
+        "g"
+      );
+      return { tg, jpStems, enPatterns, jpSurfaceRe };
+    })
+    .filter((x): x is NonNullable<typeof x> => x !== null);
+
   const linesBySpeaker = new Map<string, DialogueLineRecord[]>();
   const groupLinesMap = new Map<
     number,
@@ -2934,6 +2993,11 @@ export async function extractMultilangAppellations(versions: {
     input: fs.createReadStream(DIALOGUE_INDEX_PATH, { encoding: "utf8" }),
     crlfDelay: Infinity,
   });
+
+  const discoveredSeeds = new Map<
+    string,
+    { speakerId: string; target: Character; jpTerms: Set<string> }
+  >();
 
   for await (const rawLine of rl) {
     if (!rawLine) continue;
@@ -2951,18 +3015,71 @@ export async function extractMultilangAppellations(versions: {
         kr: rec.kr,
         ...(rec.en ? { en: rec.en } : {}),
       });
-      if (neededSpeakers.has(rec.speakerId)) {
+      if (validSpeakerIds.has(rec.speakerId)) {
         lineSceneIdx.set(rec, idx);
       }
     }
-    if (!neededSpeakers.has(rec.speakerId)) continue;
+    if (!validSpeakerIds.has(rec.speakerId)) continue;
     let list = linesBySpeaker.get(rec.speakerId);
     if (!list) {
       list = [];
       linesBySpeaker.set(rec.speakerId, list);
     }
     list.push(rec);
+
+    // Auto-discover unseeded speaker->target pairs when both JP and EN name match
+    if (rec.en && !rec.jpOnly) {
+      for (const m of autoTargetMatchers) {
+        if (m.tg.id === rec.speakerId) continue;
+        const pairId = `${rec.speakerId}->${m.tg.id}`;
+        if (existingSeedPairIds.has(pairId)) continue;
+        if (
+          m.tg.id === "shiroko" &&
+          /テラー|＊|クロコ|Terror/i.test(`${rec.jp} ${rec.en}`)
+        ) {
+          continue;
+        }
+        if (
+          m.tg.id === "shiroko_terror" &&
+          !/テラー|Terror/i.test(`${rec.jp} ${rec.en}`)
+        ) {
+          continue;
+        }
+        if (!m.jpStems.some((js) => rec.jp.includes(js))) continue;
+        if (!m.enPatterns.some((re) => re.test(rec.en!))) continue;
+
+        const hits = rec.jp.match(m.jpSurfaceRe);
+        if (!hits || hits.length === 0) continue;
+        let entry = discoveredSeeds.get(pairId);
+        if (!entry) {
+          entry = {
+            speakerId: rec.speakerId,
+            target: m.tg,
+            jpTerms: new Set<string>(),
+          };
+          discoveredSeeds.set(pairId, entry);
+        }
+        for (const h of hits) entry.jpTerms.add(h);
+      }
+    }
   }
+
+  for (const [pairId, info] of discoveredSeeds) {
+    const sp = charById.get(info.speakerId);
+    if (!sp || info.jpTerms.size === 0) continue;
+    existingSeedPairIds.add(pairId);
+    seedEntriesWithAutoSensei.push({
+      id: pairId,
+      speakerId: info.speakerId,
+      speakerWikiruName: sp.name.jp,
+      speakerWikiruAnchor: sp.wikiruAnchor ?? sp.id,
+      targetId: info.target.id,
+      targetWikiruName: info.target.name.jp,
+      jpTerms: Array.from(info.jpTerms).map((term) => ({ term })),
+      autoSeeded: true,
+    });
+  }
+  console.log(`     auto-discovered unseeded pairs: ${discoveredSeeds.size}`);
 
   const entityMemberIds = new Map<string, Set<string>>();
   for (const ent of charactersOut.characters) {
@@ -3171,6 +3288,12 @@ export async function extractMultilangAppellations(versions: {
 
       const matchedJp = rawMatchedJp.filter(
         (jt) =>
+          !(
+            stripJpParens(jt) === "委員長" &&
+            target.id !== "hina" &&
+            /風紀委員長/.test(line.jp) &&
+            !line.jp.includes(target.name.jp)
+          ) &&
           isTargetPresentInScene(
             line,
             target,

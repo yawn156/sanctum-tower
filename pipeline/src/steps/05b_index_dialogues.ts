@@ -128,6 +128,15 @@ export function buildStoryLabelMap(
             kr: `이벤트 「${ev.kr}」`,
           },
         };
+      } else if (row.mode_type === 6 && row.sub_type === 3) {
+        map[String(gid)] = {
+          sourceType: "main_story",
+          sourceLabel: {
+            jp: `メインストーリー Part2 プロローグ 第${row.episode_id}話`,
+            en: `Main Story Part 2 Prologue Ep.${row.episode_id}`,
+            kr: `메인 스토리 Part 2 프롤로그 ${row.episode_id}화`,
+          },
+        };
       } else if (row.mode_type === 6) {
         map[String(gid)] = {
           sourceType: "main_story",
@@ -155,13 +164,24 @@ export function buildStoryLabelMap(
             kr: `미니 스토리 #${row.volume_id} ${row.episode_id}화`,
           },
         };
-      } else if (row.mode_type === 5) {
+      } else if (row.mode_type === 5 && row.sub_type === 3) {
+        // 9010xxxx: Part 2 "Vol.EX" scenarios (Yukino / False GSC President arc)
         map[String(gid)] = {
           sourceType: "main_story",
           sourceLabel: {
-            jp: `特別作戦 デカグラマトン編 第${row.chapter_id}章 第${row.episode_id}話`,
-            en: `Special Operation: Decagrammaton Ch.${row.chapter_id} Ep.${row.episode_id}`,
-            kr: `특수작전 데카그라마톤 편 ${row.chapter_id}장 ${row.episode_id}화`,
+            jp: `メインストーリー Part2 Vol.EX 第${row.chapter_id}章 第${row.episode_id}話`,
+            en: `Main Story Part 2 Vol.EX Ch.${row.chapter_id} Ep.${row.episode_id}`,
+            kr: `메인 스토리 Part 2 Vol.EX ${row.chapter_id}장 ${row.episode_id}화`,
+          },
+        };
+      } else if (row.mode_type === 5) {
+        // 9000xxxx (sub_type 2): Decagrammaton Vol.EX arc
+        map[String(gid)] = {
+          sourceType: "main_story",
+          sourceLabel: {
+            jp: `メインストーリー Vol.EX デカグラマトン編 第${row.chapter_id}章 第${row.episode_id}話`,
+            en: `Main Story Vol.EX (Decagrammaton) Ch.${row.chapter_id} Ep.${row.episode_id}`,
+            kr: `메인 스토리 Vol.EX 데카그라마톤 편 ${row.chapter_id}장 ${row.episode_id}화`,
           },
         };
       } else if (row.volume_id === 100) {
@@ -174,12 +194,14 @@ export function buildStoryLabelMap(
           },
         };
       } else if (row.sub_type === 3) {
+        // Part 2 (Vol.EX) stories: keep the volume so Vol.0 and Vol.2 never collide
+        const vol = (row.display_volume_id ?? "").trim() || String(row.volume_id);
         map[String(gid)] = {
           sourceType: "main_story",
           sourceLabel: {
-            jp: `メインストーリー Vol.EX 第${row.chapter_id}章 第${row.episode_id}話`,
-            en: `Main Story Vol.EX Ch.${row.chapter_id} Ep.${row.episode_id}`,
-            kr: `메인 스토리 Vol.EX ${row.chapter_id}장 ${row.episode_id}화`,
+            jp: `メインストーリー Part2 Vol.${vol} 第${row.chapter_id}章 第${row.episode_id}話`,
+            en: `Main Story Part 2 Vol.${vol} Ch.${row.chapter_id} Ep.${row.episode_id}`,
+            kr: `메인 스토리 Part 2 Vol.${vol} ${row.chapter_id}장 ${row.episode_id}화`,
           },
         };
       } else if (row.volume_id > 0 || (row.display_volume_id ?? "").trim()) {

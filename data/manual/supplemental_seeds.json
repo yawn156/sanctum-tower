@@ -264,6 +264,81 @@
       "speakerId": "cherino",
       "targetId": "npc:gsc_president_false",
       "jpTerms": ["連邦生徒会長"]
+    },
+    {
+      "speakerId": "npc:descartes",
+      "targetId": "miyako",
+      "jpTerms": ["ミヤコさん"]
+    },
+    {
+      "speakerId": "satsuki",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "makoto",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "npc:shoko",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "npc:president",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "npc:mayumi",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "ayane",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "iori",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "kasumi",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "chinatsu",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "npc:karen",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "iroha",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "fuuka",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "akari",
+      "targetId": "entity:thunder_emperor",
+      "jpTerms": ["雷帝"]
+    },
+    {
+      "speakerId": "npc:plana",
+      "targetId": "npc:gsc_president_false",
+      "jpTerms": ["偽物"]
     }
   ]
 }

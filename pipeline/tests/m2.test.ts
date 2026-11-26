@@ -159,6 +159,36 @@ test("buildStoryLabelMap maps bond, event, and main story group IDs in 3 languag
         front_scenario_group_id: [201010],
         back_scenario_group_id: [],
       },
+      {
+        mode_id: 90002210,
+        mode_type: 5,
+        sub_type: 2,
+        volume_id: 1,
+        chapter_id: 2,
+        episode_id: 21,
+        front_scenario_group_id: [90002210],
+        back_scenario_group_id: [],
+      },
+      {
+        mode_id: 90100020,
+        mode_type: 5,
+        sub_type: 3,
+        volume_id: 1,
+        chapter_id: 1,
+        episode_id: 2,
+        front_scenario_group_id: [90100020],
+        back_scenario_group_id: [],
+      },
+      {
+        mode_id: 200001,
+        mode_type: 6,
+        sub_type: 3,
+        volume_id: 1,
+        chapter_id: 1,
+        episode_id: 1,
+        front_scenario_group_id: [200001],
+        back_scenario_group_id: [],
+      },
     ],
     eventNamesEn: { "801": "Cherry Blossom Festival Commotion!" },
     eventNamesJp: { "801": "桜花爛漫お祭り騒ぎ！" },
@@ -178,7 +208,10 @@ test("buildStoryLabelMap maps bond, event, and main story group IDs in 3 languag
   assert.equal(labels["11000"]?.sourceLabel.en, "Prologue Ep.1");
   assert.equal(labels["101037"]?.sourceLabel.en, "Main Story Vol.F Ch.3 Ep.7");
   assert.equal(labels["1701"]?.sourceLabel.en, "Group Story #7 Ep.1");
-  assert.equal(labels["201010"]?.sourceLabel.en, "Main Story Vol.EX Ch.1 Ep.1");
+  assert.equal(labels["201010"]?.sourceLabel.en, "Main Story Part 2 Vol.0 Ch.1 Ep.1");
+  assert.equal(labels["90002210"]?.sourceLabel.en, "Main Story Vol.EX (Decagrammaton) Ch.2 Ep.21");
+  assert.equal(labels["90100020"]?.sourceLabel.en, "Main Story Part 2 Vol.EX Ch.1 Ep.2");
+  assert.equal(labels["200001"]?.sourceLabel.en, "Main Story Part 2 Prologue Ep.1");
 });
 
 test("buildSpeakerResolver resolves masked/comms speakers via hash and enriches NPC names", () => {

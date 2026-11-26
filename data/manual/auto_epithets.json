@@ -3121,6 +3121,26 @@
         ]
       }
     },
+    "npc:plana->hoshino": {
+      "小鳥遊ホシノさん(キヴォトス最高の神秘)": {
+        "kr": [
+          "키보토스 최고의 신비"
+        ],
+        "en": [
+          "the Great Mystery of Kivotos"
+        ]
+      }
+    },
+    "npc:plana->npc:gsc_president_false": {
+      "偽物": {
+        "kr": [
+          "가짜"
+        ],
+        "en": [
+          "fake"
+        ]
+      }
+    },
     "yuuka->npc:rin": {
       "代行": {
         "en": [
