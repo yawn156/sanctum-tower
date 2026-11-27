@@ -3,7 +3,7 @@ import { SCHALEDB_BASE, SCHALEDB_CACHE_DIR } from "../config.js";
 import type { SchaleDbLocalization, SchaleDbStudent } from "../types.js";
 import { fetchCached } from "../utils/cache.js";
 
-export type LangCode = "en" | "jp" | "kr";
+export type LangCode = "en" | "jp" | "kr" | "tw";
 
 export interface SchaleDbRawData {
   students: Record<LangCode, Record<string, SchaleDbStudent>>;
@@ -28,7 +28,7 @@ function normalizeStudentMap(
 export async function fetchSchaleDb(opts: {
   refresh?: boolean;
 } = {}): Promise<SchaleDbRawData> {
-  const langs: LangCode[] = ["en", "jp", "kr"];
+  const langs: LangCode[] = ["en", "jp", "kr", "tw"];
   const students = {} as Record<LangCode, Record<string, SchaleDbStudent>>;
   const localization = {} as Record<LangCode, SchaleDbLocalization>;
 

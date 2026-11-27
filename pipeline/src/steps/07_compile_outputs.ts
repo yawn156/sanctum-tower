@@ -41,6 +41,9 @@ export function applyManualOverrides(
             jp: patch.aliases.jp ?? ch.aliases.jp,
             kr: patch.aliases.kr ?? ch.aliases.kr,
             en: patch.aliases.en ?? ch.aliases.en,
+            ...(patch.aliases.zh ?? ch.aliases.zh
+              ? { zh: patch.aliases.zh ?? ch.aliases.zh }
+              : {}),
           }
         : ch.aliases,
     };
@@ -68,6 +71,16 @@ export function applyManualOverrides(
         id: existing.id,
         kr: patch.kr ? { ...existing.kr, ...patch.kr } : existing.kr,
         en: patch.en ? { ...existing.en, ...patch.en } : existing.en,
+        ...(patch.zh || existing.zh
+          ? {
+              zh: patch.zh
+                ? {
+                    terms: patch.zh.terms ?? existing.zh?.terms ?? [],
+                    droppedCount: patch.zh.droppedCount ?? existing.zh?.droppedCount ?? 0,
+                  }
+                : existing.zh,
+            }
+          : {}),
         ...(patch.citations ? { citationCount: patch.citations.length } : {}),
         status: patch.status ?? "manual",
       });

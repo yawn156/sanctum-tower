@@ -2,6 +2,7 @@ export interface LocalizedText {
   jp: string;
   en: string;
   kr: string;
+  zh?: string;
 }
 
 export interface ReleaseStatus {
@@ -51,6 +52,7 @@ export interface Character {
     jp: string[];
     kr: string[];
     en: string[];
+    zh?: string[];
   };
 }
 
@@ -112,6 +114,7 @@ export interface QuoteContextLine {
   jp: string;
   kr: string;
   en?: string;
+  zh?: string;
 }
 
 export interface QuoteCitation {
@@ -121,12 +124,15 @@ export interface QuoteCitation {
   jp: string;
   kr: string;
   en?: string;
+  zh?: string;
   matchedJpTerm: string;
   matchedKrTerm?: string;
   matchedEnTerm?: string;
+  matchedZhTerm?: string;
   matchedJpTerms?: string[];
   matchedKrTerms?: string[];
   matchedEnTerms?: string[];
+  matchedZhTerms?: string[];
   contextBefore?: QuoteContextLine[];
   contextAfter?: QuoteContextLine[];
 }
@@ -147,6 +153,10 @@ export interface AppellationEntry {
     };
   };
   en: {
+    terms: TermVariant[];
+    droppedCount: number;
+  };
+  zh?: {
     terms: TermVariant[];
     droppedCount: number;
   };
@@ -259,6 +269,7 @@ export interface DialogueLineRecord {
   jp: string;
   kr: string;
   en?: string;
+  zh?: string;
   jpOnly: boolean;
 }
 
@@ -275,6 +286,8 @@ export interface ScenarioCharNameRow {
   nickname_jp?: string;
   name_en?: string;
   nickname_en?: string;
+  name_tw?: string;
+  nickname_tw?: string;
   spine_prefab_name?: string;
   small_portrait?: string;
 }
@@ -285,6 +298,7 @@ export interface ScenarioScriptRow {
   script_kr?: string;
   text_jp?: string;
   text_en?: string;
+  text_tw?: string;
 }
 
 export interface AcademyMessangerRow {
@@ -296,6 +310,7 @@ export interface AcademyMessangerRow {
   message_kr?: string;
   message_jp?: string;
   message_en?: string;
+  message_tw?: string;
 }
 
 export interface CharacterDialogRow {
@@ -306,6 +321,7 @@ export interface CharacterDialogRow {
   localize_kr?: string;
   localize_jp?: string;
   localize_en?: string;
+  localize_tw?: string;
 }
 
 export interface CharacterDialogEventRow {
@@ -318,6 +334,7 @@ export interface CharacterDialogEventRow {
   localize_kr?: string;
   localize_jp?: string;
   localize_en?: string;
+  localize_tw?: string;
 }
 
 export interface ScenarioModeRow {

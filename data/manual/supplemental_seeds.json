@@ -503,6 +503,11 @@
       "speakerId": "kaede",
       "targetId": "mimori",
       "jpTerms": ["百鬼夜行最強の読心術師"]
+    },
+    {
+      "speakerId": "suzumi",
+      "targetId": "special:self",
+      "jpTerms": ["テルミットホワイト"]
     }
   ]
 }

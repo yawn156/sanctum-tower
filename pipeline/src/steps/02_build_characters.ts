@@ -53,7 +53,8 @@ export function buildSchoolsAndClubs(
   locEn: SchaleDbLocalization,
   locJp: SchaleDbLocalization,
   locKr: SchaleDbLocalization,
-  npcRoster: NpcRosterConfig
+  npcRoster: NpcRosterConfig,
+  locTw?: SchaleDbLocalization
 ): {
   schools: Record<string, LocalizedText>;
   clubs: Record<string, LocalizedText>;
@@ -63,14 +64,17 @@ export function buildSchoolsAndClubs(
     ...Object.keys(locEn.School ?? {}),
     ...Object.keys(locJp.School ?? {}),
     ...Object.keys(locKr.School ?? {}),
+    ...Object.keys(locTw?.School ?? {}),
     ...Object.keys(npcRoster.schools ?? {}),
   ]);
   for (const key of schoolKeys) {
     const curated = npcRoster.schools[key];
+    const zh = locTw?.School?.[key] ?? curated?.zh;
     schools[key] = {
       jp: locJp.School?.[key] ?? curated?.jp ?? key,
       en: locEn.School?.[key] ?? curated?.en ?? key,
       kr: locKr.School?.[key] ?? curated?.kr ?? key,
+      ...(zh ? { zh } : {}),
     };
   }
 
@@ -79,14 +83,17 @@ export function buildSchoolsAndClubs(
     ...Object.keys(locEn.Club ?? {}),
     ...Object.keys(locJp.Club ?? {}),
     ...Object.keys(locKr.Club ?? {}),
+    ...Object.keys(locTw?.Club ?? {}),
     ...Object.keys(npcRoster.clubs ?? {}),
   ]);
   for (const key of clubKeys) {
     const curated = npcRoster.clubs[key];
+    const zh = locTw?.Club?.[key] ?? curated?.zh;
     clubs[key] = {
       jp: locJp.Club?.[key] ?? curated?.jp ?? key,
       en: locEn.Club?.[key] ?? curated?.en ?? key,
       kr: locKr.Club?.[key] ?? curated?.kr ?? key,
+      ...(zh ? { zh } : {}),
     };
   }
 
@@ -98,7 +105,7 @@ export function createSpecialCharacters(): Character[] {
     {
       id: "special:self",
       kind: "special",
-      name: { jp: "自分", en: "Self (1st Person)", kr: "자기 자신" },
+      name: { jp: "自分", en: "Self (1st Person)", kr: "자기 자신", zh: "自己" },
       reading: { jp: "じぶん" },
       school: "Special",
       released: { jp: true, global: true, cn: true },
@@ -108,12 +115,13 @@ export function createSpecialCharacters(): Character[] {
         jp: ["自分", "一人称"],
         kr: ["자기 자신", "자신", "1인칭"],
         en: ["Self", "Oneself"],
+        zh: ["自己", "第一人稱"],
       },
     },
     {
       id: "special:sensei",
       kind: "special",
-      name: { jp: "先生", en: "Sensei", kr: "선생님" },
+      name: { jp: "先生", en: "Sensei", kr: "선생님", zh: "老師" },
       reading: { jp: "せんせい" },
       school: "Special",
       club: "Schale",
@@ -124,12 +132,13 @@ export function createSpecialCharacters(): Character[] {
         jp: ["先生", "シャーレの先生"],
         kr: ["선생님", "선생", "샬레의 선생님"],
         en: ["Sensei", "Teacher"],
+        zh: ["老師", "夏萊的老師"],
       },
     },
     {
       id: "special:you",
       kind: "special",
-      name: { jp: "二人称", en: "Second Person (You)", kr: "2인칭" },
+      name: { jp: "二人称", en: "Second Person (You)", kr: "2인칭", zh: "第二人稱" },
       reading: { jp: "ににんしょう" },
       school: "Special",
       released: { jp: true, global: true, cn: true },
@@ -139,6 +148,7 @@ export function createSpecialCharacters(): Character[] {
         jp: ["二人称"],
         kr: ["2인칭"],
         en: ["You", "Second Person"],
+        zh: ["第二人稱"],
       },
     },
   ];
@@ -148,7 +158,8 @@ export function buildPlayableCharacters(
   studentsEn: Record<string, SchaleDbStudent>,
   studentsJp: Record<string, SchaleDbStudent>,
   studentsKr: Record<string, SchaleDbStudent>,
-  npcRoster: NpcRosterConfig
+  npcRoster: NpcRosterConfig,
+  studentsTw?: Record<string, SchaleDbStudent>
 ): Character[] {
   const allIds = Object.keys(studentsEn)
     .map((k) => Number(k))
@@ -211,6 +222,7 @@ export function buildPlayableCharacters(
     const baseEn = studentsEn[String(baseId)];
     const baseJp = studentsJp[String(baseId)] ?? baseEn;
     const baseKr = studentsKr[String(baseId)] ?? baseEn;
+    const baseTw = studentsTw?.[String(baseId)];
 
     const canonicalId = stripVariantParens(baseEn.PathName).toLowerCase();
     if (seenCanonicalIds.has(canonicalId)) {
@@ -232,6 +244,7 @@ export function buildPlayableCharacters(
       const sEn = studentsEn[String(id)];
       const sJp = studentsJp[String(id)] ?? sEn;
       const sKr = studentsKr[String(id)] ?? sEn;
+      const sTw = studentsTw?.[String(id)];
       const hasDupName = (variantNameCounts.get(sEn.Name) ?? 0) > 1;
       const tag = hasDupName
         ? sEn.PathName.split("_").pop() || sEn.DevName
@@ -245,6 +258,7 @@ export function buildPlayableCharacters(
           jp: sJp.Name,
           en: sEn.Name,
           kr: sKr.Name,
+          ...(sTw?.Name ? { zh: sTw.Name } : {}),
         },
         ...(tag ? { variantTag: tag } : {}),
         isBase: id === baseId,
@@ -254,20 +268,27 @@ export function buildPlayableCharacters(
       };
     });
 
+    const displayZh = baseTw ? stripVariantParens(baseTw.Name) : undefined;
     const displayName: LocalizedText = {
       jp: stripVariantParens(baseJp.Name),
       en: stripVariantParens(baseEn.Name),
       kr: stripVariantParens(baseKr.Name),
+      ...(displayZh ? { zh: displayZh } : {}),
     };
 
     const hasFamilyName = Boolean(
       (baseEn.FamilyName ?? "").trim() || (baseJp.FamilyName ?? "").trim()
     );
+    const fullNameZh =
+      baseTw && hasFamilyName
+        ? `${(baseTw.FamilyName ?? "").trim()}${(baseTw.PersonalName ?? "").trim() || displayZh || ""}`.trim()
+        : undefined;
     const fullName: LocalizedText | undefined = hasFamilyName
       ? {
           jp: `${(baseJp.FamilyName ?? "").trim()}${(baseJp.PersonalName ?? "").trim() || displayName.jp}`,
           en: `${(baseEn.FamilyName ?? "").trim()} ${(baseEn.PersonalName ?? "").trim() || displayName.en}`.trim(),
           kr: `${(baseKr.FamilyName ?? "").trim()} ${(baseKr.PersonalName ?? "").trim() || displayName.kr}`.trim(),
+          ...(fullNameZh ? { zh: fullNameZh } : {}),
         }
       : undefined;
 
@@ -306,6 +327,17 @@ export function buildPlayableCharacters(
         studentsEn[String(v.id)]?.PersonalName,
       ]),
     ]);
+    const aliasesZh = studentsTw
+      ? uniqueStrings([
+          displayName.zh,
+          baseTw?.PersonalName,
+          fullName?.zh,
+          ...variants.flatMap((v) => [
+            v.name.zh ? stripVariantParens(v.name.zh) : undefined,
+            studentsTw[String(v.id)]?.PersonalName,
+          ]),
+        ])
+      : [];
 
     const isCollab = COLLAB_SCHOOLS.has(baseEn.School);
 
@@ -329,6 +361,7 @@ export function buildPlayableCharacters(
         jp: aliasesJp,
         kr: aliasesKr,
         en: aliasesEn,
+        ...(aliasesZh.length > 0 ? { zh: aliasesZh } : {}),
       },
     });
   }

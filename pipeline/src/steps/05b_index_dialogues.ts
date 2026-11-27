@@ -414,19 +414,25 @@ export function buildSpeakerResolver(
 
       const krCounts = new Map<string, number>();
       const enCounts = new Map<string, number>();
+      const twCounts = new Map<string, number>();
       for (const r of rows) {
         const kr = (r.name_kr ?? "").trim();
         const en = (r.name_en ?? "").trim();
+        const tw = (r.name_tw ?? "").trim();
         if (kr && kr !== "???" && kr !== char.name.jp) {
           krCounts.set(kr, (krCounts.get(kr) ?? 0) + 1);
         }
         if (en && en !== "???" && en !== char.name.jp) {
           enCounts.set(en, (enCounts.get(en) ?? 0) + 1);
         }
+        if (tw && tw !== "???" && tw !== "？？？") {
+          twCounts.set(tw, (twCounts.get(tw) ?? 0) + 1);
+        }
       }
 
       const bestKr = [...krCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
       const bestEn = [...enCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+      const bestTw = [...twCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
 
       let updated = false;
       if (bestKr && (!char.name.kr || char.name.kr === char.name.jp)) {
@@ -442,6 +448,12 @@ export function buildSpeakerResolver(
       ) {
         char.name.en = bestEn;
         if (!char.aliases.en.includes(bestEn)) char.aliases.en.push(bestEn);
+        updated = true;
+      }
+      if (bestTw && !char.name.zh) {
+        char.name.zh = bestTw;
+        if (!char.aliases.zh) char.aliases.zh = [];
+        if (!char.aliases.zh.includes(bestTw)) char.aliases.zh.push(bestTw);
         updated = true;
       }
 
@@ -630,6 +642,7 @@ export async function indexDialogues(
         const sourceType =
           storyLabels[String(row.group_id)]?.sourceType ?? "main_story";
         const en = cleanDialogueText(row.text_en ?? "");
+        const zh = cleanDialogueText(row.text_tw ?? "");
         const jpOnly = isJapan || !en;
 
         await writeJsonlLine(outStream, {
@@ -640,6 +653,7 @@ export async function indexDialogues(
           jp,
           kr: parsed.textKr,
           ...(!isJapan && en ? { en } : {}),
+          ...(!isJapan && zh ? { zh } : {}),
           jpOnly,
         });
 
@@ -672,6 +686,7 @@ export async function indexDialogues(
       const jp = cleanDialogueText(row.message_jp ?? "");
       const kr = cleanDialogueText(row.message_kr ?? "");
       const en = cleanDialogueText(row.message_en ?? "");
+      const zh = cleanDialogueText(row.message_tw ?? "");
       if (!jp || !kr) continue;
 
       await writeJsonlLine(outStream, {
@@ -681,6 +696,7 @@ export async function indexDialogues(
         jp,
         kr,
         ...(!isJapan && en ? { en } : {}),
+        ...(!isJapan && zh ? { zh } : {}),
         jpOnly: isJapan || !en,
       });
 
@@ -711,6 +727,7 @@ export async function indexDialogues(
       const jp = cleanDialogueText(row.localize_jp ?? "");
       const kr = cleanDialogueText(row.localize_kr ?? "");
       const en = cleanDialogueText(row.localize_en ?? "");
+      const zh = cleanDialogueText(row.localize_tw ?? "");
       if (!jp || !kr) continue;
 
       await writeJsonlLine(outStream, {
@@ -720,6 +737,7 @@ export async function indexDialogues(
         jp,
         kr,
         ...(!isJapan && en ? { en } : {}),
+        ...(!isJapan && zh ? { zh } : {}),
         jpOnly: isJapan || !en,
       });
 
@@ -751,6 +769,7 @@ export async function indexDialogues(
       const jp = cleanDialogueText(row.localize_jp ?? "");
       const kr = cleanDialogueText(row.localize_kr ?? "");
       const en = cleanDialogueText(row.localize_en ?? "");
+      const zh = cleanDialogueText(row.localize_tw ?? "");
       if (!jp || !kr) continue;
 
       await writeJsonlLine(outStream, {
@@ -760,6 +779,7 @@ export async function indexDialogues(
         jp,
         kr,
         ...(!isJapan && en ? { en } : {}),
+        ...(!isJapan && zh ? { zh } : {}),
         jpOnly: isJapan || !en,
       });
 

@@ -79,13 +79,15 @@ async function runMilestone1(refresh: boolean): Promise<void> {
     schale.students.en,
     schale.students.jp,
     schale.students.kr,
-    npcRoster
+    npcRoster,
+    schale.students.tw
   );
   const { schools, clubs } = buildSchoolsAndClubs(
     schale.localization.en,
     schale.localization.jp,
     schale.localization.kr,
-    npcRoster
+    npcRoster,
+    schale.localization.tw
   );
   const baseCharacters = [...createSpecialCharacters(), ...playable];
   console.log(

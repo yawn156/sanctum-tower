@@ -8,6 +8,7 @@ import {
   extractEnAppellations,
   extractKrAppellations,
   extractStandaloneVocative,
+  extractZhAppellations,
   findMatchedJpTerms,
   isDirectSecondPersonAddressee,
   isGenericShirokoTerm,
@@ -2506,5 +2507,185 @@ test("GSC President (Original NP0040 vs False NP0290) split, acting guard, and s
   assert.equal(
     matchesGscPresidentScene(realCueLine, "npc:gsc_president_false", "連邦生徒会長", sceneWithFalse),
     false
+  );
+});
+
+test("extractZhAppellations handles self, sensei, you, named targets, 1-char stems, stutters, and title fallback", () => {
+  const hoshino = makeChar({
+    id: "hoshino",
+    name: { jp: "ホシノ", en: "Hoshino", kr: "호시노", zh: "星野" },
+    fullName: { jp: "小鳥遊ホシノ", en: "Takanashi Hoshino", kr: "타카나시 호시노", zh: "小鳥遊星野" },
+  });
+  const hina = makeChar({
+    id: "hina",
+    name: { jp: "ヒナ", en: "Hina", kr: "히나", zh: "陽奈" },
+  });
+  const rio = makeChar({
+    id: "rio",
+    name: { jp: "リオ", en: "Rio", kr: "리오", zh: "莉央" },
+  });
+  const midori = makeChar({
+    id: "midori",
+    name: { jp: "ミドリ", en: "Midori", kr: "미ドリ", zh: "綠" },
+  });
+  const selfChar = makeChar({ id: "special:self", kind: "special" });
+  const senseiChar = makeChar({ id: "special:sensei", kind: "special" });
+  const youChar = makeChar({ id: "special:you", kind: "special" });
+
+  // special:self: 大叔我 should not double-count 我 or 大叔
+  assert.deepEqual(
+    extractZhAppellations("哎呀～大叔我偶爾也是會認真的呀～", {
+      speaker: hoshino,
+      target: selfChar,
+      matchedJpTerms: ["おじさん"],
+    }),
+    ["大叔我"]
+  );
+  // special:self: self-intro guard avoids bare name
+  assert.deepEqual(
+    extractZhAppellations("我是星野，請多指教。", {
+      speaker: hoshino,
+      target: selfChar,
+      matchedJpTerms: ["私"],
+    }),
+    ["我"]
+  );
+
+  // special:sensei: [USERNAME]老師 does not double-count 老師
+  assert.deepEqual(
+    extractZhAppellations("歡迎來到「希迪姆的箱子」，[USERNAME]老師。", {
+      speaker: hoshino,
+      target: senseiChar,
+      matchedJpTerms: ["[USERNAME]先生"],
+    }),
+    ["[USERNAME]老師"]
+  );
+  assert.deepEqual(
+    extractZhAppellations("對了，夏萊的老師來了嗎？", {
+      speaker: hoshino,
+      target: senseiChar,
+      matchedJpTerms: ["シャーレの先生"],
+    }),
+    ["夏萊的老師"]
+  );
+
+  // special:you
+  assert.deepEqual(
+    extractZhAppellations("你們這些傢伙在說什麼？", {
+      speaker: hoshino,
+      target: youChar,
+      matchedJpTerms: ["お前ら"],
+    }),
+    ["你們"]
+  );
+
+  // Stutter normalization + named suffix
+  assert.deepEqual(
+    extractZhAppellations("陽，陽，陽奈委員長！？", {
+      speaker: hoshino,
+      target: hina,
+      matchedJpTerms: ["ヒナ委員長"],
+    }),
+    ["陽奈委員長"]
+  );
+
+  // 1-char stem guard (綠): rejects 綠色/綠茶, accepts boundary-framed 綠
+  assert.deepEqual(
+    extractZhAppellations("這杯綠茶是綠色的。", {
+      speaker: hoshino,
+      target: midori,
+      matchedJpTerms: ["ミドリ"],
+    }),
+    []
+  );
+  assert.deepEqual(
+    extractZhAppellations("哼～綠你還敢說，剛剛是誰先喊的？", {
+      speaker: hoshino,
+      target: midori,
+      matchedJpTerms: ["ミドリ"],
+    }),
+    ["綠"]
+  );
+
+  // JP_TO_ZH_TITLES fallback (大姐頭, 淨化槽裡的汙水)
+  assert.deepEqual(
+    extractZhAppellations("別看大姐頭那樣，其實內心和淨化槽裡的汙水一樣唷。", {
+      speaker: hoshino,
+      target: rio,
+      matchedJpTerms: ["ビッグシスター"],
+    }),
+    ["大姐頭"]
+  );
+  assert.deepEqual(
+    extractZhAppellations("其實內心和淨化槽裡的汙水一樣唷。", {
+      speaker: hoshino,
+      target: rio,
+      matchedJpTerms: ["浄化槽の濁った水"],
+    }),
+    ["淨化槽裡的汙水"]
+  );
+});
+
+test("findMatchedJpTerms guards bare あなた against honorific あなた様 (Wakamo -> Sensei vs Kikyou)", () => {
+  assert.deepEqual(
+    findMatchedJpTerms("あなた様のため……必ずや勝利を掴んで見せますわ。", ["あなた"]),
+    []
+  );
+  assert.deepEqual(
+    findMatchedJpTerms("あなた様のため……必ずや勝利を掴んで見せますわ。", ["あなた様"]),
+    ["あなた様"]
+  );
+  assert.deepEqual(
+    findMatchedJpTerms("ふむ……\nそれにしても、あなた……。", ["あなた"]),
+    ["あなた"]
+  );
+});
+
+test("Reisa and Suzumi Magical Girl self-references extract Thermite Pink/White without double-counting", () => {
+  const reisa = makeChar({
+    id: "reisa",
+    name: { jp: "レイサ", en: "Reisa", kr: "레이사", zh: "澪紗" },
+  });
+  const suzumi = makeChar({
+    id: "suzumi",
+    name: { jp: "スズミ", en: "Suzumi", kr: "스즈미", zh: "鈴美" },
+  });
+  const selfChar = makeChar({ id: "special:self", kind: "special" });
+
+  assert.deepEqual(
+    extractEnAppellations('And I am "Thermite Pink," Thermite White\'s best friend!', {
+      speaker: reisa,
+      target: selfChar,
+      matchedJpTerms: ["テルミットピンク"],
+      extraEnTerms: ["Thermite Pink", "Pink"],
+    }),
+    ["Thermite Pink"]
+  );
+  assert.deepEqual(
+    extractKrAppellations("저는 <테르밋 핑크>! <테르밋 화이트>를 돕는 사이드킥입니다!", {
+      speaker: reisa,
+      target: selfChar,
+      matchedJpTerms: ["テルミットピンク"],
+      extraKrTerms: ["테르밋 핑크", "핑크"],
+    }),
+    ["저", "테르밋 핑크"]
+  );
+  assert.deepEqual(
+    extractEnAppellations("Th-Thermite White has arrived!", {
+      speaker: suzumi,
+      target: selfChar,
+      matchedJpTerms: ["テルミットホワイト"],
+      extraEnTerms: ["Thermite White", "White"],
+    }),
+    ["Thermite White"]
+  );
+  assert.deepEqual(
+    extractKrAppellations("테, 테르밋 화이트. 등장~!", {
+      speaker: suzumi,
+      target: selfChar,
+      matchedJpTerms: ["テルミットホワイト"],
+      extraKrTerms: ["테르밋 화이트", "화이트"],
+    }),
+    ["테르밋 화이트"]
   );
 });

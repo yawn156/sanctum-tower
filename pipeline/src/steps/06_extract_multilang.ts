@@ -232,6 +232,16 @@ export function findMatchedJpTerms(
         }
         if (
           valid &&
+          (needle === "あなた" || needle === "貴方" || needle === "アナタ") &&
+          (jpLine[end] === "様" ||
+            jpLine.startsWith("さま", end) ||
+            jpLine.startsWith("さん", end))
+        ) {
+          // Avoid matching honorific あなた様 / 貴方様 (e.g. Wakamo -> Sensei) as bare あなた
+          valid = false;
+        }
+        if (
+          valid &&
           (needle === "バカ" || needle === "ばか" || needle === "馬鹿") &&
           (jpLine.startsWith("な", end) ||
             jpLine.startsWith("に", end) ||
@@ -540,13 +550,14 @@ export interface ExtractionContext {
   matchedJpTerms: string[];
   extraKrTerms?: string[];
   extraEnTerms?: string[];
+  extraZhTerms?: string[];
   jpLine?: string;
 }
 
 export interface AutoEpithetsConfig {
   version: 1;
-  global?: Record<string, { kr?: string[]; en?: string[] }>;
-  pairs: Record<string, Record<string, { kr?: string[]; en?: string[] }>>;
+  global?: Record<string, { kr?: string[]; en?: string[]; zh?: string[] }>;
+  pairs: Record<string, Record<string, { kr?: string[]; en?: string[]; zh?: string[] }>>;
 }
 
 function loadAutoEpithets(): AutoEpithetsConfig {
@@ -1143,7 +1154,10 @@ export function extractKrAppellations(
       const re = new RegExp(
         `(?<![가-힣])${escapeRegExp(cleanExtra)}${KR_PARTICLE_LOOKAHEAD}`
       );
-      if (re.test(krLine)) found.push(cleanExtra);
+      if (re.test(krLine)) {
+        const covered = found.some((f) => f !== cleanExtra && f.includes(cleanExtra));
+        if (!covered) found.push(cleanExtra);
+      }
     }
     for (const jt of matchedJpTerms) {
       if (/^[A-Za-z][A-Za-z0-9& -]{1,}$/.test(jt)) {
@@ -2051,7 +2065,14 @@ export function extractEnAppellations(
       const cleanExtra = extra.trim();
       if (!cleanExtra) continue;
       const m = normalized.match(new RegExp(`\\b${escapeRegExp(cleanExtra)}\\b`, "i"));
-      if (m) found.push(m[0].replace(/\s+/g, " ").trim());
+      if (m) {
+        const matchedForm = m[0].replace(/\s+/g, " ").trim();
+        const lowerForm = matchedForm.toLowerCase();
+        const covered = found.some(
+          (f) => f.toLowerCase() !== lowerForm && f.toLowerCase().includes(lowerForm)
+        );
+        if (!covered) found.push(matchedForm);
+      }
     }
     for (const jt of matchedJpTerms) {
       if (/^[A-Za-z][A-Za-z0-9& -]{1,}$/.test(jt)) {
@@ -2359,6 +2380,538 @@ export function extractEnAppellations(
   return uniqueOrdered(found);
 }
 
+const CJK_CHAR_RE = /[\u4E00-\u9FFF]/;
+
+const ZH_SINGLE_CHAR_COMPOUND_REJECT: Record<string, RegExp> = {
+  綠: /綠色|綠茶|綠燈|綠葉|綠洲|綠化|翠綠|碧綠|嫩綠|墨綠|草綠|紅綠|黃綠|藍綠|灰綠|綠意|綠地|綠油油|綠豆/,
+  泉: /溫泉|噴泉|源泉|清泉|冷泉|礦泉|泉水|泉源|黃泉|九泉/,
+  響: /影響|響應|回響|迴響|音響|反響|交響|響亮|響聲|作響|敲響|打響|響起|巨響|聲響|響尾/,
+  晴: /晴天|晴朗|放晴|晴空|晴雨/,
+  旬: /上旬|中旬|下旬|旬日|七旬|八旬/,
+  葵: /向日葵|葵花/,
+  椿: /椿象|香椿|大椿/,
+};
+
+const ZH_SINGLE_CHAR_BOUNDARY_CHAR_RE =
+  /[是和跟與對給把被讓叫找問說看聽你妳我他她呢嗎啊呀吧喔哦的也都還在去來了！？」，。、…～~—―：:；;“”‘’【】\s.,!?()（）「」『』]/;
+
+const ZH_PREFIXES_BASE = ["小", "阿", "親愛的"];
+const ZH_SUFFIXES = [
+  "聯邦學生會長",
+  "總學生會長",
+  "副學生會長",
+  "學生會長",
+  "風紀委員長",
+  "副委員長",
+  "委員長",
+  "副會長",
+  "會長",
+  "副部長",
+  "部長",
+  "副社長",
+  "社長",
+  "副小隊長",
+  "副隊長",
+  "小隊長",
+  "隊長",
+  "副團長",
+  "團長",
+  "副局長",
+  "公安局長",
+  "局長",
+  "秘書室長",
+  "防衛室長",
+  "財務室長",
+  "室長",
+  "行政官",
+  "書記長",
+  "議長",
+  "長官",
+  "監督官",
+  "監督",
+  "指揮官",
+  "大小姐",
+  "小姐",
+  "大人",
+  "殿下",
+  "公主",
+  "女王",
+  "前輩",
+  "學姊",
+  "學姐",
+  "同學",
+  "老師",
+  "教授",
+  "博士",
+  "教官",
+  "師父",
+  "師傅",
+  "大師",
+  "修女",
+  "女僕",
+  "大姐頭",
+  "大姊頭",
+  "大姐",
+  "大姊",
+  "姐姐",
+  "姊姊",
+  "姐",
+  "姊",
+  "哥哥",
+  "哥",
+  "桑",
+  "醬",
+  "君",
+  "親",
+  "碳",
+  "氏",
+  "殿",
+  "同志",
+].join("|");
+
+const ZH_SENSEI_TERMS = [
+  "夏萊的老師",
+  "菜鳥老師",
+  "老師",
+  "指揮官",
+  "教官",
+  "顧問",
+  "主人",
+  "那位大人",
+  "大人",
+  "前輩",
+  "學姊",
+  "學姐",
+  "親愛的",
+  "達令",
+  "大哥哥",
+  "歐巴",
+  "客人",
+  "吉祥物",
+  "菜鳥",
+  "新手",
+  "您",
+  "你",
+  "妳",
+];
+
+const JP_TO_ZH_TITLES: Array<[RegExp, string[]]> = [
+  [/連邦生徒会長/, ["聯邦學生會長", "總學生會長", "學生會長", "會長"]],
+  [/評議会長/, ["評議會長", "會長"]],
+  [/副生徒会長/, ["副學生會長", "副會長"]],
+  [/生徒会長/, ["學生會長", "會長"]],
+  [/ゲヘナの風紀委員長|風紀委員長/, ["風紀委員長", "委員長"]],
+  [/防衛室長/, ["防衛室長", "室長"]],
+  [/財務室長/, ["財務室長", "室長"]],
+  [/副局長/, ["副局長"]],
+  [/公安局長/, ["公安局長", "局長"]],
+  [/行政官/, ["首席行政官", "行政官"]],
+  [/万魔殿の議長|議長/, ["議長"]],
+  [/先輩/, ["前輩", "學姊", "學姐"]],
+  [/正義実現(?:委員会の)?委員長/, ["正義實現委員會委員長", "正義實現部部長", "委員長", "部長"]],
+  [/副委員長/, ["副委員長", "副部長"]],
+  [/委員長/, ["委員長", "部長"]],
+  [/副会長/, ["副會長"]],
+  [/会長/, ["學生會長", "會長"]],
+  [/社長/, ["社長"]],
+  [/門主様?/, ["門主大人", "門主"]],
+  [/お嬢様|お嬢さん/, ["大小姐", "小姐"]],
+  [/姫/, ["公主殿下", "公主"]],
+  [/お姉|姉/, ["大姐頭", "大姊頭", "姐姐", "姊姊", "姐", "姊"]],
+  [/副小隊長/, ["副小隊長"]],
+  [/小隊長/, ["小隊長"]],
+  [/副隊長/, ["副隊長", "副團長"]],
+  [/隊長/, ["隊長"]],
+  [/書記長/, ["書記長"]],
+  [/同志/, ["同志"]],
+  [/ボス/, ["老大", "Boss", "首領"]],
+  [/マスター|主/, ["主人", "Master"]],
+  [/教授/, ["教授"]],
+  [/教官/, ["教官"]],
+  [/秘書室長/, ["秘書室長"]],
+  [/室長/, ["室長"]],
+  [/監督官/, ["監督官"]],
+  [/監督/, ["監督"]],
+  [/副部長/, ["副部長"]],
+  [/副長/, ["副部長", "副團長", "副長"]],
+  [/部長/, ["部長"]],
+  [/団長/, ["團長"]],
+  [/長官/, ["長官"]],
+  [/リーダー/, ["隊長", "領隊"]],
+  [/幹部/, ["幹部們", "幹部"]],
+  [/お二人/, ["兩位", "你們兩位", "妳們兩位"]],
+  [/ビッグシスター/, ["大姐頭", "大姊頭"]],
+  [/(?<!ビッグ)シスター/, ["修女"]],
+  [/勇者/, ["勇者"]],
+  [/裏切り者/, ["背叛者", "叛徒", "間諜"]],
+  [/氷の魔女/, ["冰之魔女"]],
+  [/変態/, ["變態"]],
+  [/腹黒/, ["腹黑"]],
+  [/「天才」/, ["天才"]],
+  [/最後の天使/, ["最後的天使"]],
+  [/天才戦略家/, ["天才戰略家"]],
+  [/浄化槽の濁った水/, ["淨化槽裡的汙水", "淨化槽裡的污水", "淨化槽表面的腐臭水", "淨化槽"]],
+  [/女将/, ["老闆娘", "女將"]],
+  [/マダム/, ["夫人", "女士"]],
+  [/ジェネラル/, ["將軍"]],
+  [/チビメイド/, ["小不點女僕", "小鬼女僕", "矮子女僕"]],
+  [/メイド/, ["女僕"]],
+  [/チビ/, ["小鬼", "小不點", "矮冬瓜", "小矮子"]],
+  [/ファウスト/, ["浮士德大人", "浮士德"]],
+  [/便利屋68/, ["便利屋68", "便利屋"]],
+  [/先生/, ["老師"]],
+  [/^(?:私たち|我々)$/, ["我們"]],
+  [/^(?:みんな|皆さん)$/, ["大家", "各位"]],
+  [/^(?:あなた達|あなたたち|あなた方|お前たち|お前ら|あんたたち|あんたら)$/, ["你們", "妳們"]],
+  [/^(?:あの子|この子)$/, ["那孩子", "這孩子"]],
+  [/^(?:あの方|あの人)$/, ["那位大人", "那個人", "那位"]],
+  [/^あいつら$/, ["那些傢伙", "那群傢伙"]],
+  [/^(?:あいつ|あの女)$/, ["那傢伙", "那個女人"]],
+  [/^貴女$/, ["您", "妳"]],
+  [/^手前(?:さん|様)?(?:\([^)]*\))?$/, ["你們", "妳們", "你這傢伙", "妳這傢伙", "你", "妳"]],
+  [
+    /^(?:あなた|あんた|お前|おまえ|君|キミ|貴様|貴方|其方|そなた|御主|お主|おのし|そち)$/,
+    ["您", "你", "妳", "閣下", "汝"],
+  ],
+];
+
+export function normalizeZhStutters(text: string): string {
+  const re =
+    /(?<![\u4E00-\u9FFF])([\u4E00-\u9FFF])(?:[,，、…~]|(?:\.\.\.))+\s*(?=\1[\u4E00-\u9FFF])/g;
+  return text.replace(re, "").replace(re, "");
+}
+
+export function extractZhAppellations(
+  rawZhLine: string,
+  ctx: ExtractionContext
+): string[] {
+  if (!rawZhLine) return [];
+  const zhLine = normalizeZhStutters(rawZhLine);
+  const { speaker, target, matchedJpTerms } = ctx;
+
+  if (target.id === "special:self") {
+    const found: string[] = [];
+    const specialSelfTerms = [
+      "大叔我",
+      "大叔",
+      "小生我",
+      "小生",
+      "本大爺",
+      "本小姐",
+      "本座",
+      "本王",
+      "本機",
+      "在下",
+      "老夫",
+      "老身",
+      "老娘",
+      "吾輩",
+      "妾身",
+      "奴家",
+      "人家",
+      "姊姊我",
+      "姐姐我",
+      "歐吉桑",
+      ...(speaker.id === "himari"
+        ? [
+            "超天才清楚系病弱美少女駭客",
+            "超天才清楚系病弱美少女",
+            "超天才病弱美少女駭客",
+            "超天才病弱美少女",
+            "天才病弱美少女駭客",
+            "天才病弱美少女",
+            "病弱美少女",
+            "美少女駭客",
+            "超天才美少女",
+            "天才美少女",
+            "超天才駭客",
+            "天才駭客",
+            "電腦妖精",
+            "全知",
+          ]
+        : speaker.id === "toki"
+          ? [
+              "超級完美女僕",
+              "完美女僕",
+              "最棒的女僕",
+              "最強女僕",
+              "優秀的我",
+            ]
+          : speaker.id === "reisa"
+            ? ["自衛團的超級巨星", "大家的超級巨星", "超級巨星"]
+            : []),
+    ];
+
+    let zhSelfLine = zhLine;
+    const spZh = (speaker.name.zh ?? "").trim();
+    const spFullZh = (speaker.fullName?.zh ?? "").trim();
+    const selfNameCandidates = uniqueOrdered([spFullZh, spZh]).filter(
+      (n) => n.length >= 2 && CJK_CHAR_RE.test(n)
+    );
+    for (const sn of selfNameCandidates) {
+      const escSn = escapeRegExp(sn);
+      zhSelfLine = zhSelfLine.replace(
+        new RegExp(`(?:我是|我叫|我的名字是|人稱)\\s*${escSn}`, "g"),
+        " "
+      );
+    }
+
+    for (const term of specialSelfTerms) {
+      if (term === "大叔" && found.includes("大叔我")) continue;
+      if (term === "小生" && found.includes("小生我")) continue;
+      if (zhSelfLine.includes(term)) {
+        found.push(term);
+      }
+    }
+
+    // Bare 吾 (only when not part of a multi-char word like 吾輩)
+    if (!found.includes("吾輩") && /(?<![\u4E00-\u9FFF])吾(?![\u4E00-\u9FFF輩])/.test(zhSelfLine)) {
+      found.push("吾");
+    }
+
+    for (const sn of selfNameCandidates) {
+      if (
+        sn === spZh &&
+        spFullZh &&
+        found.includes(spFullZh)
+      ) {
+        continue;
+      }
+      if (zhSelfLine.includes(sn)) {
+        found.push(sn);
+      }
+    }
+
+    // Standard 1st-person 我 after stripping matched "大叔我"/"小生我"/"姊姊我"/"姐姐我"
+    const lineForStandardSelf = zhLine.replace(/(?:大叔|小生|姊姊|姐姐)我/g, " ");
+    if (/(?<![自忘無你妳他她它大生])我(?!們|國|方|軍|校)/.test(lineForStandardSelf)) {
+      found.push("我");
+    }
+    if (
+      matchedJpTerms.some((t) => /私たち|我々/.test(t)) &&
+      zhLine.includes("我們")
+    ) {
+      found.push("我們");
+    }
+
+    for (const extra of ctx.extraZhTerms ?? []) {
+      const cleanExtra = extra.trim();
+      if (cleanExtra && zhLine.includes(cleanExtra)) {
+        const covered = found.some((f) => f !== cleanExtra && f.includes(cleanExtra));
+        if (!covered) found.push(cleanExtra);
+      }
+    }
+
+    for (const jt of matchedJpTerms) {
+      if (/^[A-Za-z][A-Za-z0-9& -]{1,}$/.test(jt)) {
+        const m = zhLine.match(
+          new RegExp(`\\b${escapeRegExp(jt).replace(/(\d+)/, "\\s*$1")}\\b`, "i")
+        );
+        if (m) found.push(m[0].replace(/\s+/g, " ").trim());
+      } else if (
+        (jt.includes("コールサイン04") || jt.includes("コールサインゼロフォー")) &&
+        /(?:代號|呼號)\s*(?:04|零四)/.test(zhLine)
+      ) {
+        const m = zhLine.match(/(?:代號|呼號)\s*(?:04|零四)/);
+        if (m) found.push(m[0].replace(/\s+/g, ""));
+      }
+    }
+
+    return uniqueOrdered(found);
+  }
+
+  if (target.id === "special:sensei") {
+    const found: string[] = [];
+    let remaining = zhLine;
+
+    if (/夏萊的\s*\[USERNAME\]\s*老師/.test(remaining)) {
+      found.push("[USERNAME]老師");
+      remaining = remaining.replace(/夏萊的\s*\[USERNAME\]\s*老師/g, " ");
+    } else if (/\[USERNAME\]\s*老師/.test(remaining)) {
+      found.push("[USERNAME]老師");
+      remaining = remaining.replace(/\[USERNAME\]\s*老師/g, " ");
+    }
+
+    if (/\[USERNAME\]/.test(remaining)) {
+      found.push("[USERNAME]");
+    }
+
+    const cleaned = remaining.replace(/\[USERNAME\]\s*/g, "");
+    for (const term of ZH_SENSEI_TERMS) {
+      if (
+        term === "老師" &&
+        (found.includes("夏萊的老師") || found.includes("菜鳥老師"))
+      ) {
+        continue;
+      }
+      if (term === "大人" && found.includes("那位大人")) continue;
+      if (term === "菜鳥" && found.includes("菜鳥老師")) continue;
+      if (term === "客人" && !matchedJpTerms.some((t) => /お客様|お客さん/.test(t))) {
+        continue;
+      }
+      if (term === "吉祥物" && !matchedJpTerms.some((t) => /マスコット/.test(t))) {
+        continue;
+      }
+      if (
+        (term === "菜鳥老師" || term === "菜鳥" || term === "新手") &&
+        !matchedJpTerms.some((t) => /素人|しろうと/.test(t))
+      ) {
+        continue;
+      }
+      if (term === "你" && /你們|你這傢伙/.test(cleaned) && !/(?<![們])你(?!們|這傢伙)/.test(cleaned)) {
+        continue;
+      }
+      if (term === "妳" && /妳們|妳這傢伙/.test(cleaned) && !/(?<![們])妳(?!們|這傢伙)/.test(cleaned)) {
+        continue;
+      }
+      if (cleaned.includes(term)) {
+        found.push(term);
+      }
+    }
+    return uniqueOrdered(found);
+  }
+
+  if (target.id === "special:you") {
+    const youTerms = [
+      "您",
+      "你們",
+      "妳們",
+      "你這傢伙",
+      "妳這傢伙",
+      "這傢伙",
+      "那傢伙",
+      "閣下",
+      "汝",
+      "你",
+      "妳",
+    ];
+    const found: string[] = [];
+    let remaining = zhLine;
+    for (const term of youTerms) {
+      if (term === "這傢伙" && (found.includes("你這傢伙") || found.includes("妳這傢伙"))) {
+        continue;
+      }
+      if ((term === "你" || term === "妳") && !remaining.includes(term)) {
+        continue;
+      }
+      if (remaining.includes(term)) {
+        found.push(term);
+        if (term === "你們" || term === "妳們" || term === "你這傢伙" || term === "妳這傢伙") {
+          remaining = remaining.replace(new RegExp(escapeRegExp(term), "g"), " ");
+        }
+      }
+    }
+    return uniqueOrdered(found);
+  }
+
+  // Named character / NPC / entity
+  const stemCandidates: string[] = [
+    target.fullName?.zh ?? "",
+    target.name.zh ?? "",
+    ...(target.aliases.zh ?? []),
+  ];
+
+  const stems = uniqueOrdered(stemCandidates)
+    .filter((s) => s.length >= 2 || (s.length === 1 && target.name.zh === s))
+    .sort((a, b) => b.length - a.length);
+
+  const found: string[] = [];
+
+  for (const extra of ctx.extraZhTerms ?? []) {
+    const cleanExtra = extra.trim();
+    if (!cleanExtra) continue;
+    if (zhLine.includes(cleanExtra)) {
+      const covered = found.some((f) => f !== cleanExtra && f.includes(cleanExtra));
+      if (!covered) found.push(cleanExtra);
+    }
+  }
+
+  for (const jt of matchedJpTerms) {
+    if (/^[A-Za-z][A-Za-z0-9& -]{1,}$/.test(jt)) {
+      const m = zhLine.match(
+        new RegExp(`\\b${escapeRegExp(jt).replace(/(\d+)/, "\\s*$1")}\\b`, "i")
+      );
+      if (m) found.push(m[0].replace(/\s+/g, " ").trim());
+    }
+  }
+
+  const hasAnotherVariantPrefix =
+    target.id === "shiroko_terror" ||
+    matchedJpTerms.some((t) => /もう一人|別の|違う/.test(t));
+  const prefixList = hasAnotherVariantPrefix
+    ? ["另一個", "另一位", ...ZH_PREFIXES_BASE]
+    : ZH_PREFIXES_BASE;
+  const zhPrefixRe = prefixList.join("|");
+
+  for (const stem of stems) {
+    const isSingleChar = stem.length === 1 && CJK_CHAR_RE.test(stem);
+    const actingGuard = target.id.startsWith("npc:gsc_president") ? "(?!代理)" : "";
+    const re = new RegExp(
+      `(?:${zhPrefixRe})?${escapeRegExp(stem)}(?:${ZH_SUFFIXES})?${actingGuard}`,
+      "g"
+    );
+
+    let match: RegExpExecArray | null;
+    while ((match = re.exec(zhLine)) !== null) {
+      const mStr = match[0];
+      const start = match.index;
+      const end = start + mStr.length;
+
+      if (isSingleChar && mStr === stem) {
+        const rejectRe = ZH_SINGLE_CHAR_COMPOUND_REJECT[stem];
+        const ctxSlice = zhLine.slice(Math.max(0, start - 3), Math.min(zhLine.length, end + 3));
+        if (rejectRe && rejectRe.test(ctxSlice)) {
+          continue;
+        }
+        const prev = start > 0 ? zhLine[start - 1] : "";
+        const next = end < zhLine.length ? zhLine[end] : "";
+        const prevOk = !prev || ZH_SINGLE_CHAR_BOUNDARY_CHAR_RE.test(prev);
+        const nextOk = !next || ZH_SINGLE_CHAR_BOUNDARY_CHAR_RE.test(next);
+        if (!prevOk || !nextOk) {
+          continue;
+        }
+      }
+
+      const coveredByFuller = found.some((f) => f !== mStr && f.includes(mStr));
+      if (!coveredByFuller) {
+        found.push(mStr);
+      }
+    }
+  }
+
+  const hasExplicitTitleInJp = matchedJpTerms.some((t) =>
+    /(?:副?生徒会長|副?会長|副?委員長|副?部長|副?局長|副?小?隊長|副長|社長|室長|議長|行政官|書記長|教授|教官|勇者|裏切り者|氷の魔女|変態|腹黒|「天才」|最後の天使|天才戦略家|浄化槽の濁った水|ビッグシスター)/.test(
+      t
+    )
+  );
+  const stemSet = new Set(stems.map((s) => s.trim()));
+  const onlyBareStemFound =
+    !target.id.startsWith("npc:gsc_president") &&
+    found.length > 0 &&
+    found.every((f) => stemSet.has(f.trim()));
+
+  if (found.length === 0 || (hasExplicitTitleInJp && onlyBareStemFound)) {
+    const titleCandidates: string[] = [];
+    for (const [jpRe, zhTitles] of JP_TO_ZH_TITLES) {
+      if (matchedJpTerms.some((t) => jpRe.test(t))) {
+        titleCandidates.push(...zhTitles);
+      }
+    }
+    for (const title of uniqueOrdered(titleCandidates)) {
+      if (zhLine.includes(title)) {
+        if (onlyBareStemFound) {
+          found.splice(0, found.length, title);
+        } else {
+          found.push(title);
+        }
+        break;
+      }
+    }
+  }
+
+  return uniqueOrdered(found);
+}
+
 const KR_VOCATIVE_NOUN_END_RE =
   /(?:선배님|선배|위원장님|위원장|부장님|부장|회장님|회장|사장님|사장|실장님|실장|대장님|대장|단장님|단장|의장님|의장|국장님|국장|행정관님|행정관|교관님|교관|선생님|선생|아가씨|공주님|공주|여왕님|언니|누나|오빠|형님|아저씨|님|씨|쨩|짱|군|양)$/;
 const KR_VERB_CLAUSE_END_RE =
@@ -2654,12 +3207,16 @@ export interface CitationCandidate {
   matchedJpTerm: string;
   matchedKrTerm?: string;
   matchedEnTerm?: string;
+  matchedZhTerm?: string;
   matchedJpTerms?: string[];
   matchedKrTerms?: string[];
   matchedEnTerms?: string[];
+  matchedZhTerms?: string[];
   enDropped?: boolean;
+  zhDropped?: boolean;
   hasKr: boolean;
   hasEn: boolean;
+  hasZh?: boolean;
   hasUsernamePlaceholder?: boolean;
 }
 
@@ -2796,10 +3353,17 @@ export function selectPerTermCitations(
       : c.matchedEnTerm
         ? [c.matchedEnTerm]
         : [];
+    const zhs = c.matchedZhTerms?.length
+      ? c.matchedZhTerms
+      : c.matchedZhTerm
+        ? [c.matchedZhTerm]
+        : [];
     for (const t of jps) if (t) out.push(`jp:${t}`);
     for (const t of krs) if (t) out.push(`kr:${t}`);
     for (const t of ens) if (t) out.push(`en:${t}`);
+    for (const t of zhs) if (t) out.push(`zh:${t}`);
     if (c.enDropped) out.push("en_omitted");
+    if (c.zhDropped) out.push("zh_omitted");
     return Array.from(new Set(out));
   };
 
@@ -2897,6 +3461,11 @@ export function selectPerTermCitations(
       : c.matchedEnTerm
         ? [c.matchedEnTerm]
         : [];
+    const zhs = c.matchedZhTerms?.length
+      ? c.matchedZhTerms
+      : c.matchedZhTerm
+        ? [c.matchedZhTerm]
+        : [];
 
     chosen.push({
       sourceType: c.line.sourceType,
@@ -2905,12 +3474,15 @@ export function selectPerTermCitations(
       jp: c.line.jp,
       kr: c.line.kr,
       ...(c.line.en ? { en: c.line.en } : {}),
+      ...(c.line.zh ? { zh: c.line.zh } : {}),
       matchedJpTerm: jps[0],
       ...(krs[0] ? { matchedKrTerm: krs[0] } : {}),
       ...(ens[0] ? { matchedEnTerm: ens[0] } : {}),
+      ...(zhs[0] ? { matchedZhTerm: zhs[0] } : {}),
       ...(jps.length > 1 ? { matchedJpTerms: jps } : {}),
       ...(krs.length > 1 ? { matchedKrTerms: krs } : {}),
       ...(ens.length > 1 ? { matchedEnTerms: ens } : {}),
+      ...(zhs.length > 1 ? { matchedZhTerms: zhs } : {}),
     });
   }
 
@@ -3273,7 +3845,7 @@ export async function extractMultilangAppellations(versions: {
   const linesBySpeaker = new Map<string, DialogueLineRecord[]>();
   const groupLinesMap = new Map<
     number,
-    Array<{ speakerId: string; jp: string; kr: string; en?: string }>
+    Array<{ speakerId: string; jp: string; kr: string; en?: string; zh?: string }>
   >();
   const lineSceneIdx = new WeakMap<DialogueLineRecord, number>();
 
@@ -3302,6 +3874,7 @@ export async function extractMultilangAppellations(versions: {
         jp: rec.jp,
         kr: rec.kr,
         ...(rec.en ? { en: rec.en } : {}),
+        ...(rec.zh ? { zh: rec.zh } : {}),
       });
       if (validSpeakerIds.has(rec.speakerId)) {
         lineSceneIdx.set(rec, idx);
@@ -3526,7 +4099,13 @@ export async function extractMultilangAppellations(versions: {
     }
 
     // ambiguity === "pronoun"
-    if (line.jp.includes("先生")) return false;
+    if (
+      line.jp.includes("先生") ||
+      line.jp.includes("あなた様") ||
+      /(?:선생님|선생(?![가-힣]))/.test(line.kr)
+    ) {
+      return false;
+    }
 
     if (target.kind === "entity") {
       const entityNeedles = Array.from(
@@ -3605,12 +4184,14 @@ export async function extractMultilangAppellations(versions: {
     const jpCounts = new Map<string, number>();
     const krCounts = new Map<string, number>();
     const enCounts = new Map<string, number>();
+    const zhCounts = new Map<string, number>();
     const matchedKrLinesForSpeech: string[] = [];
     const citationCandidates: CitationCandidate[] = [];
 
     let matchedLineCount = 0;
     let enEligibleLineCount = 0;
     let droppedCount = 0;
+    let zhDroppedCount = 0;
 
     const speakerHomographs = speakerHomographNeedles.get(seed.speakerId);
     for (const line of speakerLines) {
@@ -3668,6 +4249,7 @@ export async function extractMultilangAppellations(versions: {
 
       const extraKrTerms: string[] = [];
       const extraEnTerms: string[] = [];
+      const extraZhTerms: string[] = [];
       for (const jt of matchedJp) {
         const pMap = pairEpithets[jt];
         const gMap = globalEpithets[jt];
@@ -3675,6 +4257,8 @@ export async function extractMultilangAppellations(versions: {
         if (gMap?.kr) extraKrTerms.push(...gMap.kr);
         if (pMap?.en) extraEnTerms.push(...pMap.en);
         if (gMap?.en) extraEnTerms.push(...gMap.en);
+        if (pMap?.zh) extraZhTerms.push(...pMap.zh);
+        if (gMap?.zh) extraZhTerms.push(...gMap.zh);
       }
 
       const ctx: ExtractionContext = {
@@ -3684,10 +4268,13 @@ export async function extractMultilangAppellations(versions: {
         jpLine: line.jp,
         ...(extraKrTerms.length > 0 ? { extraKrTerms: uniqueOrdered(extraKrTerms) } : {}),
         ...(extraEnTerms.length > 0 ? { extraEnTerms: uniqueOrdered(extraEnTerms) } : {}),
+        ...(extraZhTerms.length > 0 ? { extraZhTerms: uniqueOrdered(extraZhTerms) } : {}),
       };
       let krExtracted = extractKrAppellations(line.kr, ctx);
       let enExtracted =
         line.en && !line.jpOnly ? extractEnAppellations(line.en, ctx) : [];
+      const zhExtracted =
+        line.zh && !line.jpOnly ? extractZhAppellations(line.zh, ctx) : [];
 
       if (target.id !== "special:self") {
         const voc = extractStandaloneVocative(
@@ -3734,26 +4321,50 @@ export async function extractMultilangAppellations(versions: {
         }
       }
 
+      let hasZh = false;
+      let matchedZhTerm: string | undefined;
+      if (line.zh && !line.jpOnly) {
+        if (zhExtracted.length > 0) {
+          hasZh = true;
+          matchedZhTerm = zhExtracted[0];
+          for (const zt of zhExtracted) {
+            zhCounts.set(zt, (zhCounts.get(zt) ?? 0) + 1);
+          }
+        } else if (target.id !== "special:self") {
+          zhDroppedCount++;
+        }
+      }
+
       citationCandidates.push({
         line,
         matchedJpTerm: matchedJp[0],
         ...(krExtracted[0] ? { matchedKrTerm: krExtracted[0] } : {}),
         ...(matchedEnTerm ? { matchedEnTerm } : {}),
+        ...(matchedZhTerm ? { matchedZhTerm } : {}),
         matchedJpTerms: matchedJp,
         matchedKrTerms: krExtracted,
         matchedEnTerms: enExtracted,
+        matchedZhTerms: zhExtracted,
         enDropped: Boolean(
           line.en &&
             !line.jpOnly &&
             !hasEn &&
             target.id !== "special:self"
         ),
+        zhDropped: Boolean(
+          line.zh &&
+            !line.jpOnly &&
+            !hasZh &&
+            target.id !== "special:self"
+        ),
         hasKr: krExtracted.length > 0,
         hasEn,
+        hasZh,
         hasUsernamePlaceholder:
           line.jp.includes("[USERNAME]") ||
           line.kr.includes("[USERNAME]") ||
-          Boolean(line.en?.includes("[USERNAME]")),
+          Boolean(line.en?.includes("[USERNAME]")) ||
+          Boolean(line.zh?.includes("[USERNAME]")),
       });
     }
 
@@ -3880,6 +4491,7 @@ export async function extractMultilangAppellations(versions: {
     const termLimit = target.id === "special:self" ? 60 : 12;
     const krTerms = toSortedTermVariants(krCounts, termLimit);
     const enTerms = toSortedTermVariants(normalizedEnCounts, termLimit);
+    const zhTerms = toSortedTermVariants(zhCounts, termLimit);
 
     const speech =
       target.id === "special:self"
@@ -3910,6 +4522,7 @@ export async function extractMultilangAppellations(versions: {
             jp: gl[k].jp,
             kr: gl[k].kr,
             ...(gl[k].en ? { en: gl[k].en } : {}),
+            ...(gl[k].zh ? { zh: gl[k].zh } : {}),
           });
         }
         const after: QuoteContextLine[] = [];
@@ -3919,6 +4532,7 @@ export async function extractMultilangAppellations(versions: {
             jp: gl[idx + 1].jp,
             kr: gl[idx + 1].kr,
             ...(gl[idx + 1].en ? { en: gl[idx + 1].en } : {}),
+            ...(gl[idx + 1].zh ? { zh: gl[idx + 1].zh } : {}),
           });
         }
         if (before.length > 0) cit.contextBefore = before;
@@ -3967,6 +4581,10 @@ export async function extractMultilangAppellations(versions: {
       en: {
         terms: enTerms,
         droppedCount,
+      },
+      zh: {
+        terms: zhTerms,
+        droppedCount: zhDroppedCount,
       },
       matchedLineCount,
       citationCount: citations.length,

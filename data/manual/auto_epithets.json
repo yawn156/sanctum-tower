@@ -1,6 +1,27 @@
 {
   "version": 1,
-  "global": {},
+  "global": {
+    "テルミットピンク": {
+      "kr": ["테르밋 핑크", "핑크"],
+      "en": ["Thermite Pink", "Pink"],
+      "zh": ["Thermite Pink", "Pink"]
+    },
+    "テルミットホワイト": {
+      "kr": ["테르밋 화이트", "화이트"],
+      "en": ["Thermite White", "White"],
+      "zh": ["Thermite White", "White"]
+    },
+    "ピンク": {
+      "kr": ["핑크"],
+      "en": ["Pink"],
+      "zh": ["Pink"]
+    },
+    "ホワイト": {
+      "kr": ["화이트"],
+      "en": ["White"],
+      "zh": ["White"]
+    }
+  },
   "pairs": {
     "airi->hinata": {
       "シスターさん": {
