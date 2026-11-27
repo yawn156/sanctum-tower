@@ -971,11 +971,19 @@ function uniqueOrdered(items: string[]): string[] {
 const KR_PARTICLE_LOOKAHEAD =
   "(?=(?:은|는|이|가|을|를|의|에게는|에게|에겐|께서는|께서|께|한테는|한테|에서도|에서|에도|에|도|만|까지는|까지|부터는|부터|이랑도|이랑|랑도|랑|와도|와|과도|과|으로도|으로|로도|로|야|아|여|시여|이라고|라고|이라는|라는|이라니|라니|처럼|보다|마다|조차|마저|밖에|뿐|입니다|입니까|이시군요|이셨던|이셨|이시네요|이시죠|이세요|이잖아요|이잖아|이라면|이에요|예요|이군요|이네요|이구나|이지요|이지|이죠|인가요|인가|인데요|인데|이야|이었|였|이시다|이시|이다|인|잖아|잖아요|니까요|니까|라면)?(?![가-힣]))";
 
+function normalizeKrStutters(text: string): string {
+  return text.replace(
+    /(?<![가-힣])([가-힣])(?:,|…+|\.\.\.|~)+\s*(?=\1[가-힣])/g,
+    ""
+  );
+}
+
 export function extractKrAppellations(
-  krLine: string,
+  rawKrLine: string,
   ctx: ExtractionContext
 ): string[] {
-  if (!krLine) return [];
+  if (!rawKrLine) return [];
+  const krLine = normalizeKrStutters(rawKrLine);
   const { speaker, target, matchedJpTerms } = ctx;
 
   if (target.id === "special:self") {
