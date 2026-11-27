@@ -3333,6 +3333,15 @@ export async function extractMultilangAppellations(versions: {
         ) {
           continue;
         }
+        if (
+          m.tg.id === "aoba" &&
+          (/アオバ(?:中心|中央|[東西南北])?区/.test(rec.jp) ||
+            /\bAoba\s+(?:Central|West|East|North|South|District)\b/i.test(
+              rec.en!
+            ))
+        ) {
+          continue;
+        }
         if (!m.jpStems.some((js) => rec.jp.includes(js))) continue;
         if (!m.enPatterns.some((re) => re.test(rec.en!))) continue;
 
